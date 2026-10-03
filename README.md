@@ -59,6 +59,24 @@ In the event of a missing configuration file, HellPot will attempt to place it's
 
 666 ) 𝙏͘͝𝙝̓̓͛𝙚͑̈́̀ 𝙨͆͠͝𝙠͑̾͌𝙮̽͌͆ 𝙞̓̔̔𝙨͒͐͝ 𝙛͑̈́̚𝙖͛͒𝙡͑͆̽𝙡̾̚̚𝙞͋̒̒𝙣̾͛͝𝙜͒̒̀.́̔͝​
 
+---
+
+### Docker Method:
+
+A multi-arch (amd64/arm64) image is published to GHCR on every push to `main`:
+
+```
+docker pull ghcr.io/sirterrific/hellpot:latest
+```
+
+The image layout is unchanged from the upstream `Dockerfile`: binary at `/app`, config at `/config` (defaults from `docker_config.toml`), logs in `/logs/`, port `8080`. Mount your own config over `/config` and a volume on `/logs`:
+
+```
+docker run -d -p 8080:8080 -v ./config.toml:/config:ro -v ./logs:/logs ghcr.io/sirterrific/hellpot:latest
+```
+
+---
+
 ## Configuration Reference
 
 

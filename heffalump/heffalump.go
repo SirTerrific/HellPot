@@ -29,7 +29,7 @@ func NewHeffalump(mm MarkovMap, buffsize int) *Heffalump {
 	return &Heffalump{
 		pool: &sync.Pool{New: func() interface{} {
 			b := make([]byte, buffsize)
-			return b
+			return &b
 		}},
 		buffsize: buffsize,
 		mm:       mm,
@@ -47,17 +47,12 @@ func (h *Heffalump) WriteHell(bw *bufio.Writer) (int64, error) {
 		}
 	}()
 
-	buf := h.pool.Get().([]byte)
+	buf := h.pool.Get().(*[]byte)
+	defer h.pool.Put(buf)
 
 	if _, err = bw.WriteString("<html>\n<body>\n"); err != nil {
-		h.pool.Put(buf)
 		return n, err
 	}
-	if n, err = io.CopyBuffer(bw, h.mm, buf); err != nil {
-		h.pool.Put(buf)
-		return n, nil
-	}
-
-	h.pool.Put(buf)
+	n, _ = io.CopyBuffer(bw, h.mm, *buf)
 	return n, nil
 }
