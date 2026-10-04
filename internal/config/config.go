@@ -211,6 +211,11 @@ func associateExportedVariables() {
 
 	processOpts()
 
+	// only override the default when set, absent keys must keep the historical limit of 10
+	if snek.Exists("performance.max_conns_per_ip") {
+		MaxConnsPerIP = snek.Int("performance.max_conns_per_ip")
+	}
+
 	if noColorForce {
 		NoColor = true
 	}

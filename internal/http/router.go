@@ -97,7 +97,7 @@ func getSrv(r *router.Router) fasthttp.Server {
 		MaxRequestBodySize: 1 * 1024 * 1024,
 
 		// Help curb abuse of HellPot (we've always needed this badly)
-		MaxConnsPerIP:      10,
+		MaxConnsPerIP:      config.MaxConnsPerIP,
 		MaxRequestsPerConn: 2,
 		Concurrency:        config.MaxWorkers,
 

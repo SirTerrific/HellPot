@@ -46,6 +46,7 @@ var defOpts = map[string]map[string]interface{}{
 	"performance": {
 		"restrict_concurrency": false,
 		"max_workers":          256,
+		"max_conns_per_ip":     10,
 	},
 	"deception": {
 		"server_name": "nginx",

@@ -77,6 +77,9 @@ var (
 var (
 	RestrictConcurrency bool
 	MaxWorkers          int
+	// MaxConnsPerIP limits concurrent connections per remote IP (0 = unlimited).
+	// Behind a reverse proxy every client shares the proxy's IP, so this caps the whole instance.
+	MaxConnsPerIP = 10
 )
 
 // "deception"
