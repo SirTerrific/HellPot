@@ -23,7 +23,7 @@ Two differences in log *text*, both at debug or trace level and both coming from
 - Go modules updated: fasthttp 1.63.0 to 1.74.0, zerolog 1.34.0 to 1.35.1, koanf/v2 2.2.1 to 2.3.7, koanf file provider 1.2.0 to 1.2.1, golang.org/x/term 0.32.0 to 0.46.0, golang.org/x/sys 0.33.0 to 0.48.0, plus their indirect dependencies. The `go` directive is now 1.26.0 (required by the updated dependencies) and the `toolchain` line was removed.
 - Go module renamed to `github.com/SirTerrific/HellPot` (imports and README links updated). Use `go install github.com/SirTerrific/HellPot/cmd/HellPot@latest`.
 - Dockerfile: build image `golang:1.27`, runtime image `distroless/static-debian13` (was `static-debian11`), native cross-compilation for multi-arch builds, optional `VERSION` build argument, `org.opencontainers.image.source` label points to this repository.
-- CI: Go version read from `go.mod`, `actions/checkout` v5, `actions/setup-go` v6. Dependabot now also tracks Docker base images (weekly).
+- CI: runs on the latest stable Go (Go 1.26.0 has known standard-library vulnerabilities reported by `govulncheck`), `actions/checkout` v5, `actions/setup-go` v6. Dependabot now also tracks Docker base images (weekly).
 - Release binaries now embed the tag name (for example `v1.2.3`, shown as `1.2.3` by `--banner`). The workflow used to embed the full git ref.
 
 ### Fixed

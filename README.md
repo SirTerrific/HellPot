@@ -39,7 +39,7 @@ Under the hood of this eternal suffering is a markov engine that chucks bits and
 
 ## Building From Source
 
-HellPot requires **Go 1.26 or newer** (see the `go` line in [go.mod](go.mod)). It uses [go modules](https://go.dev/blog/using-go-modules), which makes it dead simple to build with a stock Go installation. A GNU Makefile is provided.
+HellPot requires **Go 1.26 or newer** (see the `go` line in [go.mod](go.mod)) and recommends the latest patch release: `govulncheck` reports known standard-library vulnerabilities in Go 1.26.0. It uses [go modules](https://go.dev/blog/using-go-modules), which makes it dead simple to build with a stock Go installation. A GNU Makefile is provided.
 
 1 ) `git clone https://github.com/SirTerrific/HellPot`
 
@@ -369,7 +369,7 @@ All nonexisting URLs are being reverse proxied to a HellPot instance on localhos
 
 ## Development
 
-- **CI** ([go.yml](.github/workflows/go.yml), "Vibe Check"): on every push and on pull requests to `main`: `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. The Go version comes from `go.mod`.
+- **CI** ([go.yml](.github/workflows/go.yml), "Vibe Check"): on every push and on pull requests to `main`: `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. CI uses the latest stable Go release, because older Go versions carry known standard-library vulnerabilities that `govulncheck` reports.
 - **Docker** ([docker.yml](.github/workflows/docker.yml)): builds `linux/amd64` and `linux/arm64` and pushes to `ghcr.io/sirterrific/hellpot` (pull requests only build, they do not push). The Dockerfile runs `go vet` and `go test` before building, and accepts a `VERSION` build argument.
 - **Releases** ([release-command.yml](.github/workflows/release-command.yml)): creating a GitHub release builds binaries for linux, windows, darwin and freebsd (386, amd64, arm64, except darwin/386 and windows/arm64), with SHA-256 sums.
 - **Dependabot** checks Go modules and GitHub Actions daily and Docker base images weekly.

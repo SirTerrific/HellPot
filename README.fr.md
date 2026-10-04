@@ -39,7 +39,7 @@ Sous le capot de cette souffrance éternelle, un moteur de chaînes de Markov en
 
 ## Compiler depuis les sources
 
-HellPot nécessite **Go 1.26 ou plus récent** (voir la ligne `go` de [go.mod](go.mod)). Il utilise les [modules Go](https://go.dev/blog/using-go-modules), ce qui rend la compilation très simple avec une installation Go standard. Un Makefile GNU est fourni.
+HellPot nécessite **Go 1.26 ou plus récent** (voir la ligne `go` de [go.mod](go.mod)) et recommande la dernière version corrective : `govulncheck` signale des vulnérabilités connues de la bibliothèque standard dans Go 1.26.0. Il utilise les [modules Go](https://go.dev/blog/using-go-modules), ce qui rend la compilation très simple avec une installation Go standard. Un Makefile GNU est fourni.
 
 1 ) `git clone https://github.com/SirTerrific/HellPot`
 
@@ -369,7 +369,7 @@ Toutes les URL inexistantes sont envoyées par reverse proxy vers une instance d
 
 ## Développement
 
-- **CI** ([go.yml](.github/workflows/go.yml), « Vibe Check ») : à chaque push et sur les pull requests vers `main` : `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. La version de Go vient de `go.mod`.
+- **CI** ([go.yml](.github/workflows/go.yml), « Vibe Check ») : à chaque push et sur les pull requests vers `main` : `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. La CI utilise la dernière version stable de Go, car les versions plus anciennes contiennent des vulnérabilités connues de la bibliothèque standard que `govulncheck` signale.
 - **Docker** ([docker.yml](.github/workflows/docker.yml)) : construit `linux/amd64` et `linux/arm64` et publie sur `ghcr.io/sirterrific/hellpot` (les pull requests construisent seulement, sans publier). Le Dockerfile exécute `go vet` et `go test` avant la compilation, et accepte un argument de build `VERSION`.
 - **Releases** ([release-command.yml](.github/workflows/release-command.yml)) : la création d'une release GitHub compile des binaires pour linux, windows, darwin et freebsd (386, amd64, arm64, sauf darwin/386 et windows/arm64), avec les sommes SHA-256.
 - **Dependabot** vérifie les modules Go et les GitHub Actions chaque jour, et les images de base Docker chaque semaine.
