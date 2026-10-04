@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://tcp.ac/i/00ctL.gif" alt="HellPot"/>
 
-[![Vibe Check](https://github.com/SirTerrific/HellPot/actions/workflows/go.yml/badge.svg)](https://github.com/SirTerrific/HellPot/actions/workflows/go.yml) [![Docker (GHCR)](https://github.com/SirTerrific/HellPot/actions/workflows/docker.yml/badge.svg)](https://github.com/SirTerrific/HellPot/actions/workflows/docker.yml) [![GoDoc](https://godoc.org/github.com/SirTerrific/HellPot?status.svg)](https://godoc.org/github.com/SirTerrific/HellPot) [![Go Report Card](https://goreportcard.com/badge/github.com/SirTerrific/HellPot)](https://goreportcard.com/report/github.com/SirTerrific/HellPot) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Vibe Check](https://github.com/SirTerrific/HellPot/actions/workflows/go.yml/badge.svg)](https://github.com/SirTerrific/HellPot/actions/workflows/go.yml) [![Docker (GHCR)](https://github.com/SirTerrific/HellPot/actions/workflows/docker.yml/badge.svg)](https://github.com/SirTerrific/HellPot/actions/workflows/docker.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/SirTerrific/HellPot.svg)](https://pkg.go.dev/github.com/SirTerrific/HellPot) [![Go version](https://img.shields.io/github/go-mod/go-version/SirTerrific/HellPot)](go.mod) [![GHCR image](https://img.shields.io/badge/ghcr.io-sirterrific%2Fhellpot-2496ED?logo=docker&logoColor=white)](https://github.com/SirTerrific/HellPot/pkgs/container/hellpot) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [English](README.md) | **Français**
 
