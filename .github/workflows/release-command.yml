@@ -5,6 +5,9 @@ on:
     types: [created]
   workflow_dispatch:
 
+permissions:
+  contents: write # upload release assets
+
 jobs:
   release:
     runs-on: ubuntu-latest
