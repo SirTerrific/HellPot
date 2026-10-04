@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a877e00c509a50a5bb5ff27001b76910a1dbec546c109dad993ecb88050683a6",
+  "claims": [
+    {
+      "id": "claim_8d07d0c1cbf648b09a24d14e1903a638",
+      "statement": "Avec catchall actif, une seule route GET /{path:*} capture tous les chemins et aucun handler robots.txt n'est créé ; sans catchall, une route GET est enregistrée par entrée de paths, plus /robots.txt si makerobots est actif.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L125-L139",
+          "version": "repo-lines-v1:sha256:09cf921871a682fbfc87b0f68ac7b966207d96561018401359308586328b3bed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwM2QwMjE1YTQ5MDg5OTdjNjZmNmYzYjA2Mzg1ZTk2ZDk2MjE4NTJkMTY5MDQ4NzA3MGM5MzQ1YTFiMGEyYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxMGQ0YzE4NDA2MjhjOWRhN2IxMDJkNThjZTJiN2JjMzliY2UzZGQ5YzM0ODk4NDgwMzZiYTY4ZTIzOWE5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYzcwYWJlMzAxOWMwYmM1MjliYzAzZTU5NjRjY2E1YzQxZGRiN2RmMTA0NjQ0OTJlOWJlOGZiZTkwMWIyMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fa63ead244a46de8f16c8a127c9e796",
+      "statement": "Le handler robots.txt génère à chaque requête 'User-agent: *' puis une ligne Disallow par chemin de paths avec des fins de ligne CRLF, journalise SERVE_ROBOTS au niveau debug et écrit avec fmt.Fprint pour qu'un % dans un chemin ne corrompe pas la sortie.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/robots.go#L12-L33",
+          "version": "repo-lines-v1:sha256:e70c2dc6845fe427c232f8890a3a27fddab5c27ad7ab10d89e2a5e614fa6dffb:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYzdiNjM0MGYyZGZkN2YzZWRjNTBiZjc3Zjk2ZjQyOTNiYzI3Nzg1NDY2ZjhmZjFhZjk5N2VlODQ0NGU3NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyM2FjZDliYzI5OWQyMzNiYjhkNmJhZWIyMTA3MjlhZDgzYTFlOTgxMDZjNzVmMDllZmRiYWUyYjBjZDEwYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_403c9c5d41b545bf89bfbc66a2a9731e",
+      "statement": "REMOTE_ADDR journalisé est la valeur de l'en-tête configuré par real_ip_header s'il est présent et non vide, sinon l'adresse TCP du pair ; l'en-tête est cru tel quel, sans vérification de son émetteur.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L21-L27",
+          "version": "repo-lines-v1:sha256:32fd6ac1fdbaaae2ba146e542403205a8dc32cec6d1a19f6ccd094cfb577faf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4ZjFmYmFhNTM4OGQyNTI0MjgxZDI2YWQ5YjQzMjE2MTkyN2ViM2I5MTA2NDU0ZjBmNzE1NDc5Y2UyNzUxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxMDUxM2UzOGE2YTc3YWFmYjAwNTViZDgzYzFjOTIxYzcxMTRiZjNiNWY1MTcxNGU0ODY1ZTFhNmM4MWU2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwMDdmODEzY2JkZmJkMzkxMjc2M2MxMGZjYjkwNmU3YmQxNTgzZWZlYTAzZmQ5OWM5OWZlOTI3ZWRiOGUxNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e38627f5bd6e4a30a5608cc34816bf36",
+      "statement": "Un User-Agent contenant (strings.Contains, sensible à la casse) une chaîne de uagent_string_blacklist reçoit 404 Not found avec un log trace 'Ignoring useragent' et n'est pas piégé.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L42-L48",
+          "version": "repo-lines-v1:sha256:ca0cc60ad207ff09737ddda8550b45383bf726f7c1689eb15a3be2ac37208599:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRjYzg0NWU3MzIwYzgzNjIwMDU4NmJiMDVhNWU4NjY1OGYyMDRlZDdiNWMxMDhkOWU1YmJkOGIwODc4ZjQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU0MjUxMzE2MDU1YjViODIxZGM3MDg1N2RiOWM5M2QyMzgxYjdlODUwNjQ4MDI0MjVlMDZlZTRhMzEwYWE4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI2ZDk0ZTJhZDJmMDFlZTM2MmNkOGY3YWEyN2M1OGQ4ZmEwZGZjODg1ZjhjZWJmMzA2N2M2YzMyZmEyNjFkYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ef3b09665aa463dbac93834378319f7",
+      "statement": "Pour une requête piégée, le handler journalise NEW (info), ajoute le champ caller seulement si trace est actif, puis stream le corps en rappelant WriteHell jusqu'à la première erreur et journalise END_ON_ERR (trace) puis FINISH (info) avec BYTES et DURATION.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L50-L76",
+          "version": "repo-lines-v1:sha256:ff096929f9286d483f932bcebb4a1f8858e2b7da09ca87cfdbe87580957ab854:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MWQ3MGU5NzEwZjEyNWYyYmE3ODM4ODQwNTgwYzY4NjdiNzA5OWU3YTZhOTM3NDJmN2JlYjUwZmI3NzZiNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzhjNzdlOTcwMTkzNTU2ZWI1MTQwZjA3NjgwZTFhYWZjNDM2YzllNmQ0NTA1ZWUyN2Y4NzJlMTkzMDcwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjM5OGNmZWUxOWRhYjgxY2NiYWUwNjNmMDYxYWQ3NWQwOGUxZDNhYzU3NGQwZjA0ZTBmYWFlZmEwZjNlMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cedb38a1e02444038f31dd4cc07eb2a5",
+      "statement": "En mode TCP le fasthttp.Server est construit avec l'en-tête Server de deception.server_name, ReadTimeout 5 s, corps limité à 1 Mio, MaxRequestsPerConn 2, DisableKeepalive, GetOnly, MaxConnsPerIP issu de la configuration, et une Concurrency égale à max_workers seulement si restrict_concurrency est actif (sinon fasthttp.DefaultConcurrency).",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L80-L118",
+          "version": "repo-lines-v1:sha256:32671a1a70ab6bf29b10832c8c1599c13ae4205fd94fe498acb7a1c4bba69c68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MDcxYTJlZDBhYmJkNWU5YTI4ZjUwYWI0YmFiMTFkMzI5ZjYzMDAxYTY0MzRiYzhjN2M0ODZiMzg1Mzk3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4Yjk1ZTI3MzJmNGY5MjAwOTFjZTYzOTkwMzllZmE3OTNmMjE0MTBjMWE4MDU1OTRkZmVjZjI2OGI4OTBjYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ffef01b3252a4b48983a373d58e27948",
+      "statement": "Le serveur écoute en TCP sur bind_addr:bind_port par défaut et toujours sous Windows ; avec use_unix_socket (hors Windows) un unix_socket_path vide est fatal.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L143-L154",
+          "version": "repo-lines-v1:sha256:a0560a5c1b9c378a78986c0ec41e1b7cb8705b2dfd9fe92cb0b87cbc898d8891:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOTg3ZjliNzBmYmM0NDY2ZTNjOTkwOWY5MGY2NDY4YzA0NDZkZjQ1NjRlZmNkYmMwOWNiYWFlMzM3NTM4NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Mzc5YzMyNWZhNmUwNjkwODIwMjEwOGMwYTYxN2VlMzUzZjMxODNmNmM4MWM3OWUzYzM1M2I0ZjAwYjA0ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYzcwYWJlMzAxOWMwYmM1MjliYzAzZTU5NjRjY2E1YzQxZGRiN2RmMTA0NjQ0OTJlOWJlOGZiZTkwMWIyMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71e3eb0325474774b85ffae19f299251",
+      "statement": "listenOnUnixSocket supprime un socket existant, le crée sous un umask 0077, puis applique unix_socket_permissions avec chmod ; sous Windows la fonction renvoie une erreur.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router_unix.go#L16-L42",
+          "version": "repo-lines-v1:sha256:ffb8e009716dc2e428212c0afed1db27e593bb89f9613e97600b9ba3c7e92e35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ODQ0N2YzMDEyNjZjNjliOWFkYjNjYmI3ZjhjMjIzNDM5ZjkyMzBhOTYxYzNkMWYwNThjYzFhMGRmZDU3YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyM2FjZDliYzI5OWQyMzNiYjhkNmJhZWIyMTA3MjlhZDgzYTFlOTgxMDZjNzVmMDllZmRiYWUyYjBjZDEwYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/http/router_windows.go#L12-L14",
+          "version": "repo-lines-v1:sha256:e8251bcb6435cc02d43cf220ad7f98d95afd7deaac02bc2abf0df03a95fc9ece:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ4NDQ3ZjMwMTI2NmM2OWI5YWRiM2NiYjdmOGMyMjM0MzlmOTIzMGE5NjFjM2QxZjA1OGNjMWEwZGZkNTdhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIxNDIyOTA1NDIzZWRlZjM2YzczYjY4NGNmYjFkZGI5MjAwY2Y0YzNhZGIzZjgzNzhhYjNmZGYwMTg4MmRlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdbb1000d3a8454fbd65ad420712452e",
+      "statement": "En mode socket Unix, le serveur est lancé par fasthttp.Serve(listener, r.Handler), un serveur par défaut distinct de celui de getSrv : les réglages du mode TCP (timeouts, limites de connexions, GetOnly, keep-alive, taille de corps) ne s'appliquent pas et l'en-tête Server n'est pas deception.server_name (constaté : Server: fasthttp).",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L80-L118",
+          "version": "repo-lines-v1:sha256:32671a1a70ab6bf29b10832c8c1599c13ae4205fd94fe498acb7a1c4bba69c68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MDcxYTJlZDBhYmJkNWU5YTI4ZjUwYWI0YmFiMTFkMzI5ZjYzMDAxYTY0MzRiYzhjN2M0ODZiMzg1Mzk3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4Yjk1ZTI3MzJmNGY5MjAwOTFjZTYzOTkwMzllZmE3OTNmMjE0MTBjMWE4MDU1OTRkZmVjZjI2OGI4OTBjYTIifQ"
+        },
+        {
+          "resource": "repo://internal/http/router_unix.go#L41-L41",
+          "version": "repo-lines-v1:sha256:509eecc0353569c7be52d2d80b235cada7c39d69792518b3007e1beea8c515ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5ZWVjYzAzNTM1NjljN2JlNTJkMmQ4MGIyMzVjYWRhN2MzOWQ2OTc5MjUxOGIzMDA3ZTFiZWVhOGM1MTViYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5ZWVjYzAzNTM1NjljN2JlNTJkMmQ4MGIyMzVjYWRhN2MzOWQ2OTc5MjUxOGIzMDA3ZTFiZWVhOGM1MTViYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjRiYzFmMzIyMzc4MjJhY2IxODQ5ZDRjYTg0NDYyODY4OGZmOTA5ZDg4MTUzNTU2MTgwN2Y4NGI1OTI3MTQ0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c25ca57032e24236941c8873df34ed62",
+      "statement": "Une erreur de http.Serve est fatale et, sur SIGINT ou SIGTERM, main journalise un arrêt et quitte sans attendre la fin des connexions en cours.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L48-L58",
+          "version": "repo-lines-v1:sha256:27c5704c6afff526983fae055de7a7c1fb989da3a0ea1ae484fc4a7168c98e70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZDM2NjZiMzgwNWQ1YmU1NDFkYWU1ZDk2ZTFhOTRjNjkzODM0OWViNTQxMGRjM2M0M2RiZjkyZjNjMTZkZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

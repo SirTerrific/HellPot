@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fc841e5bbedf499e968040e129ec203ac793613b480201664da5d592c329e06a",
+  "claims": [
+    {
+      "id": "claim_35cad7ba347e4a2f871fb3357f0455a8",
+      "statement": "Le démarrage a lieu dans init() de cmd/HellPot avant main() : version, config.Init(), sortie anticipée pour --banner, choix du logger, bannière, puis lignes de démarrage (fichier de config, fichier de log, debug enabled, trace enabled).",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L20-L46",
+          "version": "repo-lines-v1:sha256:e304bfb7897ece52783386fc68570992aa946feb71ae434eb7a49a2e9a947e90:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTBhNGJkY2ZjOGNkMjQwM2RlOTBjNjNjZGQzMzgzYmE5ZWQ3MDVjYzdjMzliNzQ2ZDJkMzNkM2RiZTMwYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYTdjNjVlOGNiZTNmMzI3MTYzYzI3OWY4MTEyYTI0MzUyMDEzNDQ3YjRkZjRmZDEyZTEwNDdkZWQwYTc5MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxYjA4Mjg3ZDRjYmQ0OTBkNzEzZTA2MjA5MDkzNzE1NjFlNmE4MjkyOTcxODkxMTM5Y2JiM2ZkZTMzZDI2MTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dc68677aacc492993bd2ff00f67ccb1",
+      "statement": "Si le linker fournit main.version, config.Version reçoit cette valeur sans son premier caractère ; sinon config utilise le hash court de 7 caractères du commit lu dans les informations de build, ou dev.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L20-L23",
+          "version": "repo-lines-v1:sha256:822a591ced3dd5e10f495db68a560ce25ef34b0a62fe3d175b900ae3ede75400:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRhMGE0YmRjZmM4Y2QyNDAzZGU5MGM2M2NkZDMzODNiYTllZDcwNWNjN2MzOWI3NDZkMmQzM2QzZGJlMzBhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZhN2M2NWU4Y2JlM2YzMjcxNjNjMjc5ZjgxMTJhMjQzNTIwMTM0NDdiNGRmNGZkMTJlMTA0N2RlZDBhNzkzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRkZjc3MTY5OTI4ODUwMGI3MWRjNzYwNTZjMTViYmFmM2M1NmI2ZTNlMDMzMzg0NWM4M2E0ODM5ZWMwNGQzZCJ9"
+        },
+        {
+          "resource": "repo://internal/config/globals.go#L10-L27",
+          "version": "repo-lines-v1:sha256:a35632f89b2b5d6d312b7128abe46f41c1cc785ea214c941fa081f18792ddb0f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZDJkYzA5M2UwMWI4OGJlODNlYjQ4NjczODEzNmExMTQzZjk5Yjg2M2M2NWEwOGMzZGQyYTY5NDA4NTYyMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NjhiMWJhM2QyYmVlNWFhNGM3NzRkZTc4NzdlYjkzYjBhOTg4NWYzYmZlNzk1NmNlNzJlMTIxNGQxYzg3MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYzczZGRlNGViZGZiMTkxN2VhNmE1OWE0NjEwOTE2N2M3OTJiNWIyMDc1YTk5MjBjZWVlNTk4NWQ2NDFmZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e74677698af74364963a25571144318a",
+      "statement": "Avec --banner, HellPot affiche la bannière et quitte avec le code 0 avant de démarrer le logger.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L24-L28",
+          "version": "repo-lines-v1:sha256:94a46ae3e94fb285846a5a16dbb30a5212c5e082ab84db5f1e24309827aa16c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI2NTU3NTUwNzY4NGFmM2E3MDkyOTMxOTAyNGFlYWE3YTNjNjkzY2VmYWRiODI1ZWYxNDljNTMxNTZhOTJkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGVkOTUyYjgxODg3NTBkM2IxNGZiZGNjZTg0MDU3YWY4ZGJhYjU5N2NmMWI2ZjQwMDNkMDFjYzc2OTg2Yjc0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEyOTM2MjA2YmJjN2U0OTM5ZTM2MDkyYzgwOTZiNmYxMzkwNzk5ZGYxZjU1OGZjMWQzNjk0ZTg1YmI3ODYwNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e69cae7a9fec40a5a11b6a2eef619511",
+      "statement": "Avec docker_logging le logger écrit uniquement sur la sortie standard sans couleur ; sinon il ouvre un fichier de log et la console reçoit aussi une version lisible.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L30-L37",
+          "version": "repo-lines-v1:sha256:b623f91b23d06621b3486fd4b232c634bd3263c5a9feaf034458d1bccebbd048:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZhMWUwZGMzMTUxMjlkMGVkNWFjZWJkNzQwMDE4Yzg1ODYyMTBmMGZiZmQ1M2QxYmE1Nzk2MTRhOWY4ZDhkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE3MWZmMzlhZjllM2M3OGM3ZGE2NjU0ZjFjMTJhM2JlZGRhZjY4ZmFmM2I1NWM5Zjk1NWJjZWM0ZjY0M2Y4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzExZTkyYzgzY2U3ZmFiOTQyNGI5N2JjMTRjZDMyODgwMTVhMzE5YTU3Mjc1YTMzZmU0NjlkNzc4MzYwNjNhYiJ9"
+        },
+        {
+          "resource": "repo://internal/config/logger.go#L32-L65",
+          "version": "repo-lines-v1:sha256:68fea916f727456c6f2b9919645f1033a181179d7d6089fdfed4beeda41a5c9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1Y2U2MzI5ODJlNzg5ZjNhMjI5MDdjZjVkYjAzY2MzYmViYzE4MTA2NTAwY2U3N2Y2YzgzYzA1YTg5ZGMyNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3MDI4MTlhNjM3NjI0OTkxODA4YTY5NzhmNTkxOWEyNTBlNGYwY2U1MDM0ZTg5MTBjNWU2Yjc5NzcwNTc5M2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZGRkZDhmNTg4MzI5MDdkNGQwZmM5YmEyNDE3Mzg5MDUwZTE3MTcyODkzMGE1ZWNjZDkwODZiZGNjOWI5NmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7e91232526c4f27aa16861bd82e6b2c",
+      "statement": "Sous Windows ou avec nocolor, la bannière est une simple ligne 'HellPot <version>' ; sinon c'est une bannière ANSI décompressée depuis une chaîne embarquée dont les couleurs sont tirées avec crypto/rand.",
+      "evidence": [
+        {
+          "resource": "repo://internal/extra/banner.go#L67-L100",
+          "version": "repo-lines-v1:sha256:7c1240b27b427c66759024b366e0f67a53048c072a2fa0b4bfafc701396f988f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMWMwODlhYWMxOTdjMzM1NjBjYmMwOTY3ZTQ4ODQ3ODI4NWQ1NTM0MGNhYzlhZWU4NDk5Yjc2MjBhYWZmNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2MjFmNTExOGJkMTM5M2U2ZGI4YzdjYjAzMjM5MjY1Yzc5MTIwYTBmYmY0MmQ1NzY5OWI2NmE0MzBiNDc1NzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d9362820bfb43f6b81e560497a543e1",
+      "statement": "Les packages ne se passent pas la configuration en paramètre : ils lisent des variables globales du package config, remplies pendant config.Init() par processOpts.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L157-L200",
+          "version": "repo-lines-v1:sha256:1460ed807de4480429135804c6de6ddcf78105086de0dab2f3cf086bb74bd73b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NDk0ZjA0ZTM1NzExNDQ4MjUxYTJiZjZhMWZhZWQ3MzU3NWNiODY5YmQ3NmQ2MmE2YmI1NDMzM2YyOTgwNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYThmZDI5NzBlMWYwYTAyNmUwODAxMDBmODQ3ZGVkNjk3ZDRmYzRiNDk2NDIyNmYxODJmMjBlNTNkYmY5OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYjNiOGRiNjZmOWY2YTk4ZTkwNzU1Njg5M2Q4YmFkYjZkYmRlMTU2ZmU1MjI5MmZkMDA2YzBkOTY5M2UzZjYifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L83-L89",
+          "version": "repo-lines-v1:sha256:41459e89df65c4c7aea915739f7037845d44f5faa2683298a392f5a4c5f28f5b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBlMmJkZGQ5MjFjNzI4M2NiNzE0Mjg0YjYwZGFhMmMzYjRkNjZlYjNjNjI1MzJhZWRjOTk4ZGVhZGZmMjU4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTEzZGJiNzNkNzVkNGEyNzVhMWJkMDNjNzE4OTg5ZjJhYzhmOGI0ODVlNTMyNzNlNWI2MGM4MjY3NTM0ZmQ5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWIyODE0NWEzNDg3ZTA1MDBhZDVhOWIzYWM5YTY2Mjc0N2YyMTc2YzIyMmVkMmE3ZjJkY2U0NGZlNzljZGVmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1087fcbee5b448c68b284fd8ac6cb261",
+      "statement": "http et heffalump obtiennent un pointeur vers la variable globale du logger via GetLogger ; StartLogger affecte cette variable plus tard, donc les pointeurs déjà pris voient la valeur à jour.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/logger.go#L63-L71",
+          "version": "repo-lines-v1:sha256:90c56760f45a1e167175ecc630665a1eaacf66d9137bf0b2ac38302a22c6e97b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc3ZGM5ODI5ZGYxMzdmMWEzNDU3OTYzNzg2OTZjMDkxZTMyMjI5NDZiY2ExZjcxMjk3NmNhZDA0Zjg4YWUwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDYzNjIwODI1YjdmOTMwNDk2NDE5MDAzMGExOWM1MGVjYWFhMjcwNTY0MjRhMGQ1MDllNWU0ZDY1OGRlNjhkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_80af8780525e4bfeaf966a69c0971e09",
+      "statement": "main lance http.Serve dans une goroutine dont une erreur est fatale, attend SIGINT ou SIGTERM puis journalise l'arrêt et retourne, sans arrêt gracieux des connexions en cours.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L48-L58",
+          "version": "repo-lines-v1:sha256:27c5704c6afff526983fae055de7a7c1fb989da3a0ea1ae484fc4a7168c98e70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZDM2NjZiMzgwNWQ1YmU1NDFkYWU1ZDk2ZTFhOTRjNjkzODM0OWViNTQxMGRjM2M0M2RiZjkyZjNjMTZkZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:9d7d96a6e754c78f1030fad1c17f5995143031765ea867e03d0edf94bc41e3c9",
+  "claims": [
+    {
+      "id": "claim_843ed922f38340149e99324726fe458c",
+      "statement": "Le workflow Vibe Check s'exécute sur tout push et sur les pull requests vers main, lit la version de Go dans go.mod et enchaîne go vet, gosec, go test -race, go build puis govulncheck.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/go.yml#L3-L32",
+          "version": "repo-lines-v1:sha256:4d401b2522a505c4df37cdbda3ea65b62ca14017728158606392f194744be06a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWZmYjI5NWM1ZjNjZjZiYmI4NTY3MWZlNDMxY2JjODE2OTI2ZWIwODc2MjdlMjU3MGRiMGUxMGU0ZjQ1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NzEwZGM4ZWQyMDQ5ZjEzYmZiZWM1ODUxYTM5OGUwOTU5YmJiZjdhZThlZjBjZDBmNGFiYTZiYzg1NzQyN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0YmU4YmFjN2E0MGY0MzlkYTAyZDdhYmIzNmZhY2UyZjcwMTk0YWQ2M2QwYmNhZmJiOGZlN2ZjOTA5YzVmMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e969685e3c9140a18a3db6e37dba8d74",
+      "statement": "gosec et govulncheck sont installés avec @latest à chaque exécution et ne sont donc pas épinglés.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/go.yml#L19-L23",
+          "version": "repo-lines-v1:sha256:bd08bd4846c902a6e914d07962700ac40f84e373284f58b4cab2d7f68958d887:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ3MTBhNTM3NmRmNTkzOTdiM2JmMGZmMThjY2Y1ZTJmODFlMDQ5OTJlZTMyZjJiMjU0NTcxZGIzYjAyMzY3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkNGNkMjc5OGM2YzFiOTAxNzUxNDQzMjAyM2VjMmJkODNmOTZmNzc2OTE3MTc3YzZlMTY1MzgxNGVjMjMyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTZlZjIwYjE2ZGViY2M1NzkzMTA4MDg3MDc1MDE3MzY3YTNmMjI5MTU0NDQ4NjNkNjI1ZDdjNGUxODA2NDZiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjM0ZDFlNDRhMTBjNjY1YTk1MDEwNWM5ZDQ1ZjRkYTg4N2M1ZTVlMDU1OWE3NzliOGE3MzhjMTI0YzI5ZTAxMSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/go.yml#L28-L32",
+          "version": "repo-lines-v1:sha256:9a45a60bc2fa7c2fa61fd186cb43fb368abf5690b20000e85cb67a26ad7339dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4NDBjYzA3MWRiMTMyNzVjZDdlNTUxYWVlNjYxZjU3Nzk2MTMzNzdlYTg5MWM4ZDhiNmI2YTkxY2FmMDUyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg3MTBkYzhlZDIwNDlmMTNiZmJlYzU4NTFhMzk4ZTA5NTliYmJmN2FlOGVmMGNkMGY0YWJhNmJjODU3NDI3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUyNTBjZjQ2Y2Q5MjdlNGIyODM1NzBiMjU4NDdhMTgyNzBhNWNiNTk3MTMwYzQ1ZDdiZmE1ZjY3MmM1ZmRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e7d608e31944a5c83a5d6d51153cfdd",
+      "statement": "Le workflow Docker se déclenche sur push vers main, tag v*, pull request vers main, manuellement et chaque lundi à 06:00 UTC.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/docker.yml#L3-L11",
+          "version": "repo-lines-v1:sha256:350e3b98cdf2930c57ecd44594278667efcb381a63050d391aaf3d692433d0d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2ZGM0ODE0OWY1YTgzZDFlZDZkYmIzOWJiYzdlMmI5MDJhYTNkMzRkNmJkNWFlNGIyOTFiNjhkZjBjYTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2E5NzE1NWQ3MjA2MWUxNGI5OGVlMjBmN2U1ZDk5ZDFlZDc3Mjc4ZGQ3YThmNjVjZjRiMTdmNmVkNjdkY2ZlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTNkOGMyYjRjY2I0ZjFiNTIyYmViOGMyM2ZhMjRjMjhkYmQwNjFjYjhiMGYxZDIwYTg5YmNlNTM0M2E4YTlmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UyNzQyMjRlOTgyODgxZDk4MWI4YWRkZmRkYzk4ODBiMmYxZDA3ODAzMTVkNzBkNWQ1MTkxYzc1Zjk1YTViMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de07c6f5a4dd4f9da1e7e1ddf5459818",
+      "statement": "Le workflow Build and Release se déclenche à la création d'une release ou manuellement, compile sans CGO des binaires linux, windows, darwin et freebsd en 386, amd64 et arm64 (sauf darwin/386 et windows/arm64) avec somme SHA-256, et injecte le nom du tag dans main.version.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-command.yml#L3-L38",
+          "version": "repo-lines-v1:sha256:639146a02087e9ad795cecac85459f15947b841318f576f0fffadb0ebd091bbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWZmYjI5NWM1ZjNjZjZiYmI4NTY3MWZlNDMxY2JjODE2OTI2ZWIwODc2MjdlMjU3MGRiMGUxMGU0ZjQ1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYTY2MjZkMmM3ZTkwN2I4NTQ3NTQxY2ExYWNlZjRjODFiNDlhNmVjY2Q3MTUxNmE2MmQ4YzY2MmY4MjNjMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1OGJlZTA0ZWFhZTc5M2Q5ODMxYWRmNDI1NjdhZDBiMzdhYzZmMmE4ZjlhYjFkODI4ZTQ2ODY0MWI2YzM5MGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f1050ab3a514738a103adcabab5a4d9",
+      "statement": "Dependabot propose des mises à jour groupées : modules Go et GitHub Actions chaque jour, images de base Docker chaque semaine.",
+      "evidence": [
+        {
+          "resource": "repo://.github/dependabot.yml#L8-L29",
+          "version": "repo-lines-v1:sha256:e902dc5fcb705325bcccef913b0e116107fd190418e5b2f71ff136c8c47dc1b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3ODkyZDdiMDAwYzdkNzliM2UwNzY0NDFkN2IyZDBjNTIwZTA4YjE2M2IyOGZhMGNlNDIwN2MxYTgwZWUwZTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkMWI2OWViNDM2Nzg4NDg1YmViZDYyMTBmMmE2ZWU2YmNiYTk3OGVlZmExMTBjZGJjYTZmZmE4NjZkZWFkMDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3MzlmMDdmYTQyMzM5NTczYTFmNDU2ZTkzYzczMDljNjU3NTAzZWIzM2JhZGY3MjBjZjhjNDg0Y2FjYWY3MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9a3aa73cd9146bba3c2739c33fb08d9",
+      "statement": "Le programme retire le premier caractère de la version fournie par le linker, donc un tag doit commencer par un caractère de préfixe tel que v ; le Makefile build prend le dernier tag git trié par version.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L10-L11",
+          "version": "repo-lines-v1:sha256:9d2f7c2c3dbb1c14923e9df1bfd4e7188671c2447b4a093f40b8371abf4eaa32:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM0ZmZmNWYxM2RhNGU1YjM4NWIxM2VlMDRhMmI3ZjkwZDE4YmU2NDMzNDdlYWE5Y2I5NzRiNzI2ZTBjMTdkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDk2OGE1MDI5Y2E2MDRmMzI0OTljYTBlNjcwZjM1ZmFkNTRjNmVmNDYwYzExMzYzMTA0YzZiYWY1MTI2MWI0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUwZGIyNWU0MzMzZmZiOWExZGIwMjljZjVhZjFjMDE5MGI2MjY3ODNjMjk0MjNmMjRlOTE1ZWI3MGNlYjBmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L20-L23",
+          "version": "repo-lines-v1:sha256:822a591ced3dd5e10f495db68a560ce25ef34b0a62fe3d175b900ae3ede75400:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRhMGE0YmRjZmM4Y2QyNDAzZGU5MGM2M2NkZDMzODNiYTllZDcwNWNjN2MzOWI3NDZkMmQzM2QzZGJlMzBhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGZhN2M2NWU4Y2JlM2YzMjcxNjNjMjc5ZjgxMTJhMjQzNTIwMTM0NDdiNGRmNGZkMTJlMTA0N2RlZDBhNzkzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRkZjc3MTY5OTI4ODUwMGI3MWRjNzYwNTZjMTViYmFmM2M1NmI2ZTNlMDMzMzg0NWM4M2E0ODM5ZWMwNGQzZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7626a7c402dc46ceae9859c2a92ccf95",
+      "statement": "L'IP cliente est lue dans l'en-tête configuré par real_ip_header sans vérification de son origine, donc un client peut falsifier le REMOTE_ADDR journalisé si HellPot est exposé directement.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L21-L27",
+          "version": "repo-lines-v1:sha256:32fd6ac1fdbaaae2ba146e542403205a8dc32cec6d1a19f6ccd094cfb577faf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4ZjFmYmFhNTM4OGQyNTI0MjgxZDI2YWQ5YjQzMjE2MTkyN2ViM2I5MTA2NDU0ZjBmNzE1NDc5Y2UyNzUxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxMDUxM2UzOGE2YTc3YWFmYjAwNTViZDgzYzFjOTIxYzcxMTRiZjNiNWY1MTcxNGU0ODY1ZTFhNmM4MWU2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwMDdmODEzY2JkZmJkMzkxMjc2M2MxMGZjYjkwNmU3YmQxNTgzZWZlYTAzZmQ5OWM5OWZlOTI3ZWRiOGUxNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a252dd07e6f078e0a98a4d96022edcffe77de001165c3a5146390b6a6fc1628c",
+  "claims": [
+    {
+      "id": "claim_01958c7290e64bb497f55cacd7c7c360",
+      "statement": "Le build exécute go vet et go test avant de compiler : un test qui échoue fait échouer la construction de l'image.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L7-L10",
+          "version": "repo-lines-v1:sha256:9e880dab610303d7adb3ec57d5fc768f3f12ed152797df95695ff7e18ebe62ea:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMwYzE2N2MzYWZkMGRjZjQ1NjNlNDkxMDRjOWU5MGM3MGE0NDczYjk5NWNhYmVlMmI0ODlmNDU3ZDVlYTE2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg2ODhiMTAyNjg0YzNmMTNiOTM0YTRjY2UxMThhNTVmZjE5NDQxMjdmZTM0ZTNiOGM5MDZiZTRmNmNhNzliMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWUzMGNhZTkwZDdhNjhiNzE1MGU4YjJiMDY0Njk0Y2FiOTdkODZjZmRhZTViZWEyYmFiZTA0MjYxNTcwZDIzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGMwZDQ3M2M5ZTE5ZGE3MzhiMzI5NjJhNDJjOGI0ZWRjOWNjOGViYTcwNTA4OWIzN2FlNTJiNDQzMDRlOGEzMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_43dc863070124b6eab9e19ef5ac2dd53",
+      "statement": "La compilation est croisée nativement (build sur $BUILDPLATFORM avec GOOS et GOARCH issus de TARGETOS et TARGETARCH, CGO désactivé), sans émulation pour arm64 ; la version injectée est l'argument VERSION ou à défaut le dernier tag git du contexte.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L1-L1",
+          "version": "repo-lines-v1:sha256:d90e1513c05c9db8e38863a381a444f8b99c759b1189a94026979f843431bda0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkwZTE1MTNjMDVjOWRiOGUzODg2M2EzODFhNDQ0ZjhiOTljNzU5YjExODlhOTQwMjY5NzlmODQzNDMxYmRhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkwZTE1MTNjMDVjOWRiOGUzODg2M2EzODFhNDQ0ZjhiOTljNzU5YjExODlhOTQwMjY5NzlmODQzNDMxYmRhMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRkMThkMDBlMGRjZDlkZTFlNGUxMTY0OWRmYTlhMzcwOGFlYjRmYTY0OTk3YWIwZTA1Zjg3MmFhNjZlMTczNyJ9"
+        },
+        {
+          "resource": "repo://Dockerfile#L12-L19",
+          "version": "repo-lines-v1:sha256:570c9c4b9ac4982457f54ac8d28715344193dd25b7b11c0d5fde816c4abcaf88:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjlhODU5OTM3YTMyMDgxNTQ4NjgzZmQ5YThhODA3NGI1ZTBhM2FmNjc0NWMzM2FlMGQzNGVmYmE5MmExYTZkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTczMjMyNWVhMzAxMDdmNWNkY2EyOWM1MTFlNzY5MTg3ZjZmMjVlNmY3OTFmY2RlMTA0ZjdhOTNhOWFiNTU4YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIyNzg2YTMwN2Y5YTVhMmY2YmNiNWIwYzZiMmRiNDQ0ZjhjNjNkNzQxNmI1YTdjZWNmNTkzNTUyMjRkZmRmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGM1YTVjMDQ3MWQ5NjA1ZjFlMjhhNmVlOWYyMzg1MmRjNDRhYzk0YWEwMWIwYjJjZjNjNzhmN2YxOWM2YjhlYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_17fc6ea713034091a225a742fb535e8c",
+      "statement": "L'étape finale est distroless/static-debian13 : binaire en /app, docker_config.toml en /config, port 8080 déclaré, entrypoint '/app -c /config', aucune directive USER donc exécution en root.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L22-L28",
+          "version": "repo-lines-v1:sha256:ebf3198ee9b9b9bbd049409ffadab9816787fd33499fe308e0b020b7da9a6382:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJhMTc5NGI5NDgwZTE3MmU0ZGQyMjk0NjFiMDk0NjJkZjU4NDUwMzJiNGJiNzU1ZDNiZmQxNzU0MjgzNWIwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOGNjZWQ3ZWFmNWVjMjZkY2YyNjJlMjhjOTE1ODVkOWZiYTdlNDI2OTc4NWYxNWQ3ZjdhYTgwNmYzZTg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjljMTNjNGMyMjIzOTViMWM3MTYyZDkyNWEzMzJiNGUzYjZlNjY3N2QxZjU2NTNkYWU4ZDYzODg4NDhkNTM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c066685d818f4243ad80cd795cd69214",
+      "statement": "Le workflow Docker construit linux/amd64 et linux/arm64, passe VERSION seulement pour un tag, utilise le cache GitHub Actions, se connecte à GHCR avec GITHUB_TOKEN et ne pousse pas pour les pull requests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/docker.yml#L13-L15",
+          "version": "repo-lines-v1:sha256:7a7da3a2fd550dade57de7e5265f1efcabaeef2b9e30ac11b45f7f64f795a2a8:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUyNjI0N2VkZTAwNmU5YmRhYjljNjg1MDcyODQyNWQxYjQxNjZjYWY1Y2FjNTBjZjA5NTVjNDRkMjRjMWE4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjAxMjE1OTIyMTE4NDE2MGU5OGUzOWE1YWIwYjY2N2EzMzM3ZmFiN2MwOWVmYmY4ZTIyNzc3Njg1OTkwM2RmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2RkZGUzOWU4YTYyOWM2NjA3M2I4ZDc1ODBhNjRhOGJmMjEwYmRkNzgxZmFhNDc1ZTYzNzJlNzYxMmUyODM1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVlYmE1ODJjY2E4MzAzZTBkOTJmYTRhOGM4YWNjZWM5MjVkYWNkMTBkOWJlMjFkZTUzM2I4ZmVhODg2YmZlMiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/docker.yml#L35-L57",
+          "version": "repo-lines-v1:sha256:4abff16eb3d516d53b7f7b02a040d648980c8db01c1196ca662c5773df464b63:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyZDQ4ZTJjYzllNjYzZjc0MTkyNTIxNzAzYTllYzA1ZTY1MmYxYmU2ZTY4ZjZlZDMzODk1NDkzMWQ3ODRkMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNTJiZTEwNDQyNDU4MjBlOWRkNzg0ZmRiNjk2Yjk2YzZkNDgxYzAwMjY4NGYwNTVhODEyYWUzNzAxMDU0NDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2ODJhNjc1NzNlNGUzNjAxNTU1MTExY2ZlNDNlODNhMWU5ZDUwZGNmNjE4OWNkNjViNDJhOTQ3ZDYwMDViNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0274d4f72285404b9573e2b3cd46e1ea",
+      "statement": "Les tags d'image sont latest sur la branche par défaut, sha-<commit court>, et pour un tag semver la version complète et majeure.mineure.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/docker.yml#L23-L33",
+          "version": "repo-lines-v1:sha256:9dd441b0a3115cf9d4ad8438c88c0d25bdbfdab1f1c6a930271fede1031c2581:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMjI3MDAxNjQ5OTc5MDE0ODcwNmQ5NjE2Y2Q5YmZkNzQxYTVkNTE2NjNmNjlmNGE3YjM1OTRiMDBkZThiYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyMzc5Mzk2OTRjN2NmNmUyZDA4OTY4NDBkYjdiMmMyY2M0YjE0OWQzODdmN2FhMjMwZTJhNjRmM2I1ZWI1MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1Mjk0YWQ5MDRkYzM4N2M4YThlYzkzMTY4OTI3Y2JiMTc2OTczZWY4NWE1MTU4MTViYjFhMDk0YzRkOTAzYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4OTgzOGNhZGJjMTZhMDRiMDc3YmEzM2FkZjI2NTAxMjA3NzA4ZTU4YTIxOGI2NDM2MmJkNjVhZWQzMjQ5M2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f96e6a3702e641bcba38075cd6d1fd85",
+      "statement": "Avec l'entrypoint '/app -c /config', un -c ajouté aux arguments est fusionné par-dessus /config, qui est déjà chargé.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L28-L28",
+          "version": "repo-lines-v1:sha256:12f8cced7eaf5ec26dcf262e28c91585d9fba7e4269785f15d7f7aa806f3e840:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOGNjZWQ3ZWFmNWVjMjZkY2YyNjJlMjhjOTE1ODVkOWZiYTdlNDI2OTc4NWYxNWQ3ZjdhYTgwNmYzZTg0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOGNjZWQ3ZWFmNWVjMjZkY2YyNjJlMjhjOTE1ODVkOWZiYTdlNDI2OTc4NWYxNWQ3ZjdhYTgwNmYzZTg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQwMTZmYzI5OWM5ZjU0ZGYyNTc4MDlmZDNhOWZiY2Y4Yzc3MjVmNDQ3NWQ1YThlZmFhYjljYjExMjhlODMyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://internal/config/arguments.go#L18-L37",
+          "version": "repo-lines-v1:sha256:ab8312d4aaef1936e7114e66d5f692ba9a44dd5a269c52d0990f218e0dd75c44:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZTkzMjlhYTZlN2RmYmZlNDNkZTkyZGZlNWY3ODhmNjBiZGU4MTg3YzdmMmUyYTEzYjFmNzAyYzQ5NDQ1MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYmYyOTZmZTk5NjUzY2IyMmJjZTRhYzU5MjA1N2EyMmY1YzVhMGY2MzNmNGU1ZjAyOTZjYzk1OTRlMjI2MDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bcd16438ab54f05a9f531e48ce902a3",
+      "statement": "Le logger crée son fichier de log au démarrage et le processus s'arrête avec 'cannot create log file' s'il n'y parvient pas, sauf avec docker_logging qui écrit seulement sur la sortie standard.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/logger.go#L43-L55",
+          "version": "repo-lines-v1:sha256:54cc8035d6e71c18a8b848ae13f40dbcbc0419e9778496b2b8f58c9a3e65d02b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNWQxZjhiODgwYmUzYzFjYTkzNTNjM2Q3ZTNiZDlmN2VjODQyMWZhYjJkYTQyYzQ3YTU4OGY4YTAwYmNlMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3OGUxNDcxZDY1YjU4ZmExZjFkOTk0YjlhNjczN2U0M2I4NGZjYjg4ZjQ1Y2YwZTlhYTYzNjE2Y2YzNTM0OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwOTk0NTViZjRhYzcwOTA0ZGYwM2RiNzA2M2VhZjUwNWUyYTNkMjlkZmY2NzdhN2VjNTBlMmQ2OGFiN2RmMGUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

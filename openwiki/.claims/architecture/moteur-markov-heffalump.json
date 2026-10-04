@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a9c77fed6db1222b6a6a3350dab4b6e776420c4f3b6e391eaaa9331d2c97f87a",
+  "claims": [
+    {
+      "id": "claim_e5c9fed05b104b4ba40292e291b40bf3",
+      "statement": "Le package heffalump décompresse le texte source embarqué et construit la table de Markov (DefaultMarkovMap) puis DefaultHeffalump dans init() ; le processus panique si la décompression échoue ou si le texte est vide, il n'y a pas de mode dégradé.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/markov.go#L16-L27",
+          "version": "repo-lines-v1:sha256:03236c1640d02dcd1f9a2f2ca18eec45aee2d9bbdbb17442fc53e6b46a0de9b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTBhNGJkY2ZjOGNkMjQwM2RlOTBjNjNjZGQzMzgzYmE5ZWQ3MDVjYzdjMzliNzQ2ZDJkMzNkM2RiZTMwYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2ZWNlYzg5NGE3M2ZjOTdhZTg1NzA4MTE0NDEzYjU3ZTU0NWQ0NjNkOTY3M2M2NjllNjU1MmEwNGMyOTJmYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1MGEyZDQ4ZTIzMGNiMGIxNTNmZTg3YWZiZWNlZmY3NWM5ZmJmYTAyN2FhMzgzMzhlN2EyMDAyNTk2OWY4ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61f05de21d4546fc8c366b43a3b45082",
+      "statement": "MarkovMap associe une paire de tokens consécutifs à la liste de tous les suffixes observés (doublons conservés), remplie par Fill via un Scanner dont ScanHTML découpe le texte en mots et en balises HTML entières.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/markov.go#L29-L70",
+          "version": "repo-lines-v1:sha256:37683ac708d39549513892fd51477f0671164f3a1e418b1dc7fb5d17dd0bb065:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNTIzM2U4M2Y1NGM3MGVhNTM4MWU5NGQ4MmRlMmQyNzNhZjAyMzE3ZTYxNWU1ZTI4YzFkOTVkYzEwYTFmOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5N2FjM2U5YzgxOGRiOTFiNjZmMjQyMmE1ZDc5MWNlNDcyNmVjOWFhNzdjOGM5ZDQ5MjM1ZWRlOGY4MjE3NTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1ODk5N2EwMzY4MzQ4MDJmMWJmMGEzZGFhODQxZTIxNjk1ZDk1YTM4OTgwNmY2MzFlMjY5OTg1NjdhZTRmNTUifQ"
+        },
+        {
+          "resource": "repo://heffalump/markov.go#L72-L102",
+          "version": "repo-lines-v1:sha256:279596675373b4d09d6b380fc3922413c8b7883f9c3df74b81d612a5e1183adc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwMmY1ODM4ZjYzNDQwMDQ1MTYyZDJiMjY2ZjcyMjc5NDIwZjU2NmE1YjM2YmEwMTAwZjE0ZGFjMDIxMWNjODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZDYyMzczYjE2MDkzODk0ZTNkMTMyYjRiYTQyY2I2YzYzZTZhNDdhNTBhMDM2MzlkM2VhMjQzZjVjZmFhNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1YjYwY2Q4ZmExZGU1MDg4Y2ExN2Y1ODBlZTIxYzUzMzM2ODAzY2MzNTczZWM3NDBiZWRlY2ZkZTkxMzBmZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3NzdkYzA2YjA5NjlhZjFhMjBjODFmZmIyM2E3ZDViOTU5MWIzYTcxOTA5OTJiZjNiZjQ3OGEwNDNhOTYwZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_341b885d00ad4239b56cebbfd4653442",
+      "statement": "MarkovMap.Get choisit un suffixe au hasard avec math/rand (non cryptographique, assumé) et renvoie la chaîne vide si la paire est inconnue.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/markov.go#L105-L116",
+          "version": "repo-lines-v1:sha256:8224bc53feba9fe87f23d9c85b82e12b4437fe4df9d9a3fc7219e0a6a74bd2ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImViODY4YmExZmMxMzczZmUyM2I5MTllMTMyM2VmZGU1M2FjMmU5NDhjY2EwM2E4ZGJhM2U1ZWMyNjRkZGVkNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NjdjN2E4YWU1ZDIxY2JjMjZiZjM3MTU3MDc2YzUyODRhMGU0MzRlZDY1ODFmZGIyOGMzMDY0M2RlNjZiM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3OWUzMjY3OTRiZGVlODM5ZGM4MTZjNmI0YWNhNTFmMjFkYWZjYjljY2NlMTYyOWU0MDdjOTc4NDIyMmU1MTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_544b685c319a48a4af5f1ead33c0af5b",
+      "statement": "MarkovMap.Read remplit le buffer de mots séparés par un saut de ligne jusqu'à ce que le mot suivant ne tienne plus, et ne renvoie jamais d'erreur ni io.EOF : la source est inépuisable.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/markov.go#L118-L130",
+          "version": "repo-lines-v1:sha256:ed708e9ef6efd2964bdb65f371ed8c634401f259c096a42bf68800902ff7b8e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4YzIxYTlkMjEwYTA1YTg1MjE4ZTE3MTVjYmU2ZDllZjkxZTJmNTc4M2M0MzczNGVlNzdiZmJmODMyNTk0OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjZDQwZWVlOWIwODkyZTY1NTBjOGZiYWE5NjU2ODBlN2M3YjdlMDdiY2ZlNGY2ZjcyYmNkYWUyOGNkNTkyMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkMDEzYTA3Zjk5MTFlZDRiYjg1MjA5NDM0MTJiYzViZGI5MGM4ODgxOTkzM2Q0NGI4ODIxYmQ4YjdhOTNmMzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9d1f55450b84aa0b94084518d2e495a",
+      "statement": "WriteHell écrit l'en-tête HTML puis appelle io.Copy depuis la table de Markov vers le bufio.Writer ; comme Read ne se termine jamais, l'appel ne rend la main que sur échec d'écriture (client déconnecté) et renvoie alors le nombre d'octets avec une erreur nil, l'erreur de copie étant ignorée.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump.go#L32-L47",
+          "version": "repo-lines-v1:sha256:1b50c435625bdcd7c6d64273eccef27fc20be39a83103528b65bfb638cd33e69:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NGQ2Y2Y5ZDgyZWNlOWI5ZGRiNTc4MmM0YTY0N2NjNzRhMmVhYWJmZGUzZmY1ODYzMmExMTQyZGU0OGY4MjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0YWU2MTU1OGYyNTA5ZDgyYjY0OWFiYzdmNDVhYzk1NTI1YjYyNTA5MWIzNDM1NDUxYmM5NjA3ZjY3MWU1NGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_658c9e47564d4c90b4a00ab03b515d89",
+      "statement": "La fin du flux est détectée à l'appel suivant de WriteHell : l'écriture de l'en-tête échoue (le bufio.Writer conserve son erreur), WriteHell renvoie cette erreur et la boucle du routeur s'arrête en journalisant END_ON_ERR puis FINISH.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump.go#L42-L46",
+          "version": "repo-lines-v1:sha256:db46b560d536804bd44fa20637babbcec28ce64b880f064af258d5430fb40ee9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFkYWJlOTBhOGFlMjc3MDgwODRiYjQxM2M0YjdhOTJlYjhmNzBjNmViYTdjOGIwZWMxNGYzNjRjZjA1NDhiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZhZTc1YWQzNTk0ZWNiODg1OTUxMTFjNzVhMjI2YTY3YzA0ZTA0NTg2YzQzNjIwNmVhMGRjMGIwMjhlNjJlNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjMzNmM1ZmJhM2VmM2ZiZDQ4NGYwZDA4MDE0MGNlODIyOTMyMmZhZDM0NjZjYTRkOWI4ZGJiMDViYmRhYjRmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L59-L76",
+          "version": "repo-lines-v1:sha256:a7c1be3857fd2266ff5182520f22410d3ad7e548748ab82db138bc379435c6c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZjM1M2NiMjk2Zjc4YmVjZGFlMTY2ZGQ5MjNiMjc4OTk1NjQ1MjYzYTRlZmJjZTA4YzRiNjgzMzA0ZDQxYWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzhjNzdlOTcwMTkzNTU2ZWI1MTQwZjA3NjgwZTFhYWZjNDM2YzllNmQ0NTA1ZWUyN2Y4NzJlMTkzMDcwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1OWJmYTRhZGYxNjYzNmIyMzFiMGZlNjRkZWY3Y2MzYjVmMGM1NDI3Y2M3MzQ2NmU4OGMyZTA1ZDUxYTk4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_114bbb414d9d40378d05c5842f7075e7",
+      "statement": "Une panique pendant WriteHell est interceptée par recover et journalisée au niveau error avec le message « panic recovered! » sans faire tomber le processus.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump.go#L36-L40",
+          "version": "repo-lines-v1:sha256:6a403e93da39d299b643640119ee62bd108d05e52bb49cfd13f050344e548c86:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRhZjIxNGE3YzE0YzkwZTZiY2E4NGU0MDBhYjI3ZjYyNjc4ZWE2ZTlhMDk3NTVjMzZiN2RiZmU4Y2Y3MWJjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzgzMGQ1NGEwYmZiMTlmMWRlNGNhOGE5MGJmMWNiYzlhMGEzMzM0NmUzZTRmMWExZTkyNjA5Y2ZmNzhkYmJmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ1YjExYWQwZWE2YWY1ODA5NWVhOWQyZDM1NjYyZWI1NzA2MTA5ZThiNDg3YTUwNWQ2YTMyNDVlYjM5NTg0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODE3YTIyMDNlNzFjN2YwM2U3ZDg5NWVjZWNmMWFhZmYzYmMyOTg3NDg1OGYxMWZlZDAwYWE4MjRhZGU3YTc2ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b2f777c2f65c419bba848a585d4a7183",
+      "statement": "Le pool de buffers a été supprimé de Heffalump ; le paramètre buffsize de NewHeffalump est conservé pour compatibilité mais ignoré.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump.go#L19-L29",
+          "version": "repo-lines-v1:sha256:dd0fa6bcf0f65977bbc6733ba035f1333da05e2c4eda981b2a2a29c31db07572:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlOTM3ZDM0MDdhYTRkMjVkMTc2MzYwNTlhZDM4NmExNGIwZWYxNGZiMjFjNTA4MTFmZGMwMDM5M2NjZGIzNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkOTFjY2VhZGQwYWVkZGMzZmExZGNkN2QzM2VmYzgxMWFkNWM1NzNjZmJkYzNhYTMzNzVhOGYxMjMyOGI4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NGM5M2UxMGE5MjEzMzFmMTM0NTk3OWQ4NjNmNzllMjJkMGI3OWZmYTc2ZjM4NzkzYTUyODQ5ZDg2YTYwNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aef2e26738fc49dc9e050fb20804793f",
+      "statement": "L'unique test du projet simule un client qui raccroche après 64 Kio, rejoue la boucle du routeur et vérifie que la boucle se termine, que des octets sont écrits et que la sortie commence par l'en-tête HTML.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump_test.go#L23-L43",
+          "version": "repo-lines-v1:sha256:f79bbbfa330435f56917a1763f6dba84e9cde5308c19caf41ec69b2da1add934:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2MGJkZDE4MmYzZmVlMjE2YWQzYzNmN2VhZWM4MDEzNTA2OTgyZmRlM2YyYWU0ZDZkMzhiYjgxMjA0MTk1ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0OTI0NDRjZWQ2OTZjNjUzZDM0MWE2NGY0MzNmNmE5MWVmOTZmZTA0YjIyZjc3N2JkOTk4ZjMzZjM1ZTJmZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

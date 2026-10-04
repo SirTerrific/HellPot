@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/moteur-markov-heffalump.md": {
+      "pageVersion": "sha256:a9c77fed6db1222b6a6a3350dab4b6e776420c4f3b6e391eaaa9331d2c97f87a",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/architecture/serveur-http-et-routage.md": {
+      "pageVersion": "sha256:a877e00c509a50a5bb5ff27001b76910a1dbec546c109dad993ecb88050683a6",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/architecture/vue-densemble.md": {
+      "pageVersion": "sha256:fc841e5bbedf499e968040e129ec203ac793613b480201664da5d592c329e06a",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/configuration/chargement-et-reference.md": {
+      "pageVersion": "sha256:d3cf066ba18f13de0b313a418a9e40d1fe125ed6b67301c3364ce7d9fe660db9",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/guides/fork-et-compatibilite.md": {
+      "pageVersion": "sha256:8f95cdd73f0ccbbde9fb49b0968b567a1c4caa1c6f2947564adff481be440495",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/operations/ci-securite-et-releases.md": {
+      "pageVersion": "sha256:9d7d96a6e754c78f1030fad1c17f5995143031765ea867e03d0edf94bc41e3c9",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/operations/docker-et-publication.md": {
+      "pageVersion": "sha256:a252dd07e6f078e0a98a4d96022edcffe77de001165c3a5146390b6a6fc1628c",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/operations/journalisation.md": {
+      "pageVersion": "sha256:68a1da857b20a6ca2f566f8826769a941bb5a691c7a7b67bc534747eee1be394",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/operations/limites-et-performance.md": {
+      "pageVersion": "sha256:d109877f3a04ae301e00766ad002b3411f5682fc1f0c8de71832b7cd19a79676",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:51b46f8720f7f2261aa31288916da90b69d51062b9f9e61484f6e4b46122a5bb",
+      "completedBy": "claude-code",
+      "completedRunId": "99ebe9f1-71e8-4371-a7a3-e0e677c5859a",
+      "gitHead": "27d5fac273d9da552bee680008c13b251c201feb",
+      "sourceFingerprint": "sha256:9489b2d817f4f2990e5faf4cdc10e567c734976fd9d40c2b9cdb1600df84c353"
+    }
+  }
+}

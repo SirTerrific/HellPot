@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8f95cdd73f0ccbbde9fb49b0968b567a1c4caa1c6f2947564adff481be440495",
+  "claims": [
+    {
+      "id": "claim_df5fd5fa72934fe89f65aa887c6d5545",
+      "statement": "Le fork part du commit upstream 0ba62c9 de yunginnanet/HellPot et n'a encore publié aucune version étiquetée : tous les changements sont listés sous Unreleased dans le changelog.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L1-L5",
+          "version": "repo-lines-v1:sha256:6ce659c95c0ef211e62b97c2f1379eaab1441912506076e15fc96faea5e4a53c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U3OWM0Y2FmYjUwNGEyMWY4OTEzZTRlMGU2NmYyZmY3YjExOTJhMTI3YzZmNTY0YWFiMzc5YzhiNWZhOWJkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRkN2NjMmZkNmYxNGE4MzJjMTYyMDBhYzdiYzYyNzM5NTI4ZjEwMjZhZDRjODc1ODYwNmMwNGNlZDM0NGZjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNmOGU3YjQ1N2E4YjUwYzU2ZWQ1NzMwMTA1MDQ0NjkyN2NkNDFiMDE2NGNkOGQ4MmFhYTg0MjVmZDExNjA2YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_73192f91922749239174a12f326a11c2",
+      "statement": "Le fork garantit que les clés et valeurs par défaut de configuration, la structure des logs, le comportement HTTP et la disposition de l'image Docker (/app, /config, /logs, port 8080, entrypoint, utilisateur) restent inchangés.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L7-L11",
+          "version": "repo-lines-v1:sha256:8a205a400545e82de68aafd3f99b462a39c4cdccd178eee2d6a4d39534c97678:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdjMTBiNTMyZTczNjJlZDAyZTA2Y2E1NmE5OGU2MmYxOTI0ZDgwYjE5ODg0YThkMzIyYTIwNWNiYTgwYjgyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFiZjgyZDYzYTg2OTJmYmMzMDcwMmYzMTU3ZTM2NmE4ZWFiNmFhNWMxNTRkNjZiOTEyOWFkNDMxYjI1YjllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA4NzdhN2MzODZhOGUwNDhhYTI5MmUxZGE0ODc3OTAxN2U4ZmQyNWI3ZjI3NGI5OTE5ODM1ZmRhOWM2NjA3ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_74d2ccf827c84371927d0d35c6c7a423",
+      "statement": "L'image d'exécution est distroless/static-debian13 avec le binaire en /app, la config embarquée en /config, le port 8080 exposé et l'entrypoint '/app -c /config'.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L22-L28",
+          "version": "repo-lines-v1:sha256:ebf3198ee9b9b9bbd049409ffadab9816787fd33499fe308e0b020b7da9a6382:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWJhMTc5NGI5NDgwZTE3MmU0ZGQyMjk0NjFiMDk0NjJkZjU4NDUwMzJiNGJiNzU1ZDNiZmQxNzU0MjgzNWIwMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOGNjZWQ3ZWFmNWVjMjZkY2YyNjJlMjhjOTE1ODVkOWZiYTdlNDI2OTc4NWYxNWQ3ZjdhYTgwNmYzZTg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjljMTNjNGMyMjIzOTViMWM3MTYyZDkyNWEzMzJiNGUzYjZlNjY3N2QxZjU2NTNkYWU4ZDYzODg4NDhkNTM0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_007c38ef62624b68a8bb9b3a30a15cc4",
+      "statement": "Le Dockerfile compile nativement pour la plateforme cible (compilation croisée), accepte un argument de build VERSION et prend à défaut le dernier tag git du contexte, ce qui donne une version vide tant qu'aucun tag n'existe.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L1-L19",
+          "version": "repo-lines-v1:sha256:cfdf6ccc7695c0ba68eb83d7e46989ecb60d11587b165e6294ff84fba61e6d33:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MGUxNTEzYzA1YzlkYjhlMzg4NjNhMzgxYTQ0NGY4Yjk5Yzc1OWIxMTg5YTk0MDI2OTc5Zjg0MzQzMWJkYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MzIzMjVlYTMwMTA3ZjVjZGNhMjljNTExZTc2OTE4N2Y2ZjI1ZTZmNzkxZmNkZTEwNGY3YTkzYTlhYjU1OGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjNWE1YzA0NzFkOTYwNWYxZTI4YTZlZTlmMjM4NTJkYzQ0YWM5NGFhMDFiMGIyY2YzYzc4ZjdmMTljNmI4ZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b33b9528d32e460aa7ec10072c272ca5",
+      "statement": "Le module Go s'appelle github.com/SirTerrific/HellPot et la directive go est 1.26.0.",
+      "evidence": [
+        {
+          "resource": "repo://go.mod#L1-L3",
+          "version": "repo-lines-v1:sha256:abf102e8ca8f5b2b093ff54d6590c66ebbf87892313c786e3fbbd8031f90f759:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjRmYjU2NzgyMWI0NTdmYzJlNmIzMGY2YzNhZTBmMTE4NzY1NDVhMmYzM2Y3ZWJiMTdmZDg3NWRiZGVhY2I0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODEwYzcwNGYyZjdmZTA5NTdkNGQzMTllMzU3NDJmYzFmOGQyNDcwNGM0ODJjNWU0N2RjMDFkMGI0M2YyMTUyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNiNGM5NDQyODQzYjExZGI2Y2NkNzUzNGFmYzZkYjA4YzEzNjk2ODY4NGUyOGNmOWMxZDA3YzQwMjc3NjZhYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_71eddaf49181487fb4a55357fe8dd69a",
+      "statement": "performance.max_conns_per_ip est une clé ajoutée par le fork dont la valeur par défaut est 10, la valeur qui était codée en dur.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/defaults.go#L46-L50",
+          "version": "repo-lines-v1:sha256:f587781f3716d8a412fc2f89fba4f540c76e3869b0ab1841d8b19096d686c24d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzlmYWU2Zjg2YzFhYjk3ZTMxYTNlZmRkZDY2YTlhODMyYThkYjUyNGY2MDQxZjdkY2MwZmM2ZTQ5MTg5MTUzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1MDMyNDk2MjU2NTY4NWE1OWMzOTc1ZTFhNTQyNGE4MTc1YmE0MGY3ZGZhM2EwOTY1NzkxOWIyMWNkOTI2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M5ZDE2NzQwZWQ0MDg1OWMxYzJmOTk2NzIzMTVjMDczMWI2ZDFjZTk3ZmQ3YTEwMDJhODQzN2ViMzg1ZGQ4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJkM2ZlMzMzODY0MWJlN2Q4ZWMyYTEyMjNkZWRhZDU5N2ZiYTNiNDJiMjU5ZDRkODQyYjcyN2U2YmZlMzE3MCJ9"
+        },
+        {
+          "resource": "repo://internal/config/globals.go#L80-L82",
+          "version": "repo-lines-v1:sha256:bc8428df069ffb2056c1928633e09909588801bb760e589d2d6391fe1451f87d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA4MjAwN2EzZWE1YmY0YjgxZTBhYTJiYjk5ZDc1YWRmY2QxN2U1ODRhZTEzYzU2NTJlNDZlOWZhN2ZlNTc2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZlZTdiNDVhZTQwYTI0ZDFkNTBmOTYyZmZiODdjNGE5YzNhZTI3Nzg2YTczNmZiMTFjYmVlZjE0MWIyMjdjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg2NTlkNTVhNzk5OThkMDI5NDE3YTA1ZTA3OTRmZmZiNGJhODYzMDdlMzUxOTBlMjRkNjJmOTU4YjQ4MDhjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQzYjA4M2QyNWU3YjY3MmI0MGM3NjkxMGQxYjg1NTliNDMwM2YwN2E3OTIzNjBhMTQ2NDk1MzM5OGU0MjFjZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3f7b62393bf14ffb90cc74dfdc20115f",
+      "statement": "Deux messages de log de niveau debug ou trace changent de texte parce qu'ils viennent de fasthttp mis à jour : END_ON_ERR rapporte 'fasthttputil: connection closed' et la ligne non-GET devient 'fasthttp: non-get request received' ; les champs et messages propres à HellPot sont inchangés.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L7-L11",
+          "version": "repo-lines-v1:sha256:8a205a400545e82de68aafd3f99b462a39c4cdccd178eee2d6a4d39534c97678:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdjMTBiNTMyZTczNjJlZDAyZTA2Y2E1NmE5OGU2MmYxOTI0ZDgwYjE5ODg0YThkMzIyYTIwNWNiYTgwYjgyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFiZjgyZDYzYTg2OTJmYmMzMDcwMmYzMTU3ZTM2NmE4ZWFiNmFhNWMxNTRkNjZiOTEyOWFkNDMxYjI1YjllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA4NzdhN2MzODZhOGUwNDhhYTI5MmUxZGE0ODc3OTAxN2U4ZmQyNWI3ZjI3NGI5OTE5ODM1ZmRhOWM2NjA3ZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

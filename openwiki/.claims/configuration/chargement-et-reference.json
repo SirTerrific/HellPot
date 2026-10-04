@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d3cf066ba18f13de0b313a418a9e40d1fe125ed6b67301c3364ce7d9fe660db9",
+  "claims": [
+    {
+      "id": "claim_4a77ed6d1067482fa4a1727298d84d35",
+      "statement": "Sans -c, Init applique les valeurs par défaut puis choisit le fichier : /etc/HellPot/config.toml s'il existe (jamais sous Windows), sinon config.toml du répertoire de configuration utilisateur, avec repli sur ./config.toml seulement si aucun répertoire utilisateur n'est déterminable ; un fichier absent ou illisible provoque l'écriture d'un nouveau fichier de config à partir des valeurs par défaut.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L48-L80",
+          "version": "repo-lines-v1:sha256:836a1d40e0a2a47b87fffa20809cd0e7fcfd3ee5f7ff9f46313598780f307fcb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0M2YwZDRmYjdjNWRhYzM0NTVjMGFiNmM0MGU5YzczM2I4ZTZhNDhiY2ExMDNiNTFlZGMyM2U2NDljYjg2YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZWMwNjIwOWMyODZmYzBkNGI3Njk5NmJmMjBhZThjMWJjMDUwMTRlNjRkYTY1NDBhMjdkOTVhNjQwMTBkZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1MTA0ZDc3MjIyZGVjNTQxYTExOWI4NjM2OGU3MmQ1ODYxYzhiMjg2NGEwZjA3ZDRhNDgzOTRhYjY2NmQ2NzIifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L91-L137",
+          "version": "repo-lines-v1:sha256:33109d7db248dfa5e450ad7c1c931fa7c493c72340089b4d43602f51d94a35b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzMmZjNWQ2ZGU4MzM3Y2RlNjg1MGJiOWNhYjgzYzk4ZDJkNjliZDQzY2EwNDkyMmE5NmQwY2ZiYmY5ZGM2N2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ZDQ1ZTc3ODU5NmM0ZjExYzlmYjg1OTc0ZGE0ZGRmN2U1MDhmMmI4MzlkNjdkNzA0MzQwMzJkNzE3MWYzMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlODFkOTExMzM5NDlmMWU0ZDQ2Y2IwZTliNjgzNTgyYzI2YmE0ZWNhMzkwYTQzZGU4Yjk1NGRiNDdiMzdmZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5148014ec1824f7aa5a89ec31db97d90",
+      "statement": "Avec -c, le fichier est chargé immédiatement puis Init retourne sans appeler setDefaults : les clés absentes prennent leur valeur zéro, et un -c sans fichier ou un fichier illisible est fatal ; -c peut être répété et les fichiers sont fusionnés dans l'ordre.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/arguments.go#L18-L37",
+          "version": "repo-lines-v1:sha256:ab8312d4aaef1936e7114e66d5f692ba9a44dd5a269c52d0990f218e0dd75c44:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZTkzMjlhYTZlN2RmYmZlNDNkZTkyZGZlNWY3ODhmNjBiZGU4MTg3YzdmMmUyYTEzYjFmNzAyYzQ5NDQ1MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMxYmYyOTZmZTk5NjUzY2IyMmJjZTRhYzU5MjA1N2EyMmY1YzVhMGY2MzNmNGU1ZjAyOTZjYzk1OTRlMjI2MDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L146-L155",
+          "version": "repo-lines-v1:sha256:875a4dc446bc32ebd7a7849b00d6c6c8d93c3e84bb09379279ba7e692efb2099:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMWMxOWQ2Nzg5ZTBiZDU4ZDU3YjA3MjBjYTg5ZmI0ODcyNGUwMWI3YzdmNzc4NzY0ZDAzNTUxM2ZhODExZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdhMWNmZTJkZTgyYjQ1YTZkYjY3NWYyODUwM2I4YTg1N2IyMDNjMDk3M2RkMmViYmE3ZDhiZjdlNDJmZWYzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MWJjMmJhMWY1MDA0Mzk3YzMyY2UyZmM5YmRmMDQ3OGNlMDU4MTAzYzU3ZmQ4OTA3NTJlZjJlYTE3M2Y1NWQifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L83-L89",
+          "version": "repo-lines-v1:sha256:41459e89df65c4c7aea915739f7037845d44f5faa2683298a392f5a4c5f28f5b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBlMmJkZGQ5MjFjNzI4M2NiNzE0Mjg0YjYwZGFhMmMzYjRkNjZlYjNjNjI1MzJhZWRjOTk4ZGVhZGZmMjU4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTEzZGJiNzNkNzVkNGEyNzVhMWJkMDNjNzE4OTg5ZjJhYzhmOGI0ODVlNTMyNzNlNWI2MGM4MjY3NTM0ZmQ5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWIyODE0NWEzNDg3ZTA1MDBhZDVhOWIzYWM5YTY2Mjc0N2YyMTc2YzIyMmVkMmE3ZjJkY2U0NGZlNzljZGVmNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c624a160ac8d46ef9c1afad8c8c770ee",
+      "statement": "--genconfig n'agit que dans setDefaults, donc il est ignoré quand -c est utilisé ; sans -c il écrit les valeurs par défaut dans ./config.toml avec les droits 0600 puis quitte avec le code 0.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L86-L89",
+          "version": "repo-lines-v1:sha256:17fc9f8acf51fe62c02bf39b9659f53f94160fc24bebe4f0b15ee33f8af67667:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkwYmFkY2E3NmNlMjIwYTZiYTZlZTZiN2UzNmQ3ZGIxYTIwNzVkMDczNWQzMGM1MGU0MWU5MDU5MjAzODM0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUwN2Q4OTFhNmYwNzk4NThlYjJiMWYzZjkxNjdiZTUwNzBhMzYxZjc1NGFiMzI1YjRjNzA4M2NmNzgxZjI1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWIyODE0NWEzNDg3ZTA1MDBhZDVhOWIzYWM5YTY2Mjc0N2YyMTc2YzIyMmVkMmE3ZjJkY2U0NGZlNzljZGVmNCJ9"
+        },
+        {
+          "resource": "repo://internal/config/defaults.go#L103-L105",
+          "version": "repo-lines-v1:sha256:34ec5365a072db2891fb54cf0830911de3e2125fcd9ee5c96ed5f19ae84b9b42:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk1MGVlYjJkYWQ1NDI1MDI1ZTk2MGIyYzZhMzM0MWJmZWRkYTAzODhhMzYyNWE2ZTEwNTc4YTdjNjkwZDBjMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjJmMmZmNWZlZWM2MGY1ODdjOGZhZTRlODdmODA5YTY2MWNmZmVkNmI0N2FhZTVmNmQ2YTI2NTNhYTg5NTJlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://internal/config/defaults.go#L56-L77",
+          "version": "repo-lines-v1:sha256:7422962ea29b5e71db2e233f6830ee3087f97f8e14d4e4c3b9b28429e046dbab:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYmE4ZGQ3YTU2MGQ5OTdjODRjYTZhMTNmYWJmMGQ5NWM3NmI4ZTMyOWUzODM3NTlmMTdiZTAzNDhlYzEyMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZTA1ZGIwOWQwZWU3ODMwODc1NmQzMzBjMDRhOTkxYzQzMzA3MzBkMWNiZDQ3MTE1NjlkNDA5OGJkNDFkZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjMGE1YmVhNjY1MWY4NDI3NjhjOGIyNTNmZWFlNmNhZDJjYzEzNzFjYTVjNDExYWM0MzYyMDc0YmZlNDRjMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c220ec3d99a40218573c28f157184b9",
+      "statement": "performance.max_conns_per_ip garde la valeur 10 quand la clé est absente, car MaxConnsPerIP est initialisée à 10 et n'est écrasée que si la clé existe, même avec -c.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L214-L217",
+          "version": "repo-lines-v1:sha256:d14225f81ce36e04b2f164508f1302bafec386d7647906480a5f66a06b58dad2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJiMGQ0NmEwNWNlY2U4MjdjNjY3NjQ2Njg2YmYyMTE3MGZmMTRiOTViNzk3MDI4OTQxYzQzOGQ0ZjU3NWViMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc4YWNjNWEzMmNlMWZmMjAwNGZiNDEwOGE5MmZiM2RhNWUzMzM1N2E4NGRlOGJkMmM3ODk4YTliOTAxOWE0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDNjYmZhMjlhZTgzYWI4OTZhZmY0YmNkZGUxZGI2NWVhZDE0NThjOTFhNjc3MzdlMzJkN2IzZjk2YjBjYWUyOCJ9"
+        },
+        {
+          "resource": "repo://internal/config/globals.go#L80-L82",
+          "version": "repo-lines-v1:sha256:bc8428df069ffb2056c1928633e09909588801bb760e589d2d6391fe1451f87d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjA4MjAwN2EzZWE1YmY0YjgxZTBhYTJiYjk5ZDc1YWRmY2QxN2U1ODRhZTEzYzU2NTJlNDZlOWZhN2ZlNTc2NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZlZTdiNDVhZTQwYTI0ZDFkNTBmOTYyZmZiODdjNGE5YzNhZTI3Nzg2YTczNmZiMTFjYmVlZjE0MWIyMjdjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg2NTlkNTVhNzk5OThkMDI5NDE3YTA1ZTA3OTRmZmZiNGJhODYzMDdlMzUxOTBlMjRkNjJmOTU4YjQ4MDhjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQzYjA4M2QyNWU3YjY3MmI0MGM3NjkxMGQxYjg1NTliNDMwM2YwN2E3OTIzNjBhMTQ2NDk1MzM5OGU0MjFjZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_078f7c87ea924eb7915a58d19e3600b5",
+      "statement": "Les variables d'environnement HELLPOT_* sont chargées après le fichier dans les deux modes : le préfixe est retiré, le nom est mis en minuscules, '_' devient '.' et '__' devient '_'.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L202-L212",
+          "version": "repo-lines-v1:sha256:103fb7c2c59458d04c1bc9a9f7b5307a69b6a51bf0e7c96781799bdb3af90e75:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MjZmZmVhODIxOWM4ZjFhNGNiM2UyMzU1ZWY1Y2Y2Zjc1ZmNmMDQ1MWI1MDY3YmVkNmYyMjFlZDNhNDE2YWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhMTc5ZjRmMTE0MWQ3NWFhMDk3YTQ0NWIwYjlkM2UyYTgzOWFiOGExYmM2MTUzZmUwOGMxMzlkNGRmNWE3YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzNjNiOWViMzljMTVhZTQ1YzJjM2NhMjhkM2IwNDE4MTBjZjQ1ZmQ2YjQ3NDQwYTAwNzEyMDVmZGZmZjY1NzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fda812dff0694fcab09c5ccb29b47fc4",
+      "statement": "Les clés sont copiées dans des variables globales par processOpts.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L157-L200",
+          "version": "repo-lines-v1:sha256:1460ed807de4480429135804c6de6ddcf78105086de0dab2f3cf086bb74bd73b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NDk0ZjA0ZTM1NzExNDQ4MjUxYTJiZjZhMWZhZWQ3MzU3NWNiODY5YmQ3NmQ2MmE2YmI1NDMzM2YyOTgwNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYThmZDI5NzBlMWYwYTAyNmUwODAxMDBmODQ3ZGVkNjk3ZDRmYzRiNDk2NDIyNmYxODJmMjBlNTNkYmY5OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNjYjNiOGRiNjZmOWY2YTk4ZTkwNzU1Njg5M2Q4YmFkYjZkYmRlMTU2ZmU1MjI5MmZkMDA2YzBkOTY5M2UzZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b01403163ae4979b361ca2a8689f4d2",
+      "statement": "unix_socket_path et unix_socket_permissions ne sont lus que si use_unix_socket est vrai ; les permissions sont interprétées en octal et une valeur invalide est ignorée sans message, laissant la permission à 0.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L223-L229",
+          "version": "repo-lines-v1:sha256:9a428a6c3bec2868113a8f4d1c5159f2b9f9bd422194a1a3fec77ab9b479c0bd:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRhOTc2ZWVjZTc5OWExZTAwNTM2ZWE0NGFhNjlmMDI4NTBlOTQ0OWM3MjAxY2RkNzU2NzZkOTgwMzBjZWY3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmViN2UxMjk1NDhjNDNkNWMyZTYzZTFkNjJlOGNjZWEwY2FmM2YxODI4N2NlNDU2Mzg3NGQyNjI3NjA2YjZlYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDUyNDJhOWE4ZDQ1MjMyZGFlOTM1NTQzYTY0N2JhNTc0MjdlNGY5YmJlMzgwZjNlNTQ4NDE4NWRlMGFjZjc3OSJ9"
+        },
+        {
+          "resource": "repo://internal/config/globals.go#L67-L68",
+          "version": "repo-lines-v1:sha256:779e01e0eff211b74a1324747ed17b986498da2470d2c27dff9530e028441a5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQwZWM2NzM2NjFiNzNiZTdhMGNkZWE3YTMxNDk2ZmM3NzVmZDZlYjIwNDU0MjQ0YjgyMTYyZTJkM2FiOWU2YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZmYjQ5NmVhYzExODBkMjI3NjM0Yzc5MjFkMjhiNmFhZWY4NGI5ODIwYjJjYWZmZDUyZTFjNWZiMTE0ZDg1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmEwMzc0ZjE1MmUyODEyZWY1NmJjZTIwZTYwZTY3ZmMxM2U5NWEyZWY3OTIxZjE1M2Y2MzY0ODY2MzU3MDBhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjZkNzM3OTNmZTkxYjZmMTk4MmRmNTJhMDZmMzM0ZmUwOTkyZDRkZmU1MWRkYjIzN2Q2NmUyZDlhYjU2YzU3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd22caa64f7d43088f440185fe2fefdf",
+      "statement": "Les valeurs par défaut intégrées sont : debug actif, trace inactif, use_date_filename actif, docker_logging inactif, console_time_format Kitchen, écoute 127.0.0.1:8080, real_ip_header X-Real-IP, socket Unix désactivé, catchall inactif, makerobots actif, paths wp-login.php et wp-login, liste noire Cloudflare-Traffic-Manager, restrict_concurrency inactif, max_workers 256, max_conns_per_ip 10, server_name nginx.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/defaults.go#L17-L54",
+          "version": "repo-lines-v1:sha256:b2c99728798b5421e7ad42650c417a8a93a53f31e3bb6982f33621738bfccf00:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkZTRiZmZkZGZhMTgxYTNhODFlOWU2MzEzY2M4NWVlNTgzMzRmZjBhZjBiNWUwOWFhZWJlZDQ4MzA3YTRkN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNWUyMzhkNTM2ZDIzNjgzYjA3NWU0YTg2YWQ0ZTRiYzQ1YjE1OGEzMjc5MDdjMWY3Y2IxNTY5ODg2NWJhMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjYTI2NjhiNDRjNDI5YjAzNjVlMjQ2YTUxZjExN2Y3ZDUwMzM3YmQxMDZiNmNlNmU2MzI3MjZhODE0M2U1MTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b3b5cb353504eafb41431eaa3f60bac",
+      "statement": "docker_config.toml est chargé via -c donc sans valeurs par défaut ; il fixe server_name nginx, écoute 0.0.0.0:8080, real_ip_header X-Real-IP, liste noire Cloudflare-Traffic-Manager et curl, catchall actif, debug et trace à false, logs dans /logs/, nocolor actif et use_date_filename actif.",
+      "evidence": [
+        {
+          "resource": "repo://docker_config.toml#L1-L18",
+          "version": "repo-lines-v1:sha256:fd419a8a59bb81e4fa3c0a48d9385763d77de2bed46429abe855723aa3ce5ff4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNDJkNzU0NmYxZDJjMDQ3MWJjNWM0NTkzMjUxZDQ5ZWU2ZTllYmU2YzRjZDI5NWE5YjEzZWQ1ZGVjMjhlZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhN2Q3OGM4YmFiNTY3ZDhlZmRmYTdmNjVhNzRkYThiYzE4ODQ3M2QxOWE0NGE5ODkyMzk0MDBmNzU4MTJhNzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ecc68fa17d24b9c83a1786a8ed4571a",
+      "statement": "argParse active les booléens --debug/-v, --trace/-vv, --nocolor, --banner et --genconfig, charge un fichier avec -c/--config et affiche l'aide avec -h ; --help n'est pas reconnu alors que le texte d'aide le liste.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/arguments.go#L12-L37",
+          "version": "repo-lines-v1:sha256:e3293f1cef52254aa3fc4572ab5f1fcf6038bee8c1643c04102aee8ca0deb30d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmY2NmMmYzZGY2NTBhZDZiNjZmY2UwYTlkMTAzZTQyYmU1NjA5NDUyYTE4NjQzN2JmODY0NjcyMzMxNTVlNDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMzc5YWYyYzYxNWRlNDdiODViZTM2MDUxMGI1MDNjNzk2NTYyOWIxNjU1Njg1OTdmZDRiYTFlNmE4NDhkYWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/config/help.go#L20-L26",
+          "version": "repo-lines-v1:sha256:93f432ece9f017a1b0648c0a5e165a0dfa776a6526e6d6b1a38a3005072be173:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ5ODJlZTg5YjlmNTIzOGNmNDRjZDIxNGIyNjRlNzVlYWIyYTYzYjA2MjBkMjMyODkxMGNjY2MwNWY3NmY2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM3N2UwN2U2NzAyMGY4NTFhMzVjZDQ5MjZkZmVmZTQ2NmMyZTAwZWIxOWM0YWNhYmIwNzgzYTVmZmI1MWNmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmI1ZWFlY2VjMzU5YTdmZTJlZjc2OWI1ZDFkODFkZGEwODFkMzEzNGU5ZTFlMTkwNTFmM2NmZThmZWM3YTMxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzFjMzFkMGViMzhjNDc1MjQ0YTQ0ZGU2NWIyODE1MjM1ZjFiNTYyNWYxOTE3NjZlZGYxOTkxNWU0ODU3M2E0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a90d6f434c004ebfbf001ffe6ae18738",
+      "statement": "L'aide (-h) ne s'affiche que si la sortie standard est un terminal ; sinon le processus sort avec le code 1.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/help.go#L64-L67",
+          "version": "repo-lines-v1:sha256:d4f4c7b9d1cc93542c5fd557ba0927c01fac7adc5fceb8d8a51e92937eecf6c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2QyNDFjNzAwNmRkZTMzMjUyMWE3NzhhMmIzNDcxZjVhNmM2YWRkNjVhZGNkZjU2MTY0NmJkNjNkZjMwODdlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmE0MDEzOWM4NDAyMjRhMGE0OWNjNDBhNGMzNjNmNjliNmQwMDQyMjhjOWQ5YTBiNDg5MzIwOWI3ZjRjNDI2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTlmNWZmZmMwZjRiNDViN2QyZjE1MDkzYzJhMDY0MDQ4YWY0YmYwNDliNmM0NTg3ODk3NDc5ZTAzZDRkNjY3NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a65fa045995a4fa6bfff596fcee45efb",
+      "statement": "Les options debug et trace ne font que relever le niveau global de zerolog (debug ou trace) et ne l'abaissent jamais ; sans elles le niveau global n'est pas modifié, ce qui explique que les lignes debug et trace apparaissent même avec debug = false.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L233-L240",
+          "version": "repo-lines-v1:sha256:21571cb3b16c42d6c68144b9defeaf3a28bccd4b88761a0861ab3be419ab0244:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU3ZGZiMWEwM2ExZmQ0NjMyYTg1NzJmYjdjYjM3Yjk5YjA2OTcyOTQyMjU3NTI5YzU4ZDAwZDMwZTY5YWJiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUyNDJhOWE4ZDQ1MjMyZGFlOTM1NTQzYTY0N2JhNTc0MjdlNGY5YmJlMzgwZjNlNTQ4NDE4NWRlMGFjZjc3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

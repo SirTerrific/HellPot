@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:51b46f8720f7f2261aa31288916da90b69d51062b9f9e61484f6e4b46122a5bb",
+  "claims": [
+    {
+      "id": "claim_9fadbf18a04d4957bd945d932d2e11a1",
+      "statement": "Le point d'entrée initialise la configuration, le logger et la bannière dans init(), puis main lance le serveur HTTP et attend un signal d'arrêt.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L20-L58",
+          "version": "repo-lines-v1:sha256:e5ca6cc25d73eab133346c3c3919b9a7de9021728c487b3e9666fa5527c75aed:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0YTBhNGJkY2ZjOGNkMjQwM2RlOTBjNjNjZGQzMzgzYmE5ZWQ3MDVjYzdjMzliNzQ2ZDJkMzNkM2RiZTMwYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYTdjNjVlOGNiZTNmMzI3MTYzYzI3OWY4MTEyYTI0MzUyMDEzNDQ3YjRkZjRmZDEyZTEwNDdkZWQwYTc5MzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b7630dd310845468ef142d92ed49fc2",
+      "statement": "L'image Docker écoute sur le port 8080, charge sa configuration depuis /config avec -c et écrit ses logs dans /logs.",
+      "evidence": [
+        {
+          "resource": "repo://Dockerfile#L25-L28",
+          "version": "repo-lines-v1:sha256:7b06e7eece8770387423fbfe75c05ee4a97959060947893b072adbe6c2fd456d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWE3ZDA0YjdlZWE0NjhmYjQyNTc3Y2JlZGYyMmFlODU4MWNiZTMzOTE5MGE0MjY2YzdhOGJhYWQwMWQzZDJjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJmOGNjZWQ3ZWFmNWVjMjZkY2YyNjJlMjhjOTE1ODVkOWZiYTdlNDI2OTc4NWYxNWQ3ZjdhYTgwNmYzZTg0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQ1ZTc4YjU1YjVjYzIzZGUyYTViYWY4ZDQyMWQzZmM4ZDQ0YWM4OTAxY2VmNTRjODA4ZDIzZjk2YzM1NGVlMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://docker_config.toml#L14-L18",
+          "version": "repo-lines-v1:sha256:423c265d72578a0fbd7a884e64862533b09058227fba6e9d473ee266f4f2127d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTEzYTBjOWRiMWY2ZTBiZDNkYTdmZjg5MDg1Yzg0M2E3ZGVhMjQ1MmVmNDFjZTM4YmE5NzMwZjFkNTU4MDlkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmE3ZDc4YzhiYWI1NjdkOGVmZGZhN2Y2NWE3NGRhOGJjMTg4NDczZDE5YTQ0YTk4OTIzOTQwMGY3NTgxMmE3MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGEwNGUxYTQ4M2QwODU1ZWE3Mzk4NjM2OGVjNjQxMGZjYzM3YjA2NTEzZmYzZTQxMjkwMTJhOGYwM2IyNzlmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_033ea2353e154e328a4f09dbe9b48d82",
+      "statement": "Sans option, le binaire utilise la configuration par défaut (écoute 127.0.0.1:8080) et crée son fichier de configuration dans le répertoire de configuration de l'utilisateur ; avec -c les valeurs par défaut ne s'appliquent plus.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L83-L137",
+          "version": "repo-lines-v1:sha256:a00409615d00bcd43afddb0362608f21a2db55f58f87963cabe2a4041118a7e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZTJiZGRkOTIxYzcyODNjYjcxNDI4NGI2MGRhYTJjM2I0ZDY2ZWIzYzYyNTMyYWVkYzk5OGRlYWRmZjI1OGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxM2RiYjczZDc1ZDRhMjc1YTFiZDAzYzcxODk4OWYyYWM4ZjhiNDg1ZTUzMjczZTViNjBjODI2NzUzNGZkOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlODFkOTExMzM5NDlmMWU0ZDQ2Y2IwZTliNjgzNTgyYzI2YmE0ZWNhMzkwYTQzZGU4Yjk1NGRiNDdiMzdmZTYifQ"
+        },
+        {
+          "resource": "repo://internal/config/defaults.go#L26-L32",
+          "version": "repo-lines-v1:sha256:8ad430e2eb43613fea6341339ffecad79a7f5432c1fbcbda09c247d71fe3abcb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWEwYmJjMDgxNWQ2NDFmZjAxYzA5MDBhNzg3ZmFhNTEzZTljMjEwMmNhMTQ4ZGYwNWQzYjAzZDRhNGU3ZjVkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTUwMDY1YmY4ZDY2MDMxMGE5NjUzMzYzN2RiZWE2MmQ5OWViYjQyZWUzMGVkODNhMzhkMmQwNjBiMzNhMWY4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTU0Mjk3ZGI3NzUyYWYxODVlYmVmNGNkYjVkNDNjZjhhM2ExZWRlMGJmMDE2MGQzMTdlOGJmMzI1YmE3YTlmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWNjMmFmMDExZGMwMDk3YmY4YzdmMDViYmIxZGY3YTYyYjE3MWZiNzc4ZDJhYTlhNDU4NDk2NDE1ZmZhOTdhYiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:68a1da857b20a6ca2f566f8826769a941bb5a691c7a7b67bc534747eee1be394",
+  "claims": [
+    {
+      "id": "claim_41af01437dbc424cb775d3281f0701e7",
+      "statement": "En mode normal, StartLogger ouvre un fichier de log JSON (création, ajout à la fin) et la console reçoit en plus une version lisible via ConsoleWriter ; avec docker_logging le JSON va seulement sur la sortie standard, sans fichier ni couleur.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L30-L37",
+          "version": "repo-lines-v1:sha256:b623f91b23d06621b3486fd4b232c634bd3263c5a9feaf034458d1bccebbd048:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZhMWUwZGMzMTUxMjlkMGVkNWFjZWJkNzQwMDE4Yzg1ODYyMTBmMGZiZmQ1M2QxYmE1Nzk2MTRhOWY4ZDhkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTE3MWZmMzlhZjllM2M3OGM3ZGE2NjU0ZjFjMTJhM2JlZGRhZjY4ZmFmM2I1NWM5Zjk1NWJjZWM0ZjY0M2Y4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzExZTkyYzgzY2U3ZmFiOTQyNGI5N2JjMTRjZDMyODgwMTVhMzE5YTU3Mjc1YTMzZmU0NjlkNzc4MzYwNjNhYiJ9"
+        },
+        {
+          "resource": "repo://internal/config/logger.go#L32-L65",
+          "version": "repo-lines-v1:sha256:68fea916f727456c6f2b9919645f1033a181179d7d6089fdfed4beeda41a5c9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1Y2U2MzI5ODJlNzg5ZjNhMjI5MDdjZjVkYjAzY2MzYmViYzE4MTA2NTAwY2U3N2Y2YzgzYzA1YTg5ZGMyNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3MDI4MTlhNjM3NjI0OTkxODA4YTY5NzhmNTkxOWEyNTBlNGYwY2U1MDM0ZTg5MTBjNWU2Yjc5NzcwNTc5M2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjZGRkZDhmNTg4MzI5MDdkNGQwZmM5YmEyNDE3Mzg5MDUwZTE3MTcyODkzMGE1ZWNjZDkwODZiZGNjOWI5NmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47a22623acd147db83d82eca0f55fe57",
+      "statement": "Le répertoire des logs est logger.directory ou à défaut $HOME/.local/share/HellPot/logs, créé avec les droits 0750.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/logger.go#L22-L28",
+          "version": "repo-lines-v1:sha256:ffa3feb4dbead1b076a051ba6ec540d54835ad29691fc6ebf8f62009d5c36787:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWE3OTk5MGFhMTlmZGM2YzBkOWI1MzRjNTk4ZjExZTYwZWRlNTI3OTM1ZjE5MTk2ZmY0NTZkYzM3ZDdhM2Q5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmEzODEyNmU1ZjE5Y2ZiZGI1ZGQyOGU0YzcyNTY2M2U5OThmZDI2MDdmNDRiMWMyNzFjMDk2MDI4NzllOTU2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcwMjgxOWE2Mzc2MjQ5OTE4MDhhNjk3OGY1OTE5YTI1MGU0ZjBjZTUwMzRlODkxMGM1ZTZiNzk3NzA1NzkzYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f17bdcbe49144c0a1133b6fb1d69d79",
+      "statement": "Avec use_date_filename le nom du fichier est HellPot_<date>.log où la date est le format RFC822 de l'heure de démarrage avec espaces remplacés par _ et : par - ; le nom est fixé une fois au démarrage.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/logger.go#L33-L48",
+          "version": "repo-lines-v1:sha256:8764ef3b47135f1dd97aeab264e663172e512c476c95e38739b9d6d11b23b452:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMTgwNmY5YjcwMDM2NWRhZWRkMzU4MjcyNDMzZjE5MmQ3ZGZkMDRlZTlhNTdmZTAxOWMyYmQ0Mjc2ZWZkMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZjE4MjBjZjdjNGUxOWI1N2IyZjk2MWRkNzYwZmEwZjhhNzE3ZTA1ZGU5OGQxOWVjZGM3ZDdlZmQwZGFlMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NGVkMzY3ZGYwYmU3ZGNkZTg1Y2ZiOGIyMDA0MDg3NmU3YmFlNGQ4OGZiMDNkMTJkN2JmZmI4YWM0NTI5NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiYjU3Yzc3MGU5YjQyZDlkZWJhZGJlYjJmOTI0ZWVjNmNlMDRiZDRjYWIzNWMzYTc3NzllZTU4MmMwYzUyNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_048ac5a5f0994a67b3f498ae13bc1f81",
+      "statement": "Si le fichier de log ne peut pas être créé, le processus affiche 'cannot create log file' et s'arrête avec le code 1.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/logger.go#L50-L54",
+          "version": "repo-lines-v1:sha256:64e2414aadc3320e480f64b95be4677168b807214d665c545cfb5464d2c7ebaf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTBmN2VlM2Y4NmU5N2FkMTI2ZmFhNDI5Y2YzYzkyOTI1ZjEyMmUyMjU2ZmM3ZTgyNTBkYjYyZGRmYWIzMTI4MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODI3MDBhYTVkMGI2ZjBjZGMzNDFkYTYwNTVhMjRmZTJjNDFlZDRiODljZDcxMjY4MjA2OTg2NTQ3YzIwOTNlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGIwMzAyN2M4MDQxMjRjOGU0ZTA0MjU5MzYwNTcyMTA4ZDczOGY2N2RlNTcyMGZmOGY2MzBiOWQ5YmIwMmNiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTAxYTIyZDg5Mzc5YzgyMzE3OWM2OGQyOTNmOTQyNTZmNmRlMDQ3YjA4NjFlYzljOTdkYmM2MTNiNzIxNWQxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_571e77ca295d409f8c93a5f77ec88833",
+      "statement": "Les lignes de démarrage journalisent le fichier de configuration et le fichier de log en info, puis 'debug enabled' en debug et 'trace enabled' en trace ; avec docker_logging le fichier de log affiché est /dev/stdout.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/HellPot/HellPot.go#L30-L44",
+          "version": "repo-lines-v1:sha256:a0abf9b6f6a3c7dbcf1b063ea69390e9e740fb3668d9cb09247802961de028ff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2YTFlMGRjMzE1MTI5ZDBlZDVhY2ViZDc0MDAxOGM4NTg2MjEwZjBmYmZkNTNkMWJhNTc5NjE0YTlmOGQ4ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiY2IyYTkyMjc2N2I5MWUzZmZlMTVhMzg5N2UxYjRhNzRmNjgzYzdlNWY1MWNlODJiNDRmZDhkMDJjODhiNjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxNzFmZjM5YWY5ZTNjNzhjN2RhNjY1NGYxYzEyYTNiZWRkYWY2OGZhZjNiNTVjOWY5NTViY2VjNGY2NDNmOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41e40fe99327462a8279519820827c5a",
+      "statement": "Les lignes de requête sont NEW (info), FINISH (info, avec BYTES et DURATION), END_ON_ERR (trace, avec error) et 'Ignoring useragent' (trace), tous avec USERAGENT, REMOTE_ADDR et URL.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L37-L76",
+          "version": "repo-lines-v1:sha256:4b0660f65845ba7dfa10aa3e4f7cf73c3db5a63d7def519608703a75eb0eeaec:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzOGZiOWNkMjEwNjE5MzkzYTE3ZmE3NWNkMDgwNTM2ZjFjY2Y3OTU2ZDE1ZDZjYTNkMDk5Y2FiNmI1MTA1OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzhjNzdlOTcwMTkzNTU2ZWI1MTQwZjA3NjgwZTFhYWZjNDM2YzllNmQ0NTA1ZWUyN2Y4NzJlMTkzMDcwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1ZGUwZjUxYTZkZmZjY2IzMGZiM2NiZTJlYWJiNzYyYTg1MWMyZmRmZDdiZWQzZjgzOTNhNGI3ZmZmNTBkNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a1f81d660294242ac076fbc7ef2914f",
+      "statement": "robots.txt journalise SERVE_ROBOTS en debug avec PATHS et SERVE_ROBOTS_ERROR en error avec l'erreur d'écriture.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/robots.go#L26-L32",
+          "version": "repo-lines-v1:sha256:b85094ccf1583f5fe0fd46e2c2c62e548ec8be8367a5b191b12a6ad78e131686:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk1NDZhYjA0Y2QzNzk3Y2QzOTlkOWVkMjcxYWJmZmRjZDgwMWZkNTU2ZjMwYzg3YTQyN2QzNTUyZGQwOTczNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjhkNjNjYmU2ZDk5YmM4YjM2NDExMmZiNmNmZDZiNzQwMzE5MmJlOTkzYjRhMTI4MmM3NjU0ZGM4MzYyN2E2NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eac3824ddcb54da3998d3bfa66db24c6",
+      "statement": "Le routeur journalise 'Add route' et 'Catch-All mode enabled...' en trace, 'Listening and serving HTTP...' en info avec l'adresse ou le chemin du socket dans caller, et une erreur fatale si unix_socket_path est vide.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L121-L154",
+          "version": "repo-lines-v1:sha256:02630acb0d2cd3c62ad3ea76c0b67766de3403a70c3cb97d13945dbea1798f25:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZGQ4NTZhYzRmYjY2OGY3NzJjODE3NzZiOTk2M2VjNWVjZDFhZDk2MThiMmZiYmFkYmQyM2U2MTQ3OGZjNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Mzc5YzMyNWZhNmUwNjkwODIwMjEwOGMwYTYxN2VlMzUzZjMxODNmNmM4MWM3OWUzYzM1M2I0ZjAwYjA0ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YjAwM2E0NzJiZTljNDRkOGI0OTMxMWZjMzJmNDAxOTdiYjgxNTYzOGYyMTM3MGVkOGRjZDU5MDBkNDMxOGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d696fb97227f4fda9114ec90d5bab89b",
+      "statement": "Les messages internes de fasthttp passent par le même logger car le serveur reçoit Logger: log.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L115-L117",
+          "version": "repo-lines-v1:sha256:8983cc23309ac7347b4886eae4d1a273c2a616b52386215cc7caf3ddea816bd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFlZjkwNGE5YmU2YTgxOTBlMzhlMTU5NWM5NmZhODVkN2JkM2Q4NDMwYjNhOGNhODE0ZDk4MzcyYzRlMmQzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjY1MWRlZWI3MDRlYjAzYmE3OTY0ZDg0NmI4NTM3M2U3YThhOGMzMTAzMDE3ODYxZmY1ZjRlYzc5N2YyZjkwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjhiMDAzYTQ3MmJlOWM0NGQ4YjQ5MzExZmMzMmY0MDE5N2JiODE1NjM4ZjIxMzcwZWQ4ZGNkNTkwMGQ0MzE4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2784c6ffaf2f4f429f2e72d987968801",
+      "statement": "Les options debug et trace ne font que relever le niveau global de zerolog, donc les lignes debug et trace sont écrites même avec debug = false et trace = false ; ce comportement vient de l'upstream et est conservé.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L233-L240",
+          "version": "repo-lines-v1:sha256:21571cb3b16c42d6c68144b9defeaf3a28bccd4b88761a0861ab3be419ab0244:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU3ZGZiMWEwM2ExZmQ0NjMyYTg1NzJmYjdjYjM3Yjk5YjA2OTcyOTQyMjU3NTI5YzU4ZDAwZDMwZTY5YWJiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUyNDJhOWE4ZDQ1MjMyZGFlOTM1NTQzYTY0N2JhNTc0MjdlNGY5YmJlMzgwZjNlNTQ4NDE4NWRlMGFjZjc3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.1",
+    "at": "2026-10-04T02:02:24.687Z"
+  }
+}
