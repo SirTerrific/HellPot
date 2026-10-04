@@ -6,7 +6,7 @@ This fork starts from upstream [yunginnanet/HellPot](https://github.com/yunginna
 
 ### Compatibility
 
-Configuration keys and defaults, the log structure (JSON keys, levels, messages, field order), the HTTP behavior, and the Docker image layout (`/app`, `/config`, `/logs`, port `8080`, entrypoint, user) are unchanged.
+Configuration keys and defaults, the log structure (JSON keys, levels, messages, field order), the HTTP behavior (except unix socket mode, see Fixed), and the Docker image layout (`/app`, `/config`, `/logs`, port `8080`, entrypoint, user) are unchanged.
 
 Two differences in log *text*, both at debug or trace level and both coming from the updated fasthttp library, not from HellPot: `END_ON_ERR` now reports `fasthttputil: connection closed` instead of `connection closed`, and the "non-GET request" line now reads `fasthttp: non-get request received`.
 
@@ -28,6 +28,7 @@ Two differences in log *text*, both at debug or trace level and both coming from
 
 ### Fixed
 
+- Unix socket mode (`use_unix_socket`) was served by a default fasthttp server instead of the configured one, so `deception.server_name` was ignored (the response said `Server: fasthttp`, revealing the real server) and the request read timeout, request size limit and GET-only mode did not apply. It now uses the configured server. Behavior change, only for unix socket users: those limits now apply. `max_conns_per_ip` still does not apply to unix sockets (no client IP).
 - `robots.txt` handler passed generated content as a `Fprintf` format string (`go vet` error): a `%` in a configured path would have corrupted the output.
 
 ### Removed

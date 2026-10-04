@@ -268,7 +268,7 @@ The block below is what `./HellPot --genconfig` produces (with comments added). 
 - User agents containing a blacklisted string get `404 Not found` and are not trapped.
 - `robots.txt` (when enabled) is generated from `paths`, one `Disallow:` line per path, so the bots that ignore it are the ones that get trapped.
 - The `Server` header is `deception.server_name`.
-- **Unix socket mode** (`use_unix_socket = true`) is served by a default fasthttp server: the timeouts, `max_conns_per_ip`, GET-only mode and the `Server` header from `deception.server_name` described here do **not** apply (the `Server` header is then `fasthttp`). This behavior comes from upstream and is unchanged.
+- **Unix socket mode** (`use_unix_socket = true`) uses the same server settings as TCP (timeouts, GET-only, `Server` header from `deception.server_name`). `max_conns_per_ip` does not apply, because a unix socket has no client IP. For the same reason the logged `REMOTE_ADDR` is `0.0.0.0` unless the proxy sends `real_ip_header`. (Before this fork, unix socket mode used a default fasthttp server that ignored these settings and answered `Server: fasthttp`.)
 - The client address that is logged is the value of `real_ip_header` when present, otherwise the TCP peer address.
 
 ## Logging

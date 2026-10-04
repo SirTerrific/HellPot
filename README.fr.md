@@ -268,7 +268,7 @@ Le bloc ci-dessous correspond à ce que produit `./HellPot --genconfig` (comment
 - Les user agents contenant une chaîne de la liste noire reçoivent `404 Not found` et ne sont pas piégés.
 - `robots.txt` (s'il est activé) est généré à partir de `paths`, une ligne `Disallow:` par chemin : les robots qui l'ignorent sont ceux qui se font piéger.
 - L'en-tête `Server` vaut `deception.server_name`.
-- Le **mode socket Unix** (`use_unix_socket = true`) est servi par un serveur fasthttp par défaut : les délais, `max_conns_per_ip`, le mode GET seulement et l'en-tête `Server` issu de `deception.server_name` décrits ici ne s'y appliquent **pas** (l'en-tête `Server` vaut alors `fasthttp`). Ce comportement vient du projet d'origine et n'a pas été modifié.
+- Le **mode socket Unix** (`use_unix_socket = true`) utilise les mêmes réglages de serveur qu'en TCP (délais, GET seulement, en-tête `Server` issu de `deception.server_name`). `max_conns_per_ip` ne s'applique pas, car un socket Unix n'a pas d'IP cliente. Pour la même raison, le `REMOTE_ADDR` journalisé vaut `0.0.0.0` sauf si le proxy envoie `real_ip_header`. (Avant ce fork, le mode socket Unix utilisait un serveur fasthttp par défaut qui ignorait ces réglages et répondait `Server: fasthttp`.)
 - L'adresse de client journalisée est la valeur de `real_ip_header` quand elle est présente, sinon l'adresse TCP du pair.
 
 ## Logs

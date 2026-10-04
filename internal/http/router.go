@@ -151,5 +151,5 @@ func Serve() error {
 	}
 
 	log.Info().Str("caller", config.UnixSocketPath).Msg("Listening and serving HTTP...")
-	return listenOnUnixSocket(config.UnixSocketPath, r)
+	return listenOnUnixSocket(config.UnixSocketPath, &srv)
 }
