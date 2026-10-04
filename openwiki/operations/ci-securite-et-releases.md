@@ -5,7 +5,7 @@ description: Les trois workflows GitHub Actions du dépôt, les contrôles de s�
 tags: [ci, github-actions, securite, release, dependabot]
 verified:
   - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
+    at: 2026-10-04T02:16:41.150Z
 sources:
   - id: openwiki-source-79b37831c9c81206da1d88ec
     resource: repo://.github/dependabot.yml
@@ -21,7 +21,7 @@ sources:
     resource: repo://internal/http/router.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-04T02:16:41.150Z" }
 ---
 
 # CI, sécurité et releases
@@ -38,7 +38,7 @@ Trois workflows vivent dans `.github/workflows/`, plus la configuration Dependab
 
 ## Contrôles du workflow « Vibe Check »
 
-Dans l'ordre : `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. La version de Go est lue dans `go.mod` (donc 1.26 ou plus récent). `gosec` et `govulncheck` sont installés à chaque exécution avec `@latest` : ils ne sont **pas épinglés**, ce qui garde leurs bases de règles à jour mais peut faire échouer le workflow sans qu'aucun code n'ait changé.
+Dans l'ordre : `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. Le workflow utilise la **dernière version stable de Go** (`go-version: stable`) et non la version minimale déclarée dans `go.mod`. Le choix est délibéré : installer exactement Go 1.26.0 faisait échouer `govulncheck` sur 13 vulnérabilités connues de la bibliothèque standard, corrigées dans les versions correctives suivantes. L'image Docker (`golang:1.27`) et les binaires de release (version par défaut de l'action, la dernière) utilisent eux aussi un Go à jour. Quiconque compile depuis les sources avec exactement 1.26.0 produit un binaire concerné : la dernière version corrective est recommandée. `gosec` et `govulncheck` sont installés à chaque exécution avec `@latest` : ils ne sont **pas épinglés**, ce qui garde leurs bases de règles à jour mais peut faire échouer le workflow sans qu'aucun code n'ait changé.
 
 Le test unitaire exécuté, avec le détecteur de concurrence, est celui de [heffalump](../architecture/moteur-markov-heffalump.md). Le Dockerfile rejoue `go vet` et `go test` avant de compiler.
 

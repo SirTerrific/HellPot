@@ -1,14 +1,18 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9d7d96a6e754c78f1030fad1c17f5995143031765ea867e03d0edf94bc41e3c9",
+  "pageVersion": "sha256:1b17863916f8963b8db05568af29841d501882be3004e014d8eb21c4d630ea66",
   "claims": [
     {
       "id": "claim_843ed922f38340149e99324726fe458c",
-      "statement": "Le workflow Vibe Check s'exécute sur tout push et sur les pull requests vers main, lit la version de Go dans go.mod et enchaîne go vet, gosec, go test -race, go build puis govulncheck.",
+      "statement": "Le workflow Vibe Check s'exécute sur tout push et sur les pull requests vers main, utilise la dernière version stable de Go (go-version: stable) et enchaîne go vet, gosec, go test -race, go build puis govulncheck.",
       "evidence": [
         {
+          "resource": "repo://.github/workflows/go.yml#L13-L16",
+          "version": "repo-lines-v1:sha256:ca3322aa9fd6e859f5d5775a12fd3a60cc7eab60f0d5673f402bf442dd5f1cac:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYwZjZlOTQ1YTZlMGZkYWEyNWViZWRmMTJiYWFlOTQwZjhhMjhlYWE0MTkwMDI2Y2MzMmYxMzA2YTdkYWZmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWE3MGE5ODMyODk2OGU1Yzc0MzEwYjY3OWUzMDYxNzVmMDEzZGNjMWVjOTMwMzNmM2JhMGQ4YzFjYjg5YjAyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmZkZjI4MmI0ZmNiYjAyODExMzI5MTA5MzMxZDc5YTNiMThkMTRkMzgyMTgwYzk0NjVmOGY5OTdhZGEzNjJiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTA2ZDg3MDIwMDExMTYxZDE5ZTk1MjE0NTc4NTI0ZWZiZDQ5MGVhNjZlYWEwYWM4Y2MzM2EzYTlkMDc0ZTA3YSJ9"
+        },
+        {
           "resource": "repo://.github/workflows/go.yml#L3-L32",
-          "version": "repo-lines-v1:sha256:4d401b2522a505c4df37cdbda3ea65b62ca14017728158606392f194744be06a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWZmYjI5NWM1ZjNjZjZiYmI4NTY3MWZlNDMxY2JjODE2OTI2ZWIwODc2MjdlMjU3MGRiMGUxMGU0ZjQ1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NzEwZGM4ZWQyMDQ5ZjEzYmZiZWM1ODUxYTM5OGUwOTU5YmJiZjdhZThlZjBjZDBmNGFiYTZiYzg1NzQyN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0YmU4YmFjN2E0MGY0MzlkYTAyZDdhYmIzNmZhY2UyZjcwMTk0YWQ2M2QwYmNhZmJiOGZlN2ZjOTA5YzVmMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "version": "repo-lines-v1:sha256:7b73cd1e6680ef36bbf1866b78855aa1a6f66f6276a1366c9279f7b01b58a480:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NzEwZGM4ZWQyMDQ5ZjEzYmZiZWM1ODUxYTM5OGUwOTU5YmJiZjdhZThlZjBjZDBmNGFiYTZiYzg1NzQyN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhMzg5YjkwOTMyZTQyNWE3ODFlNDAwMWVkZGQyZTUwODIxZjYyN2YyMDAzNGU2NjAyMzdiZDJmNzI2YjljYmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -17,12 +21,12 @@
       "statement": "gosec et govulncheck sont installés avec @latest à chaque exécution et ne sont donc pas épinglés.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/go.yml#L19-L23",
-          "version": "repo-lines-v1:sha256:bd08bd4846c902a6e914d07962700ac40f84e373284f58b4cab2d7f68958d887:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ3MTBhNTM3NmRmNTkzOTdiM2JmMGZmMThjY2Y1ZTJmODFlMDQ5OTJlZTMyZjJiMjU0NTcxZGIzYjAyMzY3YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJkNGNkMjc5OGM2YzFiOTAxNzUxNDQzMjAyM2VjMmJkODNmOTZmNzc2OTE3MTc3YzZlMTY1MzgxNGVjMjMyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTZlZjIwYjE2ZGViY2M1NzkzMTA4MDg3MDc1MDE3MzY3YTNmMjI5MTU0NDQ4NjNkNjI1ZDdjNGUxODA2NDZiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjM0ZDFlNDRhMTBjNjY1YTk1MDEwNWM5ZDQ1ZjRkYTg4N2M1ZTVlMDU1OWE3NzliOGE3MzhjMTI0YzI5ZTAxMSJ9"
+          "resource": "repo://.github/workflows/go.yml#L22-L22",
+          "version": "repo-lines-v1:sha256:7f1451dc1cd182c66cc88dceab70e1ac2333b9c8663b2616c43c48b639058443:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YxNDUxZGMxY2QxODJjNjZjYzg4ZGNlYWI3MGUxYWMyMzMzYjljODY2M2IyNjE2YzQzYzQ4YjYzOTA1ODQ0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2YxNDUxZGMxY2QxODJjNjZjYzg4ZGNlYWI3MGUxYWMyMzMzYjljODY2M2IyNjE2YzQzYzQ4YjYzOTA1ODQ0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGMzMmI0ODcwYTA0Yjg1NDdjZDgyYThiYTY0MTkzM2MzNjQ0OTFiZWM3NjQ0NWNiYmI0MDg2ZGQ0MTE4ODViYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhiN2Q3ZTRkMGRhZjBkMjkwNjE0ZjU0NGM2NTU1YjRmZjZkZGFkZDJhMjk4YTJhZmIwZjhhMzVkODlmY2NjZSJ9"
         },
         {
-          "resource": "repo://.github/workflows/go.yml#L28-L32",
-          "version": "repo-lines-v1:sha256:9a45a60bc2fa7c2fa61fd186cb43fb368abf5690b20000e85cb67a26ad7339dd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE4NDBjYzA3MWRiMTMyNzVjZDdlNTUxYWVlNjYxZjU3Nzk2MTMzNzdlYTg5MWM4ZDhiNmI2YTkxY2FmMDUyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg3MTBkYzhlZDIwNDlmMTNiZmJlYzU4NTFhMzk4ZTA5NTliYmJmN2FlOGVmMGNkMGY0YWJhNmJjODU3NDI3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUyNTBjZjQ2Y2Q5MjdlNGIyODM1NzBiMjU4NDdhMTgyNzBhNWNiNTk3MTMwYzQ1ZDdiZmE1ZjY3MmM1ZmRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+          "resource": "repo://.github/workflows/go.yml#L31-L31",
+          "version": "repo-lines-v1:sha256:e5535e687ab714d37e03a381ff9d639d9af2db13aadfef8b281f2d1340dce04e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU1MzVlNjg3YWI3MTRkMzdlMDNhMzgxZmY5ZDYzOWQ5YWYyZGIxM2FhZGZlZjhiMjgxZjJkMTM0MGRjZTA0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTU1MzVlNjg3YWI3MTRkMzdlMDNhMzgxZmY5ZDYzOWQ5YWYyZGIxM2FhZGZlZjhiMjgxZjJkMTM0MGRjZTA0ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODA5OGY0MWM0MzliN2VkODU5Yjg1MjE4M2VhZWRlNjdhMjI5MWJjZDM4ZGZiM2JiZWZmZDk4YzM4NjI2MTk5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg3MTBkYzhlZDIwNDlmMTNiZmJlYzU4NTFhMzk4ZTA5NTliYmJmN2FlOGVmMGNkMGY0YWJhNmJjODU3NDI3ZCJ9"
         }
       ]
     },
@@ -79,10 +83,20 @@
           "version": "repo-lines-v1:sha256:32fd6ac1fdbaaae2ba146e542403205a8dc32cec6d1a19f6ccd094cfb577faf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4ZjFmYmFhNTM4OGQyNTI0MjgxZDI2YWQ5YjQzMjE2MTkyN2ViM2I5MTA2NDU0ZjBmNzE1NDc5Y2UyNzUxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxMDUxM2UzOGE2YTc3YWFmYjAwNTViZDgzYzFjOTIxYzcxMTRiZjNiNWY1MTcxNGU0ODY1ZTFhNmM4MWU2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwMDdmODEzY2JkZmJkMzkxMjc2M2MxMGZjYjkwNmU3YmQxNTgzZWZlYTAzZmQ5OWM5OWZlOTI3ZWRiOGUxNiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_b7d82c12df7c4e67b18e2ffde0dd5275",
+      "statement": "Le workflow de release ne fixe pas de version de Go (le paramètre goversion est commenté) et laisse donc l'action choisir sa version par défaut.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-command.yml#L22-L28",
+          "version": "repo-lines-v1:sha256:f3d25d0d571540b349624f411ea116f942dbe79eb9c3327f0eefe25ddea1dd49:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJkYjZiNjZiZDQzNjgwYzYyNWM5Y2M4NTEwNGMwNjI2M2E0MjRjOGUwOWVlNWQyMmNlZmEwMjk3NTEzYTNlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ1YjVmNThhMDBkZDI3NTVlZjAxNGYyNGM4NDdhNWMwMWFhMDFlN2JiZDE5ODA3YmQ3NTExOWQyOWE3ZDk2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZjYzA0NWZlNTMzNzI4NDExMTI3NmUzNTk4YTI1NTRhMGM4ODU2MGE3Y2Y5MjIyNGE0ZWMwOTE3NjkyOTIzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE0MzRjMDM0ZDY0ZGRiNDFiYjcwNWIwMjg2MzUxOTU2ODFhNzRhNTY0MDQ1MGIxMjNmNjQxMzJjYTVjNTE0ZCJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:02:24.687Z"
+    "at": "2026-10-04T02:16:41.150Z"
   }
 }
