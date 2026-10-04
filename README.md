@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://tcp.ac/i/00ctL.gif" alt="HellPot"/>
 
-[![GoDoc](https://godoc.org/github.com/yunginnanet/HellPot?status.svg)](https://godoc.org/github.com/yunginnanet/HellPot) [![Go Report Card](https://goreportcard.com/badge/github.com/yunginnanet/HellPot)](https://goreportcard.com/report/github.com/yunginnanet/HellPot) [![IRC](https://img.shields.io/badge/ircd.chat-%23tcpdirect-blue.svg)](ircs://ircd.chat:6697/#tcpdirect) [![Mentioned in Awesome Honeypots](https://awesome.re/mentioned-badge.svg)](https://github.com/paralax/awesome-honeypots)
+[![GoDoc](https://godoc.org/github.com/SirTerrific/HellPot?status.svg)](https://godoc.org/github.com/SirTerrific/HellPot) [![Go Report Card](https://goreportcard.com/badge/github.com/SirTerrific/HellPot)](https://goreportcard.com/report/github.com/SirTerrific/HellPot) [![IRC](https://img.shields.io/badge/ircd.chat-%23tcpdirect-blue.svg)](ircs://ircd.chat:6697/#tcpdirect) [![Mentioned in Awesome Honeypots](https://awesome.re/mentioned-badge.svg)](https://github.com/paralax/awesome-honeypots)
 
 </div>
 
@@ -25,7 +25,7 @@ HellPot should probably be built with Go version 1.17 or higher.
 
 HellPot uses [go modules](https://go.dev/blog/using-go-modules). This should make it dead simple to build with a stock Go installation. To make it even simpler, we've added a GNU Makefile.
 
-1 ) `git clone https://github.com/yunginnanet/HellPot`
+1 ) `git clone https://github.com/SirTerrific/HellPot`
 
 2 ) `cd HellPot`
 
@@ -39,7 +39,7 @@ HellPot uses [go modules](https://go.dev/blog/using-go-modules). This should mak
 
 In the event of a missing configuration file, HellPot will attempt to place it's default config in **$HOME/.config/HellPot/config.toml**. This allows irresponsible souls to begin raining hellfire with ease, **_immediately_**:
 
-1 ) Download a [compiled release](https://github.com/yunginnanet/HellPot/releases/latest)
+1 ) Download a [compiled release](https://github.com/SirTerrific/HellPot/releases/latest)
 
 2 ) Run binary and immediately begin sending clients directly to hell.
 

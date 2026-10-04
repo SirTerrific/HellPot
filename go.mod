@@ -1,4 +1,4 @@
-module github.com/yunginnanet/HellPot
+module github.com/SirTerrific/HellPot
 
 go 1.26.0
 
