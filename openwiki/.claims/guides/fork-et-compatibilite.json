@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:8f95cdd73f0ccbbde9fb49b0968b567a1c4caa1c6f2947564adff481be440495",
+  "pageVersion": "sha256:49bf1c2a2009dbc72f00c0662bd702ab6e6363cb01d162492773fc2434408c27",
   "claims": [
     {
       "id": "claim_df5fd5fa72934fe89f65aa887c6d5545",
@@ -14,11 +14,11 @@
     },
     {
       "id": "claim_73192f91922749239174a12f326a11c2",
-      "statement": "Le fork garantit que les clés et valeurs par défaut de configuration, la structure des logs, le comportement HTTP et la disposition de l'image Docker (/app, /config, /logs, port 8080, entrypoint, utilisateur) restent inchangés.",
+      "statement": "Le fork garantit que les clés et valeurs par défaut de configuration, la structure des logs, le comportement HTTP (sauf le mode socket Unix, corrigé) et la disposition de l'image Docker (/app, /config, /logs, port 8080, entrypoint, utilisateur) restent inchangés.",
       "evidence": [
         {
-          "resource": "repo://CHANGELOG.md#L7-L11",
-          "version": "repo-lines-v1:sha256:8a205a400545e82de68aafd3f99b462a39c4cdccd178eee2d6a4d39534c97678:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdjMTBiNTMyZTczNjJlZDAyZTA2Y2E1NmE5OGU2MmYxOTI0ZDgwYjE5ODg0YThkMzIyYTIwNWNiYTgwYjgyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFiZjgyZDYzYTg2OTJmYmMzMDcwMmYzMTU3ZTM2NmE4ZWFiNmFhNWMxNTRkNjZiOTEyOWFkNDMxYjI1YjllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA4NzdhN2MzODZhOGUwNDhhYTI5MmUxZGE0ODc3OTAxN2U4ZmQyNWI3ZjI3NGI5OTE5ODM1ZmRhOWM2NjA3ZSJ9"
+          "resource": "repo://CHANGELOG.md#L9-L9",
+          "version": "repo-lines-v1:sha256:194f3bcbe43e7004d9e5bf6defe62d6c940dbe53aa961b50b1674d84abf9956d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0ZjNiY2JlNDNlNzAwNGQ5ZTViZjZkZWZlNjJkNmM5NDBkYmU1M2FhOTYxYjUwYjE2NzRkODRhYmY5OTU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk0ZjNiY2JlNDNlNzAwNGQ5ZTViZjZkZWZlNjJkNmM5NDBkYmU1M2FhOTYxYjUwYjE2NzRkODRhYmY5OTU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGNmOGU3YjQ1N2E4YjUwYzU2ZWQ1NzMwMTA1MDQ0NjkyN2NkNDFiMDE2NGNkOGQ4MmFhYTg0MjVmZDExNjA2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTFiODEzOGY1YWEwOGExOTE1NjRhZTAzYjg3OWU5ZjI0MGQ0YWZhM2MxNzk4NDZiZjM0YjI5ZjU5Zjc0OTYxYSJ9"
         }
       ]
     },
@@ -71,14 +71,28 @@
       "statement": "Deux messages de log de niveau debug ou trace changent de texte parce qu'ils viennent de fasthttp mis à jour : END_ON_ERR rapporte 'fasthttputil: connection closed' et la ligne non-GET devient 'fasthttp: non-get request received' ; les champs et messages propres à HellPot sont inchangés.",
       "evidence": [
         {
-          "resource": "repo://CHANGELOG.md#L7-L11",
-          "version": "repo-lines-v1:sha256:8a205a400545e82de68aafd3f99b462a39c4cdccd178eee2d6a4d39534c97678:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdjMTBiNTMyZTczNjJlZDAyZTA2Y2E1NmE5OGU2MmYxOTI0ZDgwYjE5ODg0YThkMzIyYTIwNWNiYTgwYjgyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFiZjgyZDYzYTg2OTJmYmMzMDcwMmYzMTU3ZTM2NmE4ZWFiNmFhNWMxNTRkNjZiOTEyOWFkNDMxYjI1YjllMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA4NzdhN2MzODZhOGUwNDhhYTI5MmUxZGE0ODc3OTAxN2U4ZmQyNWI3ZjI3NGI5OTE5ODM1ZmRhOWM2NjA3ZSJ9"
+          "resource": "repo://CHANGELOG.md#L11-L11",
+          "version": "repo-lines-v1:sha256:b79267f21c3c3af4225ab11cafccc80a0314512663d8e051a46e7a4153422118:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5MjY3ZjIxYzNjM2FmNDIyNWFiMTFjYWZjY2M4MGEwMzE0NTEyNjYzZDhlMDUxYTQ2ZTdhNDE1MzQyMjExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTRhYWNmZmFjN2Y0MTMxMjRlMTRmZGYxNTQ0Y2ViY2MwOWI0MjYzNTU2YzM3ZTJlN2QyMzI3YjQ4Y2ZjODE2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjA4NzdhN2MzODZhOGUwNDhhYTI5MmUxZGE0ODc3OTAxN2U4ZmQyNWI3ZjI3NGI5OTE5ODM1ZmRhOWM2NjA3ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_61f62bf518f141cca70b051359ff7536",
+      "statement": "Le mode socket Unix, qui utilisait un serveur fasthttp par défaut ignorant les réglages configurés, utilise désormais le serveur configuré : changement de comportement volontaire qui ne concerne que les utilisateurs de use_unix_socket.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L29-L31",
+          "version": "repo-lines-v1:sha256:4137d22044f6d72d474b388770702d5057c4cc864fa41bc20073a9c3d436560c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJmZDI1MjE1ODc2OGY3ZGQ2M2E5ZWZhNmZmMjllODk0NzhhMDkyZGRjNWQ4ZTY3NWMyOGMyZTUwZTEwODAxZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTcyZDU4NzRiNGRkNWY4OWY3ZmRlMTUwM2E5MmJiYzkyM2M2MTk3MmM4ZmU1NmVhNDI5NjJiMjg4NGRmZTRhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWJkOTUwMWFlYTkwM2U5NTI4NzgwNDdlM2Y1OTc2ZTM4OTEzN2M0MzY5MDczYjhkYjVlOWI0NTdjYTQ0NmQzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY0OTQ1MTNlNTE3MjIwNDAzNmM2OGZiODcyYTE1NThmNzk5OWY5MzI2ZTA5YmIzMDQxYTRhM2JiMzNmYWJhNCJ9"
+        },
+        {
+          "resource": "repo://internal/http/router_unix.go#L40-L40",
+          "version": "repo-lines-v1:sha256:1897aa4b10b5124cacd7178b8a85b4f5732177a2f2edec3dd39ceb0040a48e6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg2YzU5OWRjMjQzMWRjZTI0ZjcwNmNhNWNiYTFmMjgxZjU5NTk1NzFhZmEwNGMyMWI2ZjU1ZTkyYzUyMGQ4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:02:24.687Z"
+    "at": "2026-10-04T19:20:53.104Z"
   }
 }

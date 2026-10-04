@@ -3,9 +3,6 @@ type: operations
 title: CI, sécurité et releases
 description: Les trois workflows GitHub Actions du dépôt, les contrôles de sécurité automatiques, la mise à jour des dépendances par Dependabot, la procédure de publication par tag et la règle de nommage des versions.
 tags: [ci, github-actions, securite, release, dependabot]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:16:41.150Z
 sources:
   - id: openwiki-source-79b37831c9c81206da1d88ec
     resource: repo://.github/dependabot.yml
@@ -22,6 +19,9 @@ sources:
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
 generated: { by: "claude-code", at: "2026-10-04T02:16:41.150Z" }
+verified:
+  - by: openwiki/0.5.1
+    at: 2026-10-04T19:20:53.104Z
 ---
 
 # CI, sécurité et releases

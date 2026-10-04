@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:1b17863916f8963b8db05568af29841d501882be3004e014d8eb21c4d630ea66",
+  "pageVersion": "sha256:0a3fbdf6113e974d98918638f93daee4f61aec14b6b08dd1410cbe7af58fa012",
   "claims": [
     {
       "id": "claim_843ed922f38340149e99324726fe458c",
@@ -79,8 +79,8 @@
       "statement": "L'IP cliente est lue dans l'en-tête configuré par real_ip_header sans vérification de son origine, donc un client peut falsifier le REMOTE_ADDR journalisé si HellPot est exposé directement.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L21-L27",
-          "version": "repo-lines-v1:sha256:32fd6ac1fdbaaae2ba146e542403205a8dc32cec6d1a19f6ccd094cfb577faf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4ZjFmYmFhNTM4OGQyNTI0MjgxZDI2YWQ5YjQzMjE2MTkyN2ViM2I5MTA2NDU0ZjBmNzE1NDc5Y2UyNzUxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxMDUxM2UzOGE2YTc3YWFmYjAwNTViZDgzYzFjOTIxYzcxMTRiZjNiNWY1MTcxNGU0ODY1ZTFhNmM4MWU2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwMDdmODEzY2JkZmJkMzkxMjc2M2MxMGZjYjkwNmU3YmQxNTgzZWZlYTAzZmQ5OWM5OWZlOTI3ZWRiOGUxNiJ9"
+          "resource": "repo://internal/http/router.go#L22-L26",
+          "version": "repo-lines-v1:sha256:2095e23585bba2b1e504118814d357d56c562b7b9a38d9290794397edfbcfecc:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ3NTdjYTAyYWRlNmFlYjBkNTE3M2VmNGFjZTRiZDY3ZmJmNDU5NDMyZmYzYzIxMGFiYzMyMDRmODExMzk4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgwMjc1MTQ0MThlMGUwMGI3Yjc2NTVjNTAzMGE5OTMxZjRiMmFjMTI5MmRiOGI2ZGRlNDdjZjJjNWI0NGM1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQzZDRhYmVhMDE3NDM4ZWYyOGRkOTUyNGQ1ZjUwMTRiNzc5MDY5N2ZhMmExYjdiMzU5OWUyNDExNGYyYWZlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTgyMWE4YWY2MzE4NTg5NWQxNWNiZjUxYzJkMzUzMWNiNmEwNzJjMmY1YWUxMjQ1MTAxNzVjYjVjNmFkMTQyMSJ9"
         }
       ]
     },
@@ -97,6 +97,6 @@
   ],
   "verification": {
     "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:16:41.150Z"
+    "at": "2026-10-04T19:20:53.104Z"
   }
 }

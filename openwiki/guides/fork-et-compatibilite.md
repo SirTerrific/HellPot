@@ -3,9 +3,6 @@ type: guide
 title: Fork et garanties de compatibilité
 description: Ce qui distingue ce fork du projet yunginnanet/HellPot, ce qui doit rester identique pour ne rien casser (config, logs, image) et comment passer d'une image construite localement à l'image publiée sur GHCR.
 tags: [fork, compatibilite, migration, docker, logs]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-ca6cb4b1a14fd7969dfae3ec
     resource: repo://CHANGELOG.md
@@ -17,7 +14,12 @@ sources:
     resource: repo://internal/config/defaults.go
   - id: openwiki-source-f715782272efaf73ca0c929d
     resource: repo://internal/config/globals.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+  - id: openwiki-source-fd1f4e266c537f5376b692a9
+    resource: repo://internal/http/router_unix.go
+generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
+verified:
+  - by: openwiki/0.5.1
+    at: 2026-10-04T19:20:53.104Z
 ---
 
 # Fork et garanties de compatibilité
@@ -30,7 +32,7 @@ Le fork vise un remplacement direct. Ces éléments doivent rester identiques, e
 
 - **Clés de configuration et valeurs par défaut** : `defOpts` dans [defaults.go](../../internal/config/defaults.go). Une nouvelle clé doit avoir une valeur par défaut qui reproduit l'ancien comportement. Exemple : `performance.max_conns_per_ip` vaut 10, la valeur qui était codée en dur. Voir [Chargement de la configuration](../configuration/chargement-et-reference.md).
 - **Structure des logs** : clés JSON, niveaux, messages et ordre des champs. Catalogue dans [Journalisation](../operations/journalisation.md).
-- **Comportement HTTP** : routes, `robots.txt`, liste noire, en-tête `Server`. Voir [Serveur HTTP](../architecture/serveur-http-et-routage.md).
+- **Comportement HTTP** : routes, `robots.txt`, liste noire, en-tête `Server` (à l'exception du mode socket Unix, corrigé : voir ci-dessous). Voir [Serveur HTTP](../architecture/serveur-http-et-routage.md).
 - **Disposition de l'image** : binaire `/app`, configuration `/config`, logs `/logs`, port 8080, entrypoint `/app -c /config`. Voir [Image Docker](../operations/docker-et-publication.md).
 
 ## Ce qui a changé par rapport à l'upstream
@@ -40,7 +42,7 @@ Le fork vise un remplacement direct. Ces éléments doivent rester identiques, e
 - Dockerfile : image de build Go 1.27, image d'exécution `distroless/static-debian13`, compilation croisée native pour amd64 et arm64, argument de build `VERSION`.
 - Publication de l'image sur `ghcr.io/sirterrific/hellpot` par GitHub Actions ; suppression des workflows qui visaient le dépôt et le Docker Hub de l'upstream.
 - Nouveau paramètre optionnel `performance.max_conns_per_ip`.
-- Corrections : `robots.txt` n'utilise plus une chaîne de format non constante ; le pool de buffers inutilisé de `heffalump` est supprimé.
+- Corrections : le mode socket Unix utilise désormais le serveur configuré (en-tête `Server`, délais, GET seulement) au lieu d'un serveur fasthttp par défaut — seul changement de comportement volontaire, qui ne concerne que les utilisateurs de `use_unix_socket` ; `robots.txt` n'utilise plus une chaîne de format non constante ; le pool de buffers inutilisé de `heffalump` est supprimé.
 - Premier test unitaire, CI renforcée (`govulncheck`), documentation en anglais et en français.
 
 ## Différences de texte dans les logs
@@ -49,7 +51,7 @@ Deux messages de niveau debug ou trace changent, parce que leur texte vient de l
 
 ## Particularités de l'upstream conservées volontairement
 
-Ces comportements existaient déjà et n'ont pas été modifiés, pour ne pas changer la sortie ni la configuration existantes : les lignes debug et trace écrites même avec `debug = false`, `--help` non reconnu (seul `-h` l'est), l'aide qui annonce `HellPot.toml` alors que `--genconfig` écrit `config.toml`, l'absence de valeurs par défaut avec `-c`, et le mode socket Unix qui n'applique pas les réglages du serveur. Chacun est expliqué sur la page de son sujet.
+Ces comportements existaient déjà et n'ont pas été modifiés, pour ne pas changer la sortie ni la configuration existantes : les lignes debug et trace écrites même avec `debug = false`, `--help` non reconnu (seul `-h` l'est), l'aide qui annonce `HellPot.toml` alors que `--genconfig` écrit `config.toml`, et l'absence de valeurs par défaut avec `-c`. Chacun est expliqué sur la page de son sujet.
 
 ## Migrer d'une image construite localement vers GHCR
 

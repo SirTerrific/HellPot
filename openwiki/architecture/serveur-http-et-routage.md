@@ -3,21 +3,23 @@ type: architecture
 title: Serveur HTTP, routage et piège
 description: Comment HellPot configure son serveur fasthttp, décide quelles requêtes tombent dans le piège (catchall, paths, robots.txt, liste noire de user agents), identifie le client et écoute en TCP ou sur socket Unix.
 tags: [http, fasthttp, routage, robots-txt, socket-unix]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-c34322bad84de7b6c0a25de1
     resource: repo://cmd/HellPot/HellPot.go
   - id: openwiki-source-a9ca8194716b05765ae68c77
     resource: repo://internal/http/robots.go
+  - id: openwiki-source-5dcbf61c5847f06737a58a9d
+    resource: repo://internal/http/router_unix_test.go
   - id: openwiki-source-fd1f4e266c537f5376b692a9
     resource: repo://internal/http/router_unix.go
   - id: openwiki-source-313641b4fcdb85c8da9945ee
     resource: repo://internal/http/router_windows.go
   - id: openwiki-source-e689a4a46f2ebef989178800
     resource: repo://internal/http/router.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
+verified:
+  - by: openwiki/0.5.1
+    at: 2026-10-04T19:20:53.104Z
 ---
 
 # Serveur HTTP, routage et piège
@@ -46,7 +48,7 @@ Le handler `hellPot` enchaîne :
 3. **Log `NEW`** (niveau info) avec `USERAGENT`, `REMOTE_ADDR`, `URL`. Si `trace` est activé, le champ `caller` (le chemin) est ajouté.
 4. **Flux** : le corps de la réponse est un `SetBodyStreamWriter` qui rappelle `heffalump.WriteHell` jusqu'à la première erreur, additionne les octets écrits, puis journalise `FINISH` avec `BYTES` et `DURATION` (en millisecondes). Une erreur d'écriture est journalisée en trace sous `END_ON_ERR`. Voir [Journalisation](../operations/journalisation.md).
 
-## Paramètres du serveur fasthttp (mode TCP)
+## Paramètres du serveur fasthttp
 
 `getSrv` construit un `fasthttp.Server` avec : l'en-tête `Server` pris dans `deception.server_name`, un `ReadTimeout` de 5 s, un corps de requête limité à 1 Mio, `MaxRequestsPerConn` à 2, `DisableKeepalive`, `GetOnly`, `CloseOnShutdown`, `MaxConnsPerIP` pris dans `performance.max_conns_per_ip`, et `Concurrency` égale à `max_workers` seulement si `restrict_concurrency` est actif (sinon `fasthttp.DefaultConcurrency`). Le détail des effets sur la charge est dans [Limites de connexions et performance](../operations/limites-et-performance.md).
 
@@ -55,7 +57,7 @@ Le handler `hellPot` enchaîne :
 - Par défaut (et toujours sous Windows), le serveur écoute en TCP sur `bind_addr:bind_port` via `srv.ListenAndServe` et journalise `Listening and serving HTTP...` avec l'adresse dans `caller`.
 - Avec `use_unix_socket = true` (hors Windows), `unix_socket_path` ne doit pas être vide, sinon arrêt fatal. `listenOnUnixSocket` supprime d'abord un socket existant, crée le nouveau sous un `umask` restrictif (`0077`), puis applique `unix_socket_permissions` (lues en octal) avec `chmod`. Sous Windows la fonction existe mais renvoie une erreur.
 
-**Limite connue du mode socket Unix** : `listenOnUnixSocket` appelle `fasthttp.Serve(listener, r.Handler)`, c'est-à-dire un serveur par défaut, et non le `fasthttp.Server` construit par `getSrv`. Les réglages ci-dessus (`ReadTimeout`, limites de connexions, `GetOnly`, keep-alive désactivé, taille de corps) ne s'appliquent donc pas dans ce mode, et l'en-tête `Server` n'est pas celui de `deception.server_name`. Constaté lors des essais : la réponse porte `Server: fasthttp` en mode socket Unix, contre `Server: nginx` en TCP avec la configuration par défaut du conteneur. Ce comportement vient du projet d'origine et n'a pas été modifié dans ce fork.
+**Mode socket Unix** : `listenOnUnixSocket` reçoit le `fasthttp.Server` construit par `getSrv` et appelle `srv.Serve(listener)`. Les mêmes réglages qu'en TCP s'appliquent donc : en-tête `Server` issu de `deception.server_name`, `ReadTimeout`, taille de corps, `GetOnly`, keep-alive désactivé. Deux particularités : `MaxConnsPerIP` ne s'applique pas, parce que fasthttp ne compte que les connexions qui ont une adresse TCP, et `REMOTE_ADDR` vaut `0.0.0.0` (adresse de pair absente) tant que le reverse proxy n'envoie pas l'en-tête `real_ip_header`. Constaté lors des essais : `Server: nginx` et un `POST` refusé en `400`, comme en TCP. Historique : dans le projet d'origine, ce mode utilisait un serveur fasthttp par défaut (`Server: fasthttp`, aucun réglage appliqué) ; le fork l'a corrigé et un test (`router_unix_test.go`) vérifie l'en-tête `Server` et le refus des méthodes autres que GET sur le socket.
 
 ## Arrêt
 

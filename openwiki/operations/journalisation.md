@@ -3,9 +3,6 @@ type: operations
 title: Journalisation et format des logs
 description: Comment HellPot écrit ses logs (JSON zerolog dans un fichier ou sur stdout, console lisible), le nom du fichier, le catalogue des messages et de leurs champs, et la contrainte de ne pas changer ce format.
 tags: [logs, zerolog, json, observabilite, compatibilite]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-c34322bad84de7b6c0a25de1
     resource: repo://cmd/HellPot/HellPot.go
@@ -17,7 +14,10 @@ sources:
     resource: repo://internal/http/robots.go
   - id: openwiki-source-e689a4a46f2ebef989178800
     resource: repo://internal/http/router.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
+verified:
+  - by: openwiki/0.5.1
+    at: 2026-10-04T19:20:53.104Z
 ---
 
 # Journalisation et format des logs
@@ -79,4 +79,4 @@ Les options `debug` et `trace` ne font que **relever** le niveau global de zerol
 {"level":"info","USERAGENT":"Mozilla/5.0","REMOTE_ADDR":"1.2.3.4","URL":"/wp-login.php","BYTES":179549,"DURATION":15.914698,"time":"2026-10-03T22:00:36Z","message":"FINISH"}
 ```
 
-`REMOTE_ADDR` est la valeur de l'en-tête `real_ip_header` si elle est présente, sinon l'adresse du pair : voir [Serveur HTTP](../architecture/serveur-http-et-routage.md).
+`REMOTE_ADDR` est la valeur de l'en-tête `real_ip_header` si elle est présente, sinon l'adresse du pair : voir [Serveur HTTP](../architecture/serveur-http-et-routage.md). En mode socket Unix il n'y a pas d'adresse de pair : `REMOTE_ADDR` vaut alors `0.0.0.0` sauf si le reverse proxy envoie l'en-tête.

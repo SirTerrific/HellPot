@@ -5,7 +5,7 @@ description: Comment le package heffalump fabrique le flux de texte infini envoy
 tags: [heffalump, markov, streaming, tarpit]
 verified:
   - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
+    at: 2026-10-04T19:20:53.104Z
 sources:
   - id: openwiki-source-a97afb7f0fe6ba7d781c5467
     resource: repo://heffalump/heffalump_test.go

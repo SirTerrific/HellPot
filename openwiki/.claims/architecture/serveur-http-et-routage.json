@@ -1,14 +1,18 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a877e00c509a50a5bb5ff27001b76910a1dbec546c109dad993ecb88050683a6",
+  "pageVersion": "sha256:eb565c362ae945ba69bec3034392d0478b812fcdd1a21aef241bd74997875aa4",
   "claims": [
     {
       "id": "claim_8d07d0c1cbf648b09a24d14e1903a638",
       "statement": "Avec catchall actif, une seule route GET /{path:*} capture tous les chemins et aucun handler robots.txt n'est créé ; sans catchall, une route GET est enregistrée par entrée de paths, plus /robots.txt si makerobots est actif.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L125-L139",
-          "version": "repo-lines-v1:sha256:09cf921871a682fbfc87b0f68ac7b966207d96561018401359308586328b3bed:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwM2QwMjE1YTQ5MDg5OTdjNjZmNmYzYjA2Mzg1ZTk2ZDk2MjE4NTJkMTY5MDQ4NzA3MGM5MzQ1YTFiMGEyYjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxMGQ0YzE4NDA2MjhjOWRhN2IxMDJkNThjZTJiN2JjMzliY2UzZGQ5YzM0ODk4NDgwMzZiYTY4ZTIzOWE5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYzcwYWJlMzAxOWMwYmM1MjliYzAzZTU5NjRjY2E1YzQxZGRiN2RmMTA0NjQ0OTJlOWJlOGZiZTkwMWIyMWIifQ"
+          "resource": "repo://internal/http/router.go#L127-L129",
+          "version": "repo-lines-v1:sha256:340a091344205dc45684146d6b6265468d5c5964d89d2624a1cd7c3e258a9db7:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWVlMzFhNzk1YzE5NjdiYjFkNzk2YjEzZTVkNmFlZjFiOTVmYmNkNjI2NTVlZjM4YzY1Mjk3OWU3MmIzMDBiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWIxNDdhM2IwMmYyYTBhMjg3YzMyMmU5Yjk1YWNiYjFkZDY1YWYyOTE3YzE5MjJhOTUwMGUyNzQwYmQ0MTIzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWM0NzQ2OWRmZjdjY2M5NTNiZGZjNzc2NDY5ZDIzNDY3MDQwMzVhNDI4NjU2N2M0ZGIwMDBmMjNmNTNmMmNjMyJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L131-L139",
+          "version": "repo-lines-v1:sha256:8e28d45fb8704800961c0a049ac8e8ce92d4c73c0da5e67c6aa2a22edbe07b31:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZkNmYzODQyYjg5NDQwZmVhODJkNWYyYTVkN2VjMDdhMzMwMjIxMWIzMmI4MzM0YTYyNGY3NjQ3MDM5ZDE3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3NmExOWZlMDVhMzkwM2U4ZGE0ZDQ1YTJjNmJjOWI0YjQ2YWUwMWZhYzdkYzEwNGQxNjg1ZWUxZTQ3YTk5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTlhYWZlMWRmMjVmNDQ5NjQ1Y2RhN2Q1NjVkYWFkNTI1OGU4Zjk2YTg2ZWM2Y2E3ZTk2ODE1ZWM4ZDMyZGMxYyJ9"
         }
       ]
     },
@@ -27,8 +31,8 @@
       "statement": "REMOTE_ADDR journalisé est la valeur de l'en-tête configuré par real_ip_header s'il est présent et non vide, sinon l'adresse TCP du pair ; l'en-tête est cru tel quel, sans vérification de son émetteur.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L21-L27",
-          "version": "repo-lines-v1:sha256:32fd6ac1fdbaaae2ba146e542403205a8dc32cec6d1a19f6ccd094cfb577faf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE4ZjFmYmFhNTM4OGQyNTI0MjgxZDI2YWQ5YjQzMjE2MTkyN2ViM2I5MTA2NDU0ZjBmNzE1NDc5Y2UyNzUxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjUxMDUxM2UzOGE2YTc3YWFmYjAwNTViZDgzYzFjOTIxYzcxMTRiZjNiNWY1MTcxNGU0ODY1ZTFhNmM4MWU2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmEwMDdmODEzY2JkZmJkMzkxMjc2M2MxMGZjYjkwNmU3YmQxNTgzZWZlYTAzZmQ5OWM5OWZlOTI3ZWRiOGUxNiJ9"
+          "resource": "repo://internal/http/router.go#L22-L26",
+          "version": "repo-lines-v1:sha256:2095e23585bba2b1e504118814d357d56c562b7b9a38d9290794397edfbcfecc:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ3NTdjYTAyYWRlNmFlYjBkNTE3M2VmNGFjZTRiZDY3ZmJmNDU5NDMyZmYzYzIxMGFiYzMyMDRmODExMzk4YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgwMjc1MTQ0MThlMGUwMGI3Yjc2NTVjNTAzMGE5OTMxZjRiMmFjMTI5MmRiOGI2ZGRlNDdjZjJjNWI0NGM1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQzZDRhYmVhMDE3NDM4ZWYyOGRkOTUyNGQ1ZjUwMTRiNzc5MDY5N2ZhMmExYjdiMzU5OWUyNDExNGYyYWZlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTgyMWE4YWY2MzE4NTg5NWQxNWNiZjUxYzJkMzUzMWNiNmEwNzJjMmY1YWUxMjQ1MTAxNzVjYjVjNmFkMTQyMSJ9"
         }
       ]
     },
@@ -37,8 +41,8 @@
       "statement": "Un User-Agent contenant (strings.Contains, sensible à la casse) une chaîne de uagent_string_blacklist reçoit 404 Not found avec un log trace 'Ignoring useragent' et n'est pas piégé.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L42-L48",
-          "version": "repo-lines-v1:sha256:ca0cc60ad207ff09737ddda8550b45383bf726f7c1689eb15a3be2ac37208599:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzRjYzg0NWU3MzIwYzgzNjIwMDU4NmJiMDVhNWU4NjY1OGYyMDRlZDdiNWMxMDhkOWU1YmJkOGIwODc4ZjQ5NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmU0MjUxMzE2MDU1YjViODIxZGM3MDg1N2RiOWM5M2QyMzgxYjdlODUwNjQ4MDI0MjVlMDZlZTRhMzEwYWE4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI2ZDk0ZTJhZDJmMDFlZTM2MmNkOGY3YWEyN2M1OGQ4ZmEwZGZjODg1ZjhjZWJmMzA2N2M2YzMyZmEyNjFkYiJ9"
+          "resource": "repo://internal/http/router.go#L43-L47",
+          "version": "repo-lines-v1:sha256:7d4725b40b4e858dbf6c66a8c900f5d46853ca6cb79bcbf43cc06fe4fe7b8c7d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWUzOTg5NzgwZDA5MDY5ODRkYzMwMWE5NTBhNmRjM2RlOTBlN2IxZDI4N2FiNjNmNTk3YzY1MjJiNGIwNTg0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRlZmM0OTQxOGQyNmRjZjEyOWIyMmE2YWEyMTEwOGNlZWMzNzY3N2EzMmQwOGU5ZDVmZWUzNWRkYTY2YmI5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2M1ZGNlODcxMjQ0OTNmMjlhNDMzNzM1OTQ2ZmZlNDQyYWJhMzUxMTg5MTQyNzFhZGIwOTIzNjAxN2QzNjQ1YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWVlNDA5OWQ2ZDg5ZGJkZmJmNmRjZmQ5NjgxMjczNzVkMzY4ZmJjODIyZWZkOTBkODk2NGMxMjM5MmQyMjYyNyJ9"
         }
       ]
     },
@@ -47,18 +51,26 @@
       "statement": "Pour une requête piégée, le handler journalise NEW (info), ajoute le champ caller seulement si trace est actif, puis stream le corps en rappelant WriteHell jusqu'à la première erreur et journalise END_ON_ERR (trace) puis FINISH (info) avec BYTES et DURATION.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L50-L76",
-          "version": "repo-lines-v1:sha256:ff096929f9286d483f932bcebb4a1f8858e2b7da09ca87cfdbe87580957ab854:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MWQ3MGU5NzEwZjEyNWYyYmE3ODM4ODQwNTgwYzY4NjdiNzA5OWU3YTZhOTM3NDJmN2JlYjUwZmI3NzZiNjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzMzhjNzdlOTcwMTkzNTU2ZWI1MTQwZjA3NjgwZTFhYWZjNDM2YzllNmQ0NTA1ZWUyN2Y4NzJlMTkzMDcwNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3YjM5OGNmZWUxOWRhYjgxY2NiYWUwNjNmMDYxYWQ3NWQwOGUxZDNhYzU3NGQwZjA0ZTBmYWFlZmEwZjNlMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QifQ"
+          "resource": "repo://internal/http/router.go#L50-L54",
+          "version": "repo-lines-v1:sha256:f8d38ea04648531f228d68daae904ca135d21c807c717ed310539ab0e061e6a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEwN2I0ZDkxZWRiODI0MjgwZTk3YjIwZjljODkwMThhMWNlNDNjZjNmNjBhZTdiYWI3MjdmMGQzYjQ2ZTkyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDc1NzlkMTQ1OGUzYjIwOGQ5NGRmNGFiMDEyNDE3ZjFiNTY5YWFlZmJjMTM2MTJmMmJhYjg2NjExMmU0MTIxZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjJmMmZmNWZlZWM2MGY1ODdjOGZhZTRlODdmODA5YTY2MWNmZmVkNmI0N2FhZTVmNmQ2YTI2NTNhYTg5NTJlZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY4YzU1NmNmNzRmODg4MjMzNjE3NzhmZWY2Mjc1ZWEzMzE2Y2ZhYjQ3YWM3MTRlMzkxZDUzZTYwNWQ4NTczMCJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L56-L75",
+          "version": "repo-lines-v1:sha256:39b26e5e90f5fda1058baa42d9e9565ee9b2d4c7f5cb33221523be2d92ed005d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0Y2FhZGJiZGFjNTJmYmYyYmQ1YzQ4YzA5NjE4OTY3ODA0OTRkNzE2YmRlNDRhZWUzNWViZjg2MTAzNGQxMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYTlhYWYzYWU0Zjk1MjY1NDljNWM3ZDUzZjc0MTBjODIzOGFhZDc1YmNhMDEyZTdiYzc1ZGZmMjQ4NjU1NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzYmI1M2I1MjcyNmE0NGQ5MTA3NmE3NTlhYTI2NzIwMDY2MmMwZGE5NThkZmEzNjhjMzdmZWQxNmQxNzgzN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0OTc2OWQzNTMxNGMwNjlkZWQ3ZmUzYWI0NWU0OWNhOTM3NWU3NmIxZWEyNWNlY2FhNDNlODQ1MDcwNGM2ZWYifQ"
         }
       ]
     },
     {
       "id": "claim_cedb38a1e02444038f31dd4cc07eb2a5",
-      "statement": "En mode TCP le fasthttp.Server est construit avec l'en-tête Server de deception.server_name, ReadTimeout 5 s, corps limité à 1 Mio, MaxRequestsPerConn 2, DisableKeepalive, GetOnly, MaxConnsPerIP issu de la configuration, et une Concurrency égale à max_workers seulement si restrict_concurrency est actif (sinon fasthttp.DefaultConcurrency).",
+      "statement": "Le fasthttp.Server construit par getSrv (utilisé en TCP comme en socket Unix) a l'en-tête Server de deception.server_name, ReadTimeout 5 s, corps limité à 1 Mio, MaxRequestsPerConn 2, DisableKeepalive, GetOnly, MaxConnsPerIP issu de la configuration, et une Concurrency égale à max_workers seulement si restrict_concurrency est actif (sinon fasthttp.DefaultConcurrency).",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L80-L118",
-          "version": "repo-lines-v1:sha256:32671a1a70ab6bf29b10832c8c1599c13ae4205fd94fe498acb7a1c4bba69c68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MDcxYTJlZDBhYmJkNWU5YTI4ZjUwYWI0YmFiMTFkMzI5ZjYzMDAxYTY0MzRiYzhjN2M0ODZiMzg1Mzk3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4Yjk1ZTI3MzJmNGY5MjAwOTFjZTYzOTkwMzllZmE3OTNmMjE0MTBjMWE4MDU1OTRkZmVjZjI2OGI4OTBjYTIifQ"
+          "resource": "repo://internal/http/router.go#L81-L83",
+          "version": "repo-lines-v1:sha256:0fe965c4398fcb64aa1527f26e5cbb1b37ae1b033934ed31b10840fcac9ed711:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUzY2UxMmNhNTQwY2YwOTM5MTdjOWZjNTQ4NjhlZTgxZjhjZTUxNjBlNDYzZDYyNDJmZTg0NTJkNjAzMDNkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdjM2EzZDQ5NDIzOTdhYzc2NjIxZjkwNTZkZGUxMGY4MjM4YzE0ZDE0MmRiOTRkNjljYjM3Y2NjMjNkZTI0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjgxMGMxZmQzNzQ3NDE1ZmM5ZTVmNWVhNDEyYjQzMzQzMDQ4Zjk2NDk2MjYyMTVhODNiNTNhNGMyOWZhYTdlYSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L87-L117",
+          "version": "repo-lines-v1:sha256:5323ec2374c4f38c90520f61e5ac78275b00a73d085908d37cfafbab4ff02922:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNDVmZmNiNWYxMGU1ODZlZGRlMDkwMjkzMTQwZTZjOTQ4YzMyNTllNTQ2ZDVkODQ2YWIxMjNkNjFjNDY0ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4MTBjMWZkMzc0NzQxNWZjOWU1ZjVlYTQxMmI0MzM0MzA0OGY5NjQ5NjI2MjE1YTgzYjUzYTRjMjlmYWE3ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMTdhOTcyNWRjOTllZTNmZmI4NzE3MTAxN2EwNGEzMTJmNmIyY2UxYjVlMGVkZjNhYmE1MTZiYzA5NTk1YzUifQ"
         }
       ]
     },
@@ -67,8 +79,12 @@
       "statement": "Le serveur écoute en TCP sur bind_addr:bind_port par défaut et toujours sous Windows ; avec use_unix_socket (hors Windows) un unix_socket_path vide est fatal.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L143-L154",
-          "version": "repo-lines-v1:sha256:a0560a5c1b9c378a78986c0ec41e1b7cb8705b2dfd9fe92cb0b87cbc898d8891:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOTg3ZjliNzBmYmM0NDY2ZTNjOTkwOWY5MGY2NDY4YzA0NDZkZjQ1NjRlZmNkYmMwOWNiYWFlMzM3NTM4NDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1Mzc5YzMyNWZhNmUwNjkwODIwMjEwOGMwYTYxN2VlMzUzZjMxODNmNmM4MWM3OWUzYzM1M2I0ZjAwYjA0ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYzcwYWJlMzAxOWMwYmM1MjliYzAzZTU5NjRjY2E1YzQxZGRiN2RmMTA0NjQ0OTJlOWJlOGZiZTkwMWIyMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+          "resource": "repo://internal/http/router.go#L144-L147",
+          "version": "repo-lines-v1:sha256:6074ea3ce31141b9e118018ef990c0afca911b7456ac017d71dc19973694b7ef:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg0NjU5ZjBmZTFiZWUzNWRkMGU0ZDk0ZjNlNDhmMGM5YmM5MTVlYTA3OTM1NDllNGZjYTkyYTMzZWYzYWJmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDA1YjIzODcwMjU0NDkxZmUzZDA0OGYwNWE0ZGExNmFlZmY0MTU4NGJjMGQ2N2VhYzZiNzRjNzVmY2EwZmM1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDZhYzRmMWYwZjk3ZWFkNGFiZmFkNmExNGUzNzM0NDI4OWU3ZGU1ZGMwY2JkMjJhM2U3MTg2NmY1OTk5MjY1ZSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L149-L154",
+          "version": "repo-lines-v1:sha256:3cedddb226355cd0d1b9cdc550fe1de4013bce6c95005a57f116a7740be11e75:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTNjNWQ2ZjM1ZGVhOTJkMjEwOGVhZTIwMWJlNGQzZTA0ZDdjNDc2MzE3ZDgzZWM4YWE2M2IyZGI3ZDc4NGNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY3Y2Y4MWQyZGQ4MzcxNGZmNDAwMjFhYjA2N2ZhMTBjY2IwZDM3ZTFhMWE4YjNjYjhkOWIyYWFmNjJmMWY3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWExNGI3YjNjMTVhN2FhYTY3OWI5MzViMDU1YjA5Njc0MjBmMzAxZjY1ZjI5MGE1YjVlYzA3YTBhMjZhMTcwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
         }
       ]
     },
@@ -77,26 +93,34 @@
       "statement": "listenOnUnixSocket supprime un socket existant, le crée sous un umask 0077, puis applique unix_socket_permissions avec chmod ; sous Windows la fonction renvoie une erreur.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router_unix.go#L16-L42",
-          "version": "repo-lines-v1:sha256:ffb8e009716dc2e428212c0afed1db27e593bb89f9613e97600b9ba3c7e92e35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ODQ0N2YzMDEyNjZjNjliOWFkYjNjYmI3ZjhjMjIzNDM5ZjkyMzBhOTYxYzNkMWYwNThjYzFhMGRmZDU3YWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyM2FjZDliYzI5OWQyMzNiYjhkNmJhZWIyMTA3MjlhZDgzYTFlOTgxMDZjNzVmMDllZmRiYWUyYjBjZDEwYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://internal/http/router_unix.go#L19-L38",
+          "version": "repo-lines-v1:sha256:778b791fa4db7be4df699c7cf26a2c70455b420180ea7f4ff871edf653928dbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmN2JiMjE4OTNkNzI2MmVjZGQyZTc2MzBjZjEyOTI3NTk1Zjc1MzI0NzkyZmIwOTBiYWE1ZWU5ZmJkYjc5NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2OWM4Y2I5NmQ2ODBlMDhiN2ZiMTY0NjZiOWE0ZDIwMDk0NDk5Y2Q4Njg0Yzk3MTAzN2M3OTI1OTUxYzNjYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1ZWI1NTgyNzBjY2UxNDI3OGVlNjM3NTU5ZWY4ZDI2OTZjZDNhMTc2ZDQwNzcyYWM1NDFmZTgwMmM4Y2I0MDIifQ"
         },
         {
-          "resource": "repo://internal/http/router_windows.go#L12-L14",
-          "version": "repo-lines-v1:sha256:e8251bcb6435cc02d43cf220ad7f98d95afd7deaac02bc2abf0df03a95fc9ece:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ4NDQ3ZjMwMTI2NmM2OWI5YWRiM2NiYjdmOGMyMjM0MzlmOTIzMGE5NjFjM2QxZjA1OGNjMWEwZGZkNTdhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIxNDIyOTA1NDIzZWRlZjM2YzczYjY4NGNmYjFkZGI5MjAwY2Y0YzNhZGIzZjgzNzhhYjNmZGYwMTg4MmRlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+          "resource": "repo://internal/http/router_windows.go#L13-L13",
+          "version": "repo-lines-v1:sha256:97d4eb5292c8c60be109b642497849e92bde67875994486e4f249083c42a6a9d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdkNGViNTI5MmM4YzYwYmUxMDliNjQyNDk3ODQ5ZTkyYmRlNjc4NzU5OTQ0ODZlNGYyNDkwODNjNDJhNmE5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdkNGViNTI5MmM4YzYwYmUxMDliNjQyNDk3ODQ5ZTkyYmRlNjc4NzU5OTQ0ODZlNGYyNDkwODNjNDJhNmE5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjgxNjdkZTI1OTQ3ZjQxZDllMWJhNTlmYTcxMWU3ZjM0MjY5OGFlMzFlNDZjYzdmNmQ1MDU4OTQyNDIwNTNiZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
         }
       ]
     },
     {
       "id": "claim_cdbb1000d3a8454fbd65ad420712452e",
-      "statement": "En mode socket Unix, le serveur est lancé par fasthttp.Serve(listener, r.Handler), un serveur par défaut distinct de celui de getSrv : les réglages du mode TCP (timeouts, limites de connexions, GetOnly, keep-alive, taille de corps) ne s'appliquent pas et l'en-tête Server n'est pas deception.server_name (constaté : Server: fasthttp).",
+      "statement": "En mode socket Unix, listenOnUnixSocket reçoit le fasthttp.Server construit par getSrv et appelle srv.Serve : l'en-tête Server, ReadTimeout, GetOnly et les autres réglages s'appliquent comme en TCP (constaté : Server: nginx, POST refusé) ; MaxConnsPerIP ne s'applique pas car fasthttp ignore les connexions sans adresse TCP.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L80-L118",
-          "version": "repo-lines-v1:sha256:32671a1a70ab6bf29b10832c8c1599c13ae4205fd94fe498acb7a1c4bba69c68:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MDcxYTJlZDBhYmJkNWU5YTI4ZjUwYWI0YmFiMTFkMzI5ZjYzMDAxYTY0MzRiYzhjN2M0ODZiMzg1Mzk3YTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4Yjk1ZTI3MzJmNGY5MjAwOTFjZTYzOTkwMzllZmE3OTNmMjE0MTBjMWE4MDU1OTRkZmVjZjI2OGI4OTBjYTIifQ"
+          "resource": "repo://internal/http/router.go#L141-L141",
+          "version": "repo-lines-v1:sha256:e4c129871f6abe119bba6b2757f02eae2c060a239b7e8aa57469c287851736df:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRjMTI5ODcxZjZhYmUxMTliYmE2YjI3NTdmMDJlYWUyYzA2MGEyMzliN2U4YWE1NzQ2OWMyODc4NTE3MzZkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRjMTI5ODcxZjZhYmUxMTliYmE2YjI3NTdmMDJlYWUyYzA2MGEyMzliN2U4YWE1NzQ2OWMyODc4NTE3MzZkZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDFmOTRlZmMyZjZjNjBlYTljNTlmZDc5Zjk3ZDMxN2QzMTk4MGUyNzc1YzliMTQxNWIxMDc0ZDkxOGUxNWE2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEwNWQ3MGUwYmQxMGVkNzUzNDZiYTkwYmJiNmE3ZDlkZGVlZjg3ZDY1Y2Y3NTE5YWY0MWRlNTY0OThlNzJjYiJ9"
         },
         {
-          "resource": "repo://internal/http/router_unix.go#L41-L41",
-          "version": "repo-lines-v1:sha256:509eecc0353569c7be52d2d80b235cada7c39d69792518b3007e1beea8c515ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5ZWVjYzAzNTM1NjljN2JlNTJkMmQ4MGIyMzVjYWRhN2MzOWQ2OTc5MjUxOGIzMDA3ZTFiZWVhOGM1MTViYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5ZWVjYzAzNTM1NjljN2JlNTJkMmQ4MGIyMzVjYWRhN2MzOWQ2OTc5MjUxOGIzMDA3ZTFiZWVhOGM1MTViYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjRiYzFmMzIyMzc4MjJhY2IxODQ5ZDRjYTg0NDYyODY4OGZmOTA5ZDg4MTUzNTU2MTgwN2Y4NGI1OTI3MTQ0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
+          "resource": "repo://internal/http/router.go#L153-L154",
+          "version": "repo-lines-v1:sha256:0d9693ab915b718329702f9eae82e0023af12cf9d84094cbddb6ceb93eaa2016:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWU5OTM3ZTU5MDQ0ZWM4NzU4NThkNTYzNzhjN2EyODc5Njc0ZjUzYjk1ZTJiYWYzMTVmYmQwMTlmMjBkYzNiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY3Y2Y4MWQyZGQ4MzcxNGZmNDAwMjFhYjA2N2ZhMTBjY2IwZDM3ZTFhMWE4YjNjYjhkOWIyYWFmNjJmMWY3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTI5NzAyMWI5NGVjMTljNDgwNWI0OWM4NmQ5OTUxMWY1ZDk1ZDVkYWVkY2FlZGFlMTY0ZWRhNzIxNGMxZGIzMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router_unix.go#L15-L15",
+          "version": "repo-lines-v1:sha256:a5b2ba5cd87111716471a188a5b7170a3049aedfc463dae64c25316f6039a94a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTViMmJhNWNkODcxMTE3MTY0NzFhMTg4YTViNzE3MGEzMDQ5YWVkZmM0NjNkYWU2NGMyNTMxNmY2MDM5YTk0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTViMmJhNWNkODcxMTE3MTY0NzFhMTg4YTViNzE3MGEzMDQ5YWVkZmM0NjNkYWU2NGMyNTMxNmY2MDM5YTk0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDU1NjM4YjM4NjQ5YjlkYmU2MTA1YWVjZjlkZDVlOTAwYjZjNmRkYjk5YTZlMzJjNTg4NGNkZDU0MDI2NDhmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTY5YzhjYjk2ZDY4MGUwOGI3ZmIxNjQ2NmI5YTRkMjAwOTQ0OTljZDg2ODRjOTcxMDM3Yzc5MjU5NTFjM2NjMSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router_unix.go#L40-L40",
+          "version": "repo-lines-v1:sha256:1897aa4b10b5124cacd7178b8a85b4f5732177a2f2edec3dd39ceb0040a48e6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg2YzU5OWRjMjQzMWRjZTI0ZjcwNmNhNWNiYTFmMjgxZjU5NTk1NzFhZmEwNGMyMWI2ZjU1ZTkyYzUyMGQ4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
         }
       ]
     },
@@ -109,10 +133,28 @@
           "version": "repo-lines-v1:sha256:27c5704c6afff526983fae055de7a7c1fb989da3a0ea1ae484fc4a7168c98e70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZDM2NjZiMzgwNWQ1YmU1NDFkYWU1ZDk2ZTFhOTRjNjkzODM0OWViNTQxMGRjM2M0M2RiZjkyZjNjMTZkZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_a4039d69058f49188fc855b877872b27",
+      "statement": "Un test dédi vérifie que le socket Unix répond avec l'en-tête Server configuré et refuse un POST grâce à GetOnly.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router_unix_test.go#L20-L33",
+          "version": "repo-lines-v1:sha256:77eacc0e43cdaf4bd8b19e53f9b1de7990f9199f7b9d429dd99f9989a206789e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiNDc1OTZkNGFlZmY2MzQ0OTY0NjJjZjcwODhjZDc2ZDBkOGFiYWU2ZWNhZWEzMDEwYWE3MTQyZDk0MzA2YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjODg5ZTUzYzQ3YzY1M2M5NGZiMzI5MGNkODk0YmQwMGQxNGY0NDY3ZGVjYjNlOTE3YTNiMzJjODU3OGEyMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxM2FlNjI5YTlkNjJmNDU3MzZiOTIxYTkzZDU5MzZmNTQ0NGRmYjE3NzVmMDg2ZWI4Y2Y3ZWI5YmQwZjcxMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyNzMxMTExYzBjOTUwOTA4NjAwNWIxMjhkOGMzZDY0OGZkOGJlZTRhMzRhNzRiNmU3ZTM0ZTE0ZTIwNDVlMmMifQ"
+        },
+        {
+          "resource": "repo://internal/http/router_unix_test.go#L59-L61",
+          "version": "repo-lines-v1:sha256:12408885fe629f95088cac1f35a44f41854424a02fae5e95224e4a808e0c640a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5Zjg4Y2MzMzU1MjllNjc5MTk1M2YyZjFjZGViNDdiZDg4MTIyMjZjMTQxMGYzMzNlMjVlODU2ZTNiNGQ4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZhODYxY2I2NTRkOTFiN2U2Y2Q4ZTgzZWZiZjk4YzhhNmY3NjAyOTAwODM1OTkyNTQxODk4ODdhOTIwYjU1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTAwMGNlODFmMGUyM2I4OTg4ZGQ2MTkyN2VmNDliOWQzNzU0M2I0OGFlZWFhMmU2OTIwMjVlZDk5ZmZhZGJjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhlMDViYzMwZGU3YzQ4OGU5ZDQ0MzhiOTEyNjUxZTljYzEwYTE2ZjU2ODQwOWEyMmMwNGRjMzI2NDkwYzg4ZCJ9"
+        },
+        {
+          "resource": "repo://internal/http/router_unix_test.go#L77-L80",
+          "version": "repo-lines-v1:sha256:dbec39b9801d5bcdc17e31efc7a0eda830857df267218b33242863add1b0189f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNkYTM1YTgxNjgyNzE1Mjk3NWU1ZTEwZmYyMjdmNTgyYzgzNTFhYjkyZDI3YjI5MWQyOWY2NTFhMDNmNzI3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTAwMGNlODFmMGUyM2I4OTg4ZGQ2MTkyN2VmNDliOWQzNzU0M2I0OGFlZWFhMmU2OTIwMjVlZDk5ZmZhZGJjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:02:24.687Z"
+    "at": "2026-10-04T19:20:53.104Z"
   }
 }

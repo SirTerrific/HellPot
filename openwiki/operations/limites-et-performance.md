@@ -3,9 +3,6 @@ type: operations
 title: Limites de connexions et performance
 description: Les réglages qui bornent la charge de HellPot (connexions par IP, concurrence, timeouts), l'effet d'un reverse proxy sur la limite par IP, ce qui a été mesuré, et pourquoi le pool de buffers a été retiré.
 tags: [performance, limites, maxconnsperip, concurrence, reverse-proxy]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-6225717d77c0df8b3a43d4df
     resource: repo://heffalump/heffalump.go
@@ -19,7 +16,10 @@ sources:
     resource: repo://internal/http/router_unix.go
   - id: openwiki-source-e689a4a46f2ebef989178800
     resource: repo://internal/http/router.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
+verified:
+  - by: openwiki/0.5.1
+    at: 2026-10-04T19:20:53.104Z
 ---
 
 # Limites de connexions et performance
@@ -28,7 +28,7 @@ HellPot est un tarpit : chaque bot piégé garde une **connexion ouverte indéfi
 
 ## Réglages
 
-Tous sont posés par `getSrv` dans [router.go](../../internal/http/router.go) pour le mode TCP.
+Tous sont posés par `getSrv` dans [router.go](../../internal/http/router.go) et valent aussi bien en TCP qu'en socket Unix, sauf `max_conns_per_ip` (voir plus bas).
 
 | Réglage | Valeur | Effet |
 | --- | --- | --- |
@@ -46,7 +46,7 @@ Aucun `WriteTimeout` ni `IdleTimeout` n'est défini : un client qui lit très le
 
 `MaxConnsPerIP` compte les connexions par **adresse TCP du pair**, pas par la valeur de l'en-tête `real_ip_header`. Derrière un reverse proxy (nginx, Nginx Proxy Manager...), tous les bots arrivent avec l'IP du proxy : la limite par défaut de 10 plafonne alors **toute l'instance** à 10 bots piégés en même temps, et les suivants reçoivent 429 au lieu d'être piégés. Chaque refus laisse une ligne de niveau debug `The number of connections from <ip> exceeds MaxConnsPerIP=<n>` : compter ces lignes dans les logs indique si la limite était atteinte. Voir [Journalisation](journalisation.md).
 
-Jusqu'à ce fork la valeur était codée en dur à 10. Elle est maintenant configurable (`performance.max_conns_per_ip`, variable `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP`), avec la même valeur par défaut, y compris avec `-c` quand la clé est absente. Une valeur de quelques dizaines à centaines convient derrière un proxy ; `0` supprime toute limite. En mode socket Unix la limite ne s'applique pas du tout : voir [Serveur HTTP](../architecture/serveur-http-et-routage.md).
+Jusqu'à ce fork la valeur était codée en dur à 10. Elle est maintenant configurable (`performance.max_conns_per_ip`, variable `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP`), avec la même valeur par défaut, y compris avec `-c` quand la clé est absente. Une valeur de quelques dizaines à centaines convient derrière un proxy ; `0` supprime toute limite. En mode socket Unix la limite par IP ne s'applique pas : fasthttp ne compte que les connexions qui ont une adresse TCP, et un socket Unix n'en a pas. Les autres réglages (délais, taille de requête, GET seulement) s'y appliquent, voir [Serveur HTTP](../architecture/serveur-http-et-routage.md).
 
 ## Ce qui a été mesuré
 
