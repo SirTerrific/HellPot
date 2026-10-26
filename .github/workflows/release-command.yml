@@ -3,7 +3,6 @@ name: Build and Release
 on:
   release:
     types: [created]
-  workflow_dispatch:
 
 permissions:
   contents: write # upload release assets
@@ -22,7 +21,7 @@ jobs:
             goos: windows
     steps:
       - uses: actions/checkout@v5
-      - uses: wangyoucao577/go-release-action@v1.53
+      - uses: wangyoucao577/go-release-action@481a2c1a0f1be199722e3e9b74d7199acafc30a8 # v1.53
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}

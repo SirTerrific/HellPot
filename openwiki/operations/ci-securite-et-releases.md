@@ -34,7 +34,7 @@ Trois workflows vivent dans `.github/workflows/`, plus la configuration Dependab
 | --- | --- | --- | --- |
 | [go.yml](../../.github/workflows/go.yml) | Vibe Check | tout push, et pull request vers `main` | Contrôles qualité et sécurité |
 | [docker.yml](../../.github/workflows/docker.yml) | Docker (GHCR) | push sur `main`, tag `v*`, pull request vers `main`, manuel, et chaque lundi à 06:00 UTC | Construit et publie l'image : voir [Image Docker](docker-et-publication.md) |
-| [release-command.yml](../../.github/workflows/release-command.yml) | Build and Release | création d'une release GitHub, ou manuel | Binaires multi-plateformes |
+| [release-command.yml](../../.github/workflows/release-command.yml) | Build and Release | création d'une release GitHub | Binaires multi-plateformes |
 
 ## Contrôles du workflow « Vibe Check »
 
