@@ -17,7 +17,7 @@ func robotsTXT(ctx *fasthttp.RequestCtx) {
 	paths := &strings.Builder{}
 	paths.WriteString("User-agent: *\r\n")
 	for _, p := range config.Paths {
-		paths.WriteString("Disallow: ")
+		paths.WriteString("Disallow: /")
 		paths.WriteString(p)
 		paths.WriteString("\r\n")
 	}

@@ -86,7 +86,7 @@
     },
     {
       "id": "claim_b2f777c2f65c419bba848a585d4a7183",
-      "statement": "Le pool de buffers a été supprimé de Heffalump ; le paramètre buffsize de NewHeffalump est conservé pour compatibilité mais ignoré.",
+      "statement": "Le pool de buffers a été supprimé de Heffalump, ainsi que le paramètre buffsize de NewHeffalump.",
       "evidence": [
         {
           "resource": "repo://heffalump/heffalump.go#L19-L29",

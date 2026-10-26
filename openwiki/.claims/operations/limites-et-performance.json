@@ -4,7 +4,7 @@
   "claims": [
     {
       "id": "claim_7876a4db012f4a228496adb38cf2f6d0",
-      "statement": "Le serveur fixe ReadTimeout à 5 s, MaxRequestBodySize à 1 Mio, MaxRequestsPerConn à 2, DisableKeepalive et GetOnly, et définit MaxConnsPerIP depuis la configuration ; aucun WriteTimeout ni IdleTimeout n'est défini.",
+      "statement": "Le serveur fixe ReadTimeout à 5 s, MaxRequestBodySize à 1 Mio, DisableKeepalive et GetOnly, et définit MaxConnsPerIP depuis la configuration ; aucun WriteTimeout ni IdleTimeout n'est défini.",
       "evidence": [
         {
           "resource": "repo://internal/http/router.go#L100-L117",
@@ -64,7 +64,7 @@
     },
     {
       "id": "claim_0e450fa784b5474884a939e101c16e4d",
-      "statement": "Le pool de buffers de heffalump a été supprimé car il n'était pas utilisé (bufio.Writer implémente io.ReaderFrom) ; le paramètre buffsize est conservé mais ignoré.",
+      "statement": "Le pool de buffers de heffalump a été supprimé car il n'était pas utilisé (bufio.Writer implémente io.ReaderFrom), ainsi que le paramètre buffsize de NewHeffalump.",
       "evidence": [
         {
           "resource": "repo://heffalump/heffalump.go#L24-L29",

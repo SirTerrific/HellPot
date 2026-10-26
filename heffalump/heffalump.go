@@ -22,9 +22,7 @@ type Heffalump struct {
 }
 
 // NewHeffalump instantiates a new Heffalump for markov generation and io operations.
-// buffsize is kept for API compatibility but unused: WriteHell writes to a *bufio.Writer,
-// which implements io.ReaderFrom, so io.CopyBuffer never touched the pooled buffer.
-func NewHeffalump(mm MarkovMap, buffsize int) *Heffalump {
+func NewHeffalump(mm MarkovMap) *Heffalump {
 	return &Heffalump{mm: mm}
 }
 

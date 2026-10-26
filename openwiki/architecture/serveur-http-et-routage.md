@@ -37,7 +37,7 @@ Seules des routes `GET` existent. Par ailleurs le serveur est configuré avec `G
 
 ## `robots.txt`
 
-Le handler génère le fichier à chaque requête : `User-agent: *` puis une ligne `Disallow: <chemin>` par entrée de `paths`, avec des fins de ligne `\r\n`. Il journalise `SERVE_ROBOTS` au niveau debug. L'intérêt est de rendre les chemins du piège « interdits » : seuls les robots qui ignorent le fichier y tombent. Le contenu est écrit avec `fmt.Fprint` et non `Fprintf`, de sorte qu'un `%` dans un chemin configuré ne corrompt pas la sortie.
+Le handler génère le fichier à chaque requête : `User-agent: *` puis une ligne `Disallow: /<chemin>` par entrée de `paths` (le `/` initial est exigé par la RFC 9309 et correspond aux routes du routeur), avec des fins de ligne `\r\n`. Il journalise `SERVE_ROBOTS` au niveau debug. L'intérêt est de rendre les chemins du piège « interdits » : seuls les robots qui ignorent le fichier y tombent. Le contenu est écrit avec `fmt.Fprint` et non `Fprintf`, de sorte qu'un `%` dans un chemin configuré ne corrompt pas la sortie.
 
 ## Traitement d'une requête piégée
 
@@ -50,7 +50,7 @@ Le handler `hellPot` enchaîne :
 
 ## Paramètres du serveur fasthttp
 
-`getSrv` construit un `fasthttp.Server` avec : l'en-tête `Server` pris dans `deception.server_name`, un `ReadTimeout` de 5 s, un corps de requête limité à 1 Mio, `MaxRequestsPerConn` à 2, `DisableKeepalive`, `GetOnly`, `CloseOnShutdown`, `MaxConnsPerIP` pris dans `performance.max_conns_per_ip`, et `Concurrency` égale à `max_workers` seulement si `restrict_concurrency` est actif (sinon `fasthttp.DefaultConcurrency`). Le détail des effets sur la charge est dans [Limites de connexions et performance](../operations/limites-et-performance.md).
+`getSrv` construit un `fasthttp.Server` avec : l'en-tête `Server` pris dans `deception.server_name`, un `ReadTimeout` de 5 s, un corps de requête limité à 1 Mio, `DisableKeepalive` (une seule requête par connexion), `GetOnly`, `CloseOnShutdown`, `MaxConnsPerIP` pris dans `performance.max_conns_per_ip`, et `Concurrency` égale à `max_workers` seulement si `restrict_concurrency` est actif (sinon `fasthttp.DefaultConcurrency`). Le détail des effets sur la charge est dans [Limites de connexions et performance](../operations/limites-et-performance.md).
 
 ## Écoute : TCP ou socket Unix
 

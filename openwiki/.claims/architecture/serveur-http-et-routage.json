@@ -62,7 +62,7 @@
     },
     {
       "id": "claim_cedb38a1e02444038f31dd4cc07eb2a5",
-      "statement": "Le fasthttp.Server construit par getSrv (utilisé en TCP comme en socket Unix) a l'en-tête Server de deception.server_name, ReadTimeout 5 s, corps limité à 1 Mio, MaxRequestsPerConn 2, DisableKeepalive, GetOnly, MaxConnsPerIP issu de la configuration, et une Concurrency égale à max_workers seulement si restrict_concurrency est actif (sinon fasthttp.DefaultConcurrency).",
+      "statement": "Le fasthttp.Server construit par getSrv (utilisé en TCP comme en socket Unix) a l'en-tête Server de deception.server_name, ReadTimeout 5 s, corps limité à 1 Mio, DisableKeepalive, GetOnly, MaxConnsPerIP issu de la configuration, et une Concurrency égale à max_workers seulement si restrict_concurrency est actif (sinon fasthttp.DefaultConcurrency).",
       "evidence": [
         {
           "resource": "repo://internal/http/router.go#L81-L83",

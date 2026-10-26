@@ -36,7 +36,6 @@ Tous sont posés par `getSrv` dans [router.go](../../internal/http/router.go) et
 | `performance.restrict_concurrency` et `max_workers` | inactif ; 256 | `max_workers` ne s'applique que si `restrict_concurrency` est actif ; sinon la concurrence est `fasthttp.DefaultConcurrency` |
 | `ReadTimeout` | 5 s | Borne la lecture de la requête (pas l'écriture de la réponse) |
 | `MaxRequestBodySize` | 1 Mio | Plafond du corps de requête |
-| `MaxRequestsPerConn` | 2 | Requêtes servies par connexion |
 | `DisableKeepalive` | actif | Pas de connexion persistante : le flux infini joue ce rôle |
 | `GetOnly` | actif | Seul `GET` est accepté |
 
@@ -57,4 +56,4 @@ Mesures indicatives, faites sur Docker Desktop (Windows) avec des clients `curl`
 
 ## Pourquoi le pool de buffers a disparu
 
-L'ancien code gardait un `sync.Pool` de buffers de 100 Kio destinés à `io.CopyBuffer`. Il n'était jamais utilisé : la destination est un `*bufio.Writer`, qui implémente `io.ReaderFrom`, donc la copie ne passait pas par le buffer fourni. Le pool est supprimé ; le paramètre `buffsize` de `NewHeffalump` est conservé mais ignoré. La mesure ci-dessus a été faite avec et sans pool : aucune différence de mémoire (environ 36 Mio de RSS dans les deux cas). C'est un nettoyage, pas une optimisation.
+L'ancien code gardait un `sync.Pool` de buffers de 100 Kio destinés à `io.CopyBuffer`. Il n'était jamais utilisé : la destination est un `*bufio.Writer`, qui implémente `io.ReaderFrom`, donc la copie ne passait pas par le buffer fourni. Le pool est supprimé, ainsi que le paramètre `buffsize` de `NewHeffalump`. La mesure ci-dessus a été faite avec et sans pool : aucune différence de mémoire (environ 36 Mio de RSS dans les deux cas). C'est un nettoyage, pas une optimisation.

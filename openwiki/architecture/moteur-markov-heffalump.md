@@ -51,7 +51,7 @@ Une panique survenue pendant l'écriture est interceptée par un `recover` : ell
 
 ## Pas de pool de buffers
 
-Une version antérieure gardait un `sync.Pool` de buffers de 100 Kio passé à `io.CopyBuffer`. Il n'était jamais utilisé : `*bufio.Writer` implémente `io.ReaderFrom`, donc la copie passait par son propre mécanisme. Le pool a été supprimé et le paramètre `buffsize` de `NewHeffalump` est conservé pour compatibilité de signature mais ignoré. Aucune différence de sortie ni de logs. Voir [Limites de connexions et performance](../operations/limites-et-performance.md).
+Une version antérieure gardait un `sync.Pool` de buffers de 100 Kio passé à `io.CopyBuffer`. Il n'était jamais utilisé : `*bufio.Writer` implémente `io.ReaderFrom`, donc la copie passait par son propre mécanisme. Le pool a été supprimé, puis le paramètre `buffsize` de `NewHeffalump`, devenu inutile. Aucune différence de sortie ni de logs. Voir [Limites de connexions et performance](../operations/limites-et-performance.md).
 
 ## Vérification
 
