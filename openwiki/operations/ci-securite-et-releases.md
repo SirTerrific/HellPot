@@ -14,14 +14,16 @@ sources:
     resource: repo://.github/workflows/release-command.yml
   - id: openwiki-source-c34322bad84de7b6c0a25de1
     resource: repo://cmd/HellPot/HellPot.go
+  - id: openwiki-source-f4868503981e3b707b159bb2
+    resource: repo://internal/extra/banner.go
   - id: openwiki-source-e689a4a46f2ebef989178800
     resource: repo://internal/http/router.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "claude-code", at: "2026-10-04T02:16:41.150Z" }
+generated: { by: "claude-code", at: "2026-10-27T17:47:03.026Z" }
 verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T19:20:53.104Z
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # CI, sécurité et releases
@@ -34,11 +36,13 @@ Trois workflows vivent dans `.github/workflows/`, plus la configuration Dependab
 | --- | --- | --- | --- |
 | [go.yml](../../.github/workflows/go.yml) | Vibe Check | tout push, et pull request vers `main` | Contrôles qualité et sécurité |
 | [docker.yml](../../.github/workflows/docker.yml) | Docker (GHCR) | push sur `main`, tag `v*`, pull request vers `main`, manuel, et chaque lundi à 06:00 UTC | Construit et publie l'image : voir [Image Docker](docker-et-publication.md) |
-| [release-command.yml](../../.github/workflows/release-command.yml) | Build and Release | création d'une release GitHub | Binaires multi-plateformes |
+| [release-command.yml](../../.github/workflows/release-command.yml) | Build and Release | création d'une release GitHub | Binaires multi-plateformes, sans déclenchement manuel |
 
 ## Contrôles du workflow « Vibe Check »
 
 Dans l'ordre : `go vet`, `gosec`, `go test -race`, `go build`, `govulncheck`. Le workflow utilise la **dernière version stable de Go** (`go-version: stable`) et non la version minimale déclarée dans `go.mod`. Le choix est délibéré : installer exactement Go 1.26.0 faisait échouer `govulncheck` sur 13 vulnérabilités connues de la bibliothèque standard, corrigées dans les versions correctives suivantes. L'image Docker (`golang:1.27`) et les binaires de release (version par défaut de l'action, la dernière) utilisent eux aussi un Go à jour. Quiconque compile depuis les sources avec exactement 1.26.0 produit un binaire concerné : la dernière version corrective est recommandée. `gosec` et `govulncheck` sont installés à chaque exécution avec `@latest` : ils ne sont **pas épinglés**, ce qui garde leurs bases de règles à jour mais peut faire échouer le workflow sans qu'aucun code n'ait changé.
+
+`gosec` signale la règle G115 (conversion d'entier) sur le tirage aléatoire de la bannière ; la ligne concernée de `internal/extra/banner.go` porte un commentaire `#nosec G115` qui explique que la liste de mots est courte et fixe, donc que sa longueur ne s'approche jamais de `MaxUint32`.
 
 Le test unitaire exécuté, avec le détecteur de concurrence, est celui de [heffalump](../architecture/moteur-markov-heffalump.md). Le Dockerfile rejoue `go vet` et `go test` avant de compiler.
 
@@ -50,7 +54,9 @@ Dependabot ouvre des pull requests groupées : modules Go et GitHub Actions chaq
 
 1. Choisir un tag qui commence par **un caractère de préfixe**, en pratique `v1.2.3`. Le programme retire le premier caractère de la version fournie par le linker : un tag `1.2.3` s'afficherait `.2.3`.
 2. Pousser le tag : le workflow Docker publie les tags d'image versionnés.
-3. Créer la release GitHub à partir de ce tag : le workflow « Build and Release » compile et attache les binaires, avec leur somme SHA-256.
+3. Créer la release GitHub à partir de ce tag : le workflow « Build and Release » compile et attache les binaires, avec leur somme SHA-256. Règle du projet : chaque changement de code poussé sur `main` reçoit un nouveau tag `vX.Y.Z` et sa release, afin que binaires et image Docker soient reconstruits ; sans commit depuis le dernier tag, aucun tag n'est créé.
+
+L'action `wangyoucao577/go-release-action` est **épinglée au commit** `481a2c1a0f1be199722e3e9b74d7199acafc30a8` (commentaire `# v1.53`) et non à un tag mobile, car l'action reçoit un jeton `GITHUB_TOKEN` en écriture. Le workflow n'a plus de déclencheur `workflow_dispatch` : il ne se lance qu'à la création d'une release. Dependabot proposera les montées de version de cette action avec leur nouveau SHA.
 
 Matrice des binaires : Linux, Windows, macOS (darwin) et FreeBSD en `386`, `amd64`, `arm64`, sauf darwin/`386` et windows/`arm64`. Les binaires sont compilés sans CGO et reçoivent le nom du tag dans `main.version`. Dans le projet d'origine, le workflow y plaçait la référence git complète (`refs/tags/...`), ce qui donnait une version erronée à l'affichage ; le fork utilise le nom du tag.
 

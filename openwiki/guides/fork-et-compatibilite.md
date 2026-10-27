@@ -10,16 +10,18 @@ sources:
     resource: repo://Dockerfile
   - id: openwiki-source-7bd911fdd3026b7b031a01e3
     resource: repo://go.mod
+  - id: openwiki-source-6225717d77c0df8b3a43d4df
+    resource: repo://heffalump/heffalump.go
   - id: openwiki-source-871a8611f939f64b133e20a8
     resource: repo://internal/config/defaults.go
   - id: openwiki-source-f715782272efaf73ca0c929d
     resource: repo://internal/config/globals.go
   - id: openwiki-source-fd1f4e266c537f5376b692a9
     resource: repo://internal/http/router_unix.go
-generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
+generated: { by: "claude-code", at: "2026-10-27T17:47:03.026Z" }
 verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T19:20:53.104Z
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # Fork et garanties de compatibilité
@@ -42,7 +44,7 @@ Le fork vise un remplacement direct. Ces éléments doivent rester identiques, e
 - Dockerfile : image de build Go 1.27, image d'exécution `distroless/static-debian13`, compilation croisée native pour amd64 et arm64, argument de build `VERSION`.
 - Publication de l'image sur `ghcr.io/sirterrific/hellpot` par GitHub Actions ; suppression des workflows qui visaient le dépôt et le Docker Hub de l'upstream.
 - Nouveau paramètre optionnel `performance.max_conns_per_ip`.
-- Corrections : le mode socket Unix utilise désormais le serveur configuré (en-tête `Server`, délais, GET seulement) au lieu d'un serveur fasthttp par défaut — seul changement de comportement volontaire, qui ne concerne que les utilisateurs de `use_unix_socket` ; `robots.txt` n'utilise plus une chaîne de format non constante ; le pool de buffers inutilisé de `heffalump` est supprimé.
+- Corrections : le mode socket Unix utilise désormais le serveur configuré (en-tête `Server`, délais, GET seulement) au lieu d'un serveur fasthttp par défaut — seul changement de comportement volontaire, qui ne concerne que les utilisateurs de `use_unix_socket` ; `robots.txt` n'utilise plus une chaîne de format non constante ; le pool de buffers inutilisé de `heffalump` est supprimé, ainsi que le paramètre `buffsize` de `NewHeffalump` (changement de signature de l'API Go du package, sans effet sur le binaire, la configuration ni la sortie).
 - Premier test unitaire, CI renforcée (`govulncheck`), documentation en anglais et en français.
 
 ## Différences de texte dans les logs

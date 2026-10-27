@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d3cf066ba18f13de0b313a418a9e40d1fe125ed6b67301c3364ce7d9fe660db9",
+  "pageVersion": "sha256:cd877a704264baae6ea69c58bdbeb41a98daa0caf755388e522c3dbcbc15a335",
   "claims": [
     {
       "id": "claim_4a77ed6d1067482fa4a1727298d84d35",
@@ -153,10 +153,20 @@
           "version": "repo-lines-v1:sha256:21571cb3b16c42d6c68144b9defeaf3a28bccd4b88761a0861ab3be419ab0244:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGU3ZGZiMWEwM2ExZmQ0NjMyYTg1NzJmYjdjYjM3Yjk5YjA2OTcyOTQyMjU3NTI5YzU4ZDAwZDMwZTY5YWJiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDUyNDJhOWE4ZDQ1MjMyZGFlOTM1NTQzYTY0N2JhNTc0MjdlNGY5YmJlMzgwZjNlNTQ4NDE4NWRlMGFjZjc3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_20f8e0e9cb354372895ffe2ad547018c",
+      "statement": "Le test TestMaxConnsPerIPFromEnv fixe HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP=100, appelle associateExportedVariables et vérifie que MaxConnsPerIP vaut 100 ; le déploiement Docker derrière un reverse proxy en dépend, sinon la limite retombe à 10.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config_test.go#L5-L13",
+          "version": "repo-lines-v1:sha256:bdc8bc5b6a1a1a4d93da9eacc1f905359f81920c29ec6b4d58f14c96446e8f28:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODliZTA5MGMwM2Y4Y2ZhYTEwZmYzZTA0Zjc5OGM4MmRiZGM3YmMyYjMwMDQ1ZTY5MzYxM2EzY2NlMzNiOWYwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdmZThlMWE1YjEzNDYxYjkzNTBjN2M1ZjlhYWQxNWJkZTBjMDQ2ZWJlOWQ2MTZiMjY2NDM3ZmFhYzkyZGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:02:24.687Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }

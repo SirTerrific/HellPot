@@ -18,8 +18,8 @@ sources:
     resource: repo://internal/http/router.go
 generated: { by: "claude-code", at: "2026-10-04T19:20:53.104Z" }
 verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T19:20:53.104Z
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # Limites de connexions et performance

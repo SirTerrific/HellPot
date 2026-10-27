@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:c6f4ae540da856ff127b14e9e9c5eb6b5d21a4022fbd0aa7455c10444f5be06d",
+  "pageVersion": "sha256:ff402475d3209d5e6f25aa9f1c4f579949651b19ebf4a9550ace22ded0a5dec3",
   "claims": [
     {
       "id": "claim_41af01437dbc424cb775d3281f0701e7",
@@ -89,11 +89,11 @@
       "statement": "Le routeur journalise 'Add route' et 'Catch-All mode enabled...' en trace, 'Listening and serving HTTP...' en info avec l'adresse ou le chemin du socket dans caller, et une erreur fatale si unix_socket_path est vide.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L131-L139",
+          "resource": "repo://internal/http/router.go#L130-L138",
           "version": "repo-lines-v1:sha256:8e28d45fb8704800961c0a049ac8e8ce92d4c73c0da5e67c6aa2a22edbe07b31:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGZkNmYzODQyYjg5NDQwZmVhODJkNWYyYTVkN2VjMDdhMzMwMjIxMWIzMmI4MzM0YTYyNGY3NjQ3MDM5ZDE3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDM3NmExOWZlMDVhMzkwM2U4ZGE0ZDQ1YTJjNmJjOWI0YjQ2YWUwMWZhYzdkYzEwNGQxNjg1ZWUxZTQ3YTk5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTlhYWZlMWRmMjVmNDQ5NjQ1Y2RhN2Q1NjVkYWFkNTI1OGU4Zjk2YTg2ZWM2Y2E3ZTk2ODE1ZWM4ZDMyZGMxYyJ9"
         },
         {
-          "resource": "repo://internal/http/router.go#L144-L154",
+          "resource": "repo://internal/http/router.go#L143-L153",
           "version": "repo-lines-v1:sha256:2a56fdb8f5a61a3c6a6a5b097f8c2bcc0fde38f368aaf133ffb03a5ee6b05e99:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NDY1OWYwZmUxYmVlMzVkZDBlNGQ5NGYzZTQ4ZjBjOWJjOTE1ZWEwNzkzNTQ5ZTRmY2E5MmEzM2VmM2FiZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmN2NmODFkMmRkODM3MTRmZjQwMDIxYWIwNjdmYTEwY2NiMGQzN2UxYTFhOGIzY2I4ZDliMmFhZjYyZjFmN2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNWIyMzg3MDI1NDQ5MWZlM2QwNDhmMDVhNGRhMTZhZWZmNDE1ODRiYzBkNjdlYWM2Yjc0Yzc1ZmNhMGZjNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
         }
       ]
@@ -103,7 +103,7 @@
       "statement": "Les messages internes de fasthttp passent par le même logger car le serveur reçoit Logger: log.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L116-L117",
+          "resource": "repo://internal/http/router.go#L115-L116",
           "version": "repo-lines-v1:sha256:7892c6bb2ce27a24e1d7cc51073a45a253851a861aa75c938a600199ac8ae9b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWU4NGVhY2I4YjVjYjA5NDM1OWI5M2Y0MzE0NjRlY2YwNTRlZGYwNGUxYjkzNzhlNThlNjU1OWIyZDY2YjgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTFiMjVkM2NlODA5ZDlhM2IyN2MyOTAyNmU0NjdmMTRlMDQ2MjM5MDk3M2Y1Yzg0ZGU2MWY5M2E1YmVkMmU4MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGExN2E5NzI1ZGM5OWVlM2ZmYjg3MTcxMDE3YTA0YTMxMmY2YjJjZTFiNWUwZWRmM2FiYTUxNmJjMDk1OTVjNSJ9"
         }
       ]
@@ -130,7 +130,7 @@
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T19:20:53.104Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }

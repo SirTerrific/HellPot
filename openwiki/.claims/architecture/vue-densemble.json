@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:fc841e5bbedf499e968040e129ec203ac793613b480201664da5d592c329e06a",
+  "pageVersion": "sha256:54bfba203f2e5c53940029baccb84c8c5c2fa770fd646ffc90c64ce8a69bdafd",
   "claims": [
     {
       "id": "claim_35cad7ba347e4a2f871fb3357f0455a8",
@@ -51,16 +51,6 @@
       ]
     },
     {
-      "id": "claim_f7e91232526c4f27aa16861bd82e6b2c",
-      "statement": "Sous Windows ou avec nocolor, la bannière est une simple ligne 'HellPot <version>' ; sinon c'est une bannière ANSI décompressée depuis une chaîne embarquée dont les couleurs sont tirées avec crypto/rand.",
-      "evidence": [
-        {
-          "resource": "repo://internal/extra/banner.go#L67-L100",
-          "version": "repo-lines-v1:sha256:7c1240b27b427c66759024b366e0f67a53048c072a2fa0b4bfafc701396f988f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjMWMwODlhYWMxOTdjMzM1NjBjYmMwOTY3ZTQ4ODQ3ODI4NWQ1NTM0MGNhYzlhZWU4NDk5Yjc2MjBhYWZmNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2MjFmNTExOGJkMTM5M2U2ZGI4YzdjYjAzMjM5MjY1Yzc5MTIwYTBmYmY0MmQ1NzY5OWI2NmE0MzBiNDc1NzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
-        }
-      ]
-    },
-    {
       "id": "claim_6d9362820bfb43f6b81e560497a543e1",
       "statement": "Les packages ne se passent pas la configuration en paramètre : ils lisent des variables globales du package config, remplies pendant config.Init() par processOpts.",
       "evidence": [
@@ -93,10 +83,34 @@
           "version": "repo-lines-v1:sha256:27c5704c6afff526983fae055de7a7c1fb989da3a0ea1ae484fc4a7168c98e70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZDM2NjZiMzgwNWQ1YmU1NDFkYWU1ZDk2ZTFhOTRjNjkzODM0OWViNTQxMGRjM2M0M2RiZjkyZjNjMTZkZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5MWFjMzdiNjZiMTJiOTczODZiM2FiYzU0Y2JiZWJjNWM2NjVlYjVjZjc4ZDE2NjI0Y2FhYmViZGUwNmMxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_d11e4c668ebc41ce8335258ebc1cc450",
+      "statement": "Sous Windows ou avec nocolor, la bannière est une simple ligne 'HellPot <version>' ; sinon c'est une bannière ANSI décompressée depuis une chaîne embarquée dont les couleurs sont tirées avec crypto/rand.",
+      "evidence": [
+        {
+          "resource": "repo://internal/extra/banner.go#L67-L99",
+          "version": "repo-lines-v1:sha256:68ac9c7a271d7a77b790eaf67176935f936be7e1f23a3da99865f5349719d676:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExZDc0YzhlNjc3OGMwM2NmYjQ5N2JiZTJmZDE0OWE4ODQxZGY3MjVjZGVhM2E5YzExZjA4YjJkZTZhOGVkMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyOGU2OGEzNTZmNjQyMmZhZjQ5NGE4NzdlYWI2NmUyNDZlZTZhNjg3OTNiZTM2OTY2NzhhNzk4MjI3MTNmMmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5Mjc2OGZiMTEyODJhMjU2ZjFmNjY2MGUzYWM0MTE5M2UzMDZiYmNjNzQ0NjcxZjljZGQyMmZkODFlM2RlOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_758d8a4cae0542d7a922945fa4bbc8f6",
+      "statement": "Le tirage aléatoire de la bannière (rc) calcule l'indice en uint32 (ru() % uint32(len(s))), ce qui évite un indice négatif et la panique au démarrage sur les builds 32 bits (386).",
+      "evidence": [
+        {
+          "resource": "repo://internal/extra/banner.go#L19-L21",
+          "version": "repo-lines-v1:sha256:0a17748b4f76e7ba59594ff510bdac97c7ee05b3f01fad8b8259b5935c0f9bdb:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk2ZDYyYjUzM2U4MDM1MWNmNmY3YjI5MjI1ODU4MzkwMDA2YzliNDllZDA1YjI0MTk5YmE2MzdhYTk4Y2EwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIxZjA3ZGU1YzA4ZDRlYjkzY2M2MTc4ZjE0ODliY2FmYzgyMDFmNzMzZDFjYTAyNTdjNjcxNmQwYWQxMmQ5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmE1MTg4NTkwZmNmNjNmYWYxNDM2OTcxMDI4YmQwMmI2NjkzNzRjZjhlZDQzOGQyZDNhYThkNTY4NGUwMGM2YyJ9"
+        },
+        {
+          "resource": "repo://internal/extra/banner.go#L67-L73",
+          "version": "repo-lines-v1:sha256:13e83e72febbba0694c00f2ed4b76c69b71f08434f9997dbbfb2f85f4e952d45:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFkNzRjOGU2Nzc4YzAzY2ZiNDk3YmJlMmZkMTQ5YTg4NDFkZjcyNWNkZWEzYTljMTFmMDhiMmRlNmE4ZWQwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzkyNzY4ZmIxMTI4MmEyNTZmMWY2NjYwZTNhYzQxMTkzZTMwNmJiY2M3NDQ2NzFmOWNkZDIyZmQ4MWUzZGU5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVlNDlkMDA5NTE0NjM3ZTgwNDM0ZDJkMjFmZjU2ZDAwNDc2NGE3NzViZGFkM2FlNmNkYWQxZjJhMzIwYTBkOSJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T02:02:24.687Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }

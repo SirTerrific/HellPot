@@ -2,9 +2,6 @@
 type: "Référence"
 title: "Démarrage rapide et carte de la documentation"
 openwiki_generated: true
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-c34322bad84de7b6c0a25de1
     resource: repo://cmd/HellPot/HellPot.go
@@ -17,6 +14,9 @@ sources:
   - id: openwiki-source-871a8611f939f64b133e20a8
     resource: repo://internal/config/defaults.go
 generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 

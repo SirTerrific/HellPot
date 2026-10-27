@@ -3,9 +3,6 @@ type: operations
 title: Image Docker et publication sur GHCR
 description: Comment l'image HellPot est construite (Dockerfile multi-étapes, compilation croisée amd64 et arm64), ce qu'elle contient, comment elle est publiée sur GHCR et comment la déployer avec docker run ou docker compose.
 tags: [docker, ghcr, distroless, multi-arch, deploiement]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-1bc83e59b3e3c64091f68169
     resource: repo://.github/workflows/docker.yml
@@ -16,6 +13,9 @@ sources:
   - id: openwiki-source-091ee1219a9d0c94513b0e00
     resource: repo://internal/config/logger.go
 generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # Image Docker et publication sur GHCR

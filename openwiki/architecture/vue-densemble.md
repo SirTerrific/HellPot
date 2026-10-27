@@ -3,9 +3,6 @@ type: architecture
 title: Vue d'ensemble de l'architecture
 description: Les cinq packages de HellPot, leur rôle, et la séquence de démarrage du processus, de l'initialisation de la configuration et du logger jusqu'au serveur HTTP et à l'arrêt sur signal.
 tags: [architecture, demarrage, packages, cycle-de-vie]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-c34322bad84de7b6c0a25de1
     resource: repo://cmd/HellPot/HellPot.go
@@ -17,7 +14,10 @@ sources:
     resource: repo://internal/config/logger.go
   - id: openwiki-source-f4868503981e3b707b159bb2
     resource: repo://internal/extra/banner.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-27T17:47:03.026Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # Vue d'ensemble de l'architecture
@@ -44,7 +44,7 @@ Tout le démarrage a lieu dans la fonction `init()` de `cmd/HellPot`, avant `mai
 2. **`config.Init()`** : analyse des options de ligne de commande, chargement du fichier, surcharge par variables d'environnement. Détails dans [Chargement de la configuration](../configuration/chargement-et-reference.md).
 3. **`--banner`** : si demandé, affiche la bannière et quitte avec le code 0, sans démarrer de logger.
 4. **Logger** : avec `docker_logging`, les logs JSON vont uniquement sur la sortie standard (couleurs coupées) ; sinon un fichier de log est ouvert et la console reçoit en plus une version lisible. Voir [Journalisation](../operations/journalisation.md).
-5. **Bannière** : sous Windows ou avec `nocolor`, une simple ligne `HellPot <version>` ; sinon une bannière ANSI décompressée à partir d'une chaîne embarquée, dont les couleurs sont tirées au hasard avec `crypto/rand`.
+5. **Bannière** : sous Windows ou avec `nocolor`, une simple ligne `HellPot <version>` ; sinon une bannière ANSI décompressée à partir d'une chaîne embarquée, dont les couleurs sont tirées au hasard avec `crypto/rand`. Le tirage (`rc`) calcule l'indice en `uint32` (`ru() % uint32(len(s))`), pour ne pas produire d'indice négatif sur les builds 32 bits (386), où l'ancien calcul faisait paniquer le démarrage.
 6. **Lignes de démarrage** : le fichier de configuration (`caller: config`), le fichier de log (`caller: logger`), puis les messages `debug enabled` et `trace enabled`.
 
 Le package `heffalump` a sa propre initialisation, indépendante : sa table de Markov est construite quand le package est chargé, donc avant même `config.Init()`. Une défaillance à ce stade fait paniquer le processus.

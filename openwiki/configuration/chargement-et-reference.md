@@ -3,14 +3,13 @@ type: configuration
 title: Chargement de la configuration, options et variables d'environnement
 description: D'où HellPot lit sa configuration (fichier TOML, variables HELLPOT_, options de ligne de commande), dans quel ordre, pourquoi les valeurs par défaut disparaissent avec -c, et les particularités connues du code.
 tags: [configuration, toml, variables-environnement, cli, koanf]
-verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T02:02:24.687Z
 sources:
   - id: openwiki-source-c239e6e06e2b1ec445a5f81f
     resource: repo://docker_config.toml
   - id: openwiki-source-499d45fbdac8421cc7917be2
     resource: repo://internal/config/arguments.go
+  - id: openwiki-source-ed952cc20b88f9a9e8bbf0c3
+    resource: repo://internal/config/config_test.go
   - id: openwiki-source-a8910515ddd14810ad43f5c1
     resource: repo://internal/config/config.go
   - id: openwiki-source-871a8611f939f64b133e20a8
@@ -19,7 +18,10 @@ sources:
     resource: repo://internal/config/globals.go
   - id: openwiki-source-cd862ac729c594a324d155a6
     resource: repo://internal/config/help.go
-generated: { by: "claude-code", at: "2026-10-04T02:02:24.687Z" }
+generated: { by: "claude-code", at: "2026-10-27T17:47:03.026Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 ---
 
 # Chargement de la configuration, options et variables d'environnement
@@ -65,6 +67,8 @@ Si le fichier choisi est absent ou illisible, HellPot affiche « No configuratio
 | `http.router.catchall` | `HELLPOT_HTTP_ROUTER_CATCHALL` |
 | `logger.docker_logging` | `HELLPOT_LOGGER_DOCKER__LOGGING` |
 | `performance.max_conns_per_ip` | `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP` |
+
+Un test (`TestMaxConnsPerIPFromEnv`, [config_test.go](../../internal/config/config_test.go)) fixe `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP=100`, appelle `associateExportedVariables` et vérifie que `MaxConnsPerIP` vaut 100. Le déploiement Docker derrière un reverse proxy dépend de cette variable : si la correspondance casse, la limite retombe silencieusement à 10.
 
 ## Correspondance clé vers variable globale
 

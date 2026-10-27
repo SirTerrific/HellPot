@@ -4,8 +4,8 @@ title: Moteur de chaînes de Markov (heffalump)
 description: Comment le package heffalump fabrique le flux de texte infini envoyé aux robots, de la décompression du texte source à l'écriture dans la réponse HTTP, et comment il s'arrête quand le client part.
 tags: [heffalump, markov, streaming, tarpit]
 verified:
-  - by: openwiki/0.5.1
-    at: 2026-10-04T19:20:53.104Z
+  - by: openwiki/0.7.2
+    at: 2026-10-27T17:47:03.026Z
 sources:
   - id: openwiki-source-a97afb7f0fe6ba7d781c5467
     resource: repo://heffalump/heffalump_test.go

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0a3fbdf6113e974d98918638f93daee4f61aec14b6b08dd1410cbe7af58fa012",
+  "pageVersion": "sha256:4a2bce4d4cf488d1fe178976496341e61a7eda42f3c0159394158e8abaf7bf8c",
   "claims": [
     {
       "id": "claim_843ed922f38340149e99324726fe458c",
@@ -41,16 +41,6 @@
       ]
     },
     {
-      "id": "claim_de07c6f5a4dd4f9da1e7e1ddf5459818",
-      "statement": "Le workflow Build and Release se déclenche à la création d'une release ou manuellement, compile sans CGO des binaires linux, windows, darwin et freebsd en 386, amd64 et arm64 (sauf darwin/386 et windows/arm64) avec somme SHA-256, et injecte le nom du tag dans main.version.",
-      "evidence": [
-        {
-          "resource": "repo://.github/workflows/release-command.yml#L3-L38",
-          "version": "repo-lines-v1:sha256:639146a02087e9ad795cecac85459f15947b841318f576f0fffadb0ebd091bbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3OWZmYjI5NWM1ZjNjZjZiYmI4NTY3MWZlNDMxY2JjODE2OTI2ZWIwODc2MjdlMjU3MGRiMGUxMGU0ZjQ1YTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYTY2MjZkMmM3ZTkwN2I4NTQ3NTQxY2ExYWNlZjRjODFiNDlhNmVjY2Q3MTUxNmE2MmQ4YzY2MmY4MjNjMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1OGJlZTA0ZWFhZTc5M2Q5ODMxYWRmNDI1NjdhZDBiMzdhYzZmMmE4ZjlhYjFkODI4ZTQ2ODY0MWI2YzM5MGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
-        }
-      ]
-    },
-    {
       "id": "claim_6f1050ab3a514738a103adcabab5a4d9",
       "statement": "Dependabot propose des mises à jour groupées : modules Go et GitHub Actions chaque jour, images de base Docker chaque semaine.",
       "evidence": [
@@ -85,18 +75,38 @@
       ]
     },
     {
-      "id": "claim_b7d82c12df7c4e67b18e2ffde0dd5275",
-      "statement": "Le workflow de release ne fixe pas de version de Go (le paramètre goversion est commenté) et laisse donc l'action choisir sa version par défaut.",
+      "id": "claim_62135792802548cca0471d8006cb507f",
+      "statement": "Le workflow Build and Release se déclenche uniquement à la création d'une release (plus de déclenchement manuel), compile sans CGO des binaires linux, windows, darwin et freebsd en 386, amd64 et arm64 (sauf darwin/386 et windows/arm64) avec somme SHA-256, et injecte le nom du tag dans main.version.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/release-command.yml#L22-L28",
-          "version": "repo-lines-v1:sha256:f3d25d0d571540b349624f411ea116f942dbe79eb9c3327f0eefe25ddea1dd49:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJkYjZiNjZiZDQzNjgwYzYyNWM5Y2M4NTEwNGMwNjI2M2E0MjRjOGUwOWVlNWQyMmNlZmEwMjk3NTEzYTNlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ1YjVmNThhMDBkZDI3NTVlZjAxNGYyNGM4NDdhNWMwMWFhMDFlN2JiZDE5ODA3YmQ3NTExOWQyOWE3ZDk2MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZjYzA0NWZlNTMzNzI4NDExMTI3NmUzNTk4YTI1NTRhMGM4ODU2MGE3Y2Y5MjIyNGE0ZWMwOTE3NjkyOTIzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmE0MzRjMDM0ZDY0ZGRiNDFiYjcwNWIwMjg2MzUxOTU2ODFhNzRhNTY0MDQ1MGIxMjNmNjQxMzJjYTVjNTE0ZCJ9"
+          "resource": "repo://.github/workflows/release-command.yml#L3-L40",
+          "version": "repo-lines-v1:sha256:ffa7a01a3e1cf04b53b180a940edc5ef7635fb1228348cef0347e91535f90bfc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYTllMzM5ODNiNmE5MGI1Y2Q2OTdiZGIxODlkNGIxYjU4ODFjNWIxMzUyYzZjZjNiOWE5OGE2MDVhZjA4OTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0MjZlZTRjNjljYWY5OTNlMzFjMjhmOTEyOGRiMjAwMjI4ZTY2MzdiMjU4NzlkMWNmMTBiN2M3MTIwZGUzNzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9234c072d7ae4279a4376e3465416d8c",
+      "statement": "L'action go-release-action est épinglée au commit 481a2c1a0f1be199722e3e9b74d7199acafc30a8 (v1.53) ; le paramètre goversion est commenté, donc l'action choisit sa version de Go par défaut.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-command.yml#L24-L29",
+          "version": "repo-lines-v1:sha256:9bd93d87f13ccac89c5c7dd98901ce98a17adc4a39a8f2307d13b731c5f324ec:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmZjNzU0NmVkZTZiMDZkY2E5ZDM4ZTM3OGQzYzgwZDQ0NmU5ZjI5NWYyNmNkYjY3MTQ2OGQ5YmRkMzQyMzY3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2I1NjczMDc5MDUwMzExOWE0YmYxMDNjNGUzNWIwYzYwYjNiMWViNGMxMmQ2MWViMGRiNDgxZmVmODFmMmQ2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQyZmJiZWU0OTFjOWQ1MjE5ZDk5M2M1NWQ1MzFiYmUyN2RhMzY0NmNhZDUxYzlmYThlODBiMTVmMDNiZDZhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQ5YWMyNzRlNjI5ZGRjMGMwOTYzN2Q0OTFjNzgwYzFlM2ZmNDRiYTRlOGRkZjg3MmNiNzlkMTgzNGVjNjdjYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d68334090e0491aa123b3bacb4f1221",
+      "statement": "La ligne de tirage aléatoire de la bannière porte un commentaire #nosec G115 expliquant que la liste de mots est courte et fixe.",
+      "evidence": [
+        {
+          "resource": "repo://internal/extra/banner.go#L19-L21",
+          "version": "repo-lines-v1:sha256:0a17748b4f76e7ba59594ff510bdac97c7ee05b3f01fad8b8259b5935c0f9bdb:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk2ZDYyYjUzM2U4MDM1MWNmNmY3YjI5MjI1ODU4MzkwMDA2YzliNDllZDA1YjI0MTk5YmE2MzdhYTk4Y2EwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGIxZjA3ZGU1YzA4ZDRlYjkzY2M2MTc4ZjE0ODliY2FmYzgyMDFmNzMzZDFjYTAyNTdjNjcxNmQwYWQxMmQ5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmE1MTg4NTkwZmNmNjNmYWYxNDM2OTcxMDI4YmQwMmI2NjkzNzRjZjhlZDQzOGQyZDNhYThkNTY4NGUwMGM2YyJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T19:20:53.104Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }

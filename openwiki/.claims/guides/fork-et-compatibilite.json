@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:49bf1c2a2009dbc72f00c0662bd702ab6e6363cb01d162492773fc2434408c27",
+  "pageVersion": "sha256:fd2bb6baa34bed83755b2e0e76328ad635956ff74ae0e60878bb0865160e7be6",
   "claims": [
     {
       "id": "claim_df5fd5fa72934fe89f65aa887c6d5545",
@@ -89,10 +89,20 @@
           "version": "repo-lines-v1:sha256:1897aa4b10b5124cacd7178b8a85b4f5732177a2f2edec3dd39ceb0040a48e6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5N2FhNGIxMGI1MTI0Y2FjZDcxNzhiOGE4NWI0ZjU3MzIxNzdhMmYyZWRlYzNkZDM5Y2ViMDA0MGE0OGU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTg2YzU5OWRjMjQzMWRjZTI0ZjcwNmNhNWNiYTFmMjgxZjU5NTk1NzFhZmEwNGMyMWI2ZjU1ZTkyYzUyMGQ4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_271692050b724934a498572bc6c44037",
+      "statement": "NewHeffalump ne prend plus que la table de Markov en paramètre (le paramètre buffsize et le pool de buffers ont été supprimés) : changement de signature de l'API Go du package, sans effet sur la configuration ni la sortie.",
+      "evidence": [
+        {
+          "resource": "repo://heffalump/heffalump.go#L24-L27",
+          "version": "repo-lines-v1:sha256:1006a3fc2db124af102728cd421002bae330c5e43d6bbf60dfa973db6c2f8a13:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYTNjMDc1NzBmMjA2NTk5ZmU0OTFhYmJiZmYxNjM3ZmRkOGQ4MTdlOGMxYmZkNjViMWE0ZWZkOGQyYWRkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFkMDgyMTQ3Njc4YTRjMzMxYzkwNzM4MmNiOWFlOGZmZjM2NzgyNmVmYzI1NThhOTFkNzMzZmViN2M0NTcyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc0YzkzZTEwYTkyMTMzMWYxMzQ1OTc5ZDg2M2Y3OWUyMmQwYjc5ZmZhNzZmMzg3OTNhNTI4NDlkODZhNjA0ZSJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T19:20:53.104Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }

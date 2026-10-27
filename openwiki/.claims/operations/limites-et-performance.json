@@ -1,35 +1,7 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e2e6b159111be79eb8591a72570e58b68cbb6a0c55e1185bbb0e44ad81f89934",
+  "pageVersion": "sha256:1c64e03cda9b99fba81290669366b23caac4137709db8f6ee349fabe09d12892",
   "claims": [
-    {
-      "id": "claim_7876a4db012f4a228496adb38cf2f6d0",
-      "statement": "Le serveur fixe ReadTimeout à 5 s, MaxRequestBodySize à 1 Mio, DisableKeepalive et GetOnly, et définit MaxConnsPerIP depuis la configuration ; aucun WriteTimeout ni IdleTimeout n'est défini.",
-      "evidence": [
-        {
-          "resource": "repo://internal/http/router.go#L100-L117",
-          "version": "repo-lines-v1:sha256:05db151e4709c37d3c122734489be45c47e4cc341734a449d5bf57eb923cc833:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0Mjc3MWYwMDc0NGE5MTE3YTdjNjgwNjZjOGQ4NzVkYjM5YzJiNzRjMWRkNzk4MWYwMzE5NTA5ZDhhMGQ1MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1Y2NmYzYzOTY0YjNmZTE0OTIzZWJiOWI1MjA2MGNiZjc5NmU4MmI1NWViZTY3NWI3OTJiNmFhNTEzMTIxNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMTdhOTcyNWRjOTllZTNmZmI4NzE3MTAxN2EwNGEzMTJmNmIyY2UxYjVlMGVkZjNhYmE1MTZiYzA5NTk1YzUifQ"
-        },
-        {
-          "resource": "repo://internal/http/router.go#L88-L98",
-          "version": "repo-lines-v1:sha256:07263aa7df4015d0e136437c1ca5fffd64f0739fec6b0abbb7d6f70c82435573:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhYTM4MmU2OGFmYzAxNzRjMDczZGM2ODQyMGYwZGE0YjEwZjVhNTdkYmViMDIyODI5ZGZkNTBhMWE4NTI1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwM2Y0NDBmNWQ0ZjE1NjA4MDQ3NzFiN2E1MmRjMzI1ZWI1NGJiZDhlNWMyZjNlNzdlOTg3YWRlYTg2OWVmOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmODc3NzcwOWI2MDZiZjcyMzMwMzM2Mzc0ZDBkOGJlYzJlYjZhZGEyZjdiMTQ3NWVkNDE0NjRmYWUzYzg2YTUifQ"
-        }
-      ]
-    },
-    {
-      "id": "claim_e2405bd71a9248bbbc61ad124799e061",
-      "statement": "La concurrence du serveur vaut fasthttp.DefaultConcurrency tant que restrict_concurrency est inactif ; max_workers n'est utilisé que s'il est actif.",
-      "evidence": [
-        {
-          "resource": "repo://internal/http/router.go#L101-L103",
-          "version": "repo-lines-v1:sha256:73435331548314e6b41fcaf541db12a5c3040f74a29d745b7a86371b56240ebf:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNjY2VlOTQzYTZkM2Y4MWUxMGU1MTU0ODEzYTdlMjliY2RhYTMzMjg0M2UyMWExZGY4YTg1MWM0Y2RlNzliMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGU2Mzc3MDM2MzRkMzg1ZmJhYTQwMWQ5M2RhYmU5ZTAxZjdmMDAyMTVjZmYxYTQ0OTQwZTVjMDdiMzk2MjkxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI3YTk2MTY0NmI5MmM3MTNjNjlmNWNhNTgyM2UwNDQzZDNhMTg3YmZmNGUxYTVhZTY5NDUxMjMwZjcyZGNmMCJ9"
-        },
-        {
-          "resource": "repo://internal/http/router.go#L81-L83",
-          "version": "repo-lines-v1:sha256:0fe965c4398fcb64aa1527f26e5cbb1b37ae1b033934ed31b10840fcac9ed711:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWUzY2UxMmNhNTQwY2YwOTM5MTdjOWZjNTQ4NjhlZTgxZjhjZTUxNjBlNDYzZDYyNDJmZTg0NTJkNjAzMDNkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdjM2EzZDQ5NDIzOTdhYzc2NjIxZjkwNTZkZGUxMGY4MjM4YzE0ZDE0MmRiOTRkNjljYjM3Y2NjMjNkZTI0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjgxMGMxZmQzNzQ3NDE1ZmM5ZTVmNWVhNDEyYjQzMzQzMDQ4Zjk2NDk2MjYyMTVhODNiNTNhNGMyOWZhYTdlYSJ9"
-        }
-      ]
-    },
     {
       "id": "claim_f038abc51fc64e0d8998d4367860ce4f",
       "statement": "La limite de connexions par IP est configurable par performance.max_conns_per_ip (défaut 10, 0 = illimité) et conserve 10 quand la clé est absente, y compris avec -c.",
@@ -49,12 +21,36 @@
       ]
     },
     {
-      "id": "claim_1a6b21ade2c447fcb9ab81b889cb262b",
+      "id": "claim_498945513e034b5a95370d4af8a17bf4",
+      "statement": "Le serveur fixe ReadTimeout à 5 s, MaxRequestBodySize à 1 Mio, DisableKeepalive et GetOnly, et définit MaxConnsPerIP depuis la configuration ; aucun WriteTimeout ni IdleTimeout n'est défini.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L94-L112",
+          "version": "repo-lines-v1:sha256:b0a2d8103775733ce9c020ba2de71da7ac4cdc8b4e015536ad20a93ad3bde46b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZDcyMzEzYzYxNjVlYjBjMzJhZGI3NzYzOTkwMGQzMjc1NmU1NTE3MTQ3ZjVlNjA1ZDRhYzVhMDA5ZWQ1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzODlmODIxY2RjNGExZDAzYjg1ZDRhMDIwZDZiYzljZjQxNjEyYjc1Mjc2MzkxN2RmYWExMDlhYzFkMGI1Y2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZmY3ZTRmZmJiMzk3NjZiYTA0NzlkMmZhNDc2NmMyMzc3MzU3NmJjNDM2YzA2ODIwZjQ1MjE1ZWMyNWE5ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzYjQ5NjkyMjhkYTc2ZGExNGJhNzg4MjY2MjIwMWViOGM1ZDkwMGJhYzFiZjQzMjczNDU0NzYyNjEzYTNhZDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_590dd0bec00c4688b0bf317b16657f53",
+      "statement": "La concurrence du serveur vaut fasthttp.DefaultConcurrency tant que restrict_concurrency est inactif ; max_workers n'est utilisé que s'il est actif.",
+      "evidence": [
+        {
+          "resource": "repo://internal/http/router.go#L100-L101",
+          "version": "repo-lines-v1:sha256:f9b2a6402691b5643e2293d46f35021501b9bd57a9bdca1781af5efb42e3ac47:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI2Nzc0MThhMjNiNmRkNGYwZDFhOGUxZmU3MDBkNzI5MzI2NDNkZGI0YWExODhiMGVkZDE1YzU4YzgxYmE2ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzcwYzBmNjQ1Mjg0OTY3NDM3Njc5M2QzOTE3YWUwMzQ4Njk3ZjA1MDYwYzFmMWZhOTNlMTZlYzNjZjM0NzFjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjVjY2ZjNjM5NjRiM2ZlMTQ5MjNlYmI5YjUyMDYwY2JmNzk2ZTgyYjU1ZWJlNjc1Yjc5MmI2YWE1MTMxMjE1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZiZDBiN2UzZWFiYjVmZTg4ZjUyYmJiZWU0OWE0NmJmNGE3ZjliNzNlMDhhYTYyZmYzNDJjMzM5ZmM3NmJhMSJ9"
+        },
+        {
+          "resource": "repo://internal/http/router.go#L80-L83",
+          "version": "repo-lines-v1:sha256:3aab9c5dbe4ca784f1b4740e445921dcba11e1353a015cbd4d6c04aef06915c5:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmUyNjJmYWI4MzE3NzRlMWExZjMxOGM2MTY1ZTI3ZmRmYWFmMDAwZGYzODY5M2MyMDE0ZDZlNDNjNDFlNmIyZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGZjNWQ4ZWM3ZDUzYTkxOTMzMjU2NjNkYzBlN2NiZmJkODNlODdkZjc3ZTFjOTY2YjY2NTdmZTY1Nzg0MGUwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjgxMGMxZmQzNzQ3NDE1ZmM5ZTVmNWVhNDEyYjQzMzQzMDQ4Zjk2NDk2MjYyMTVhODNiNTNhNGMyOWZhYTdlYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b702d41feccb45b5b66fbfcbb51ef9e1",
       "statement": "La limite MaxConnsPerIP est passée depuis config.MaxConnsPerIP au fasthttp.Server partagé par le mode TCP et le mode socket Unix ; en socket Unix elle n'est pourtant pas appliquée (constaté : avec max_conns_per_ip = 2, cinq connexions simultanées reçoivent toutes 200), car fasthttp ne compte que les connexions ayant une adresse TCP.",
       "evidence": [
         {
-          "resource": "repo://internal/http/router.go#L100-L100",
-          "version": "repo-lines-v1:sha256:a42771f00744a9117a7c68066c8d875db39c2b74c1dd7981f0319509d8a0d51b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQyNzcxZjAwNzQ0YTkxMTdhN2M2ODA2NmM4ZDg3NWRiMzljMmI3NGMxZGQ3OTgxZjAzMTk1MDlkOGEwZDUxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTQyNzcxZjAwNzQ0YTkxMTdhN2M2ODA2NmM4ZDg3NWRiMzljMmI3NGMxZGQ3OTgxZjAzMTk1MDlkOGEwZDUxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjVjY2ZjNjM5NjRiM2ZlMTQ5MjNlYmI5YjUyMDYwY2JmNzk2ZTgyYjU1ZWJlNjc1Yjc5MmI2YWE1MTMxMjE1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzM0MzUzMzE1NDgzMTRlNmI0MWZjYWY1NDFkYjEyYTVjMzA0MGY3NGEyOWQ3NDViN2E4NjM3MWI1NjI0MGViZiJ9"
+          "resource": "repo://internal/http/router.go#L99-L100",
+          "version": "repo-lines-v1:sha256:c90dc43cf950ba5de11925e83f56a80ec9abd8ceda723dfcaad8d8531f72823a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDYzMmNlMTRkOWZjMDRkMzIxNGVkZDFhMWMzOTYxNzY5M2I5ODUxYTljMzdkNzE4ZWVhMmU1ODcxNGQyMDY1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI2Nzc0MThhMjNiNmRkNGYwZDFhOGUxZmU3MDBkNzI5MzI2NDNkZGI0YWExODhiMGVkZDE1YzU4YzgxYmE2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzI0ZTI5NzE2ZmQyMGZhNGI4NGUzYjU5YzRkNWFjYWMyNWM4NDRhNGMzM2QxMTQ5YjJiMWQ5YmZmNzBjNTI3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVjMGNlMmMxODE2YTA2MzE1MWM4M2JmNTc1ZTQ5Mzg0MDVjZmY2NGQ0NzM0NWRmNzQ0OTYzODU4ODgyNTY5ZCJ9"
         },
         {
           "resource": "repo://internal/http/router_unix.go#L40-L40",
@@ -63,18 +59,18 @@
       ]
     },
     {
-      "id": "claim_0e450fa784b5474884a939e101c16e4d",
+      "id": "claim_d1df4f305fdb43b48dd6d860e2e72a2e",
       "statement": "Le pool de buffers de heffalump a été supprimé car il n'était pas utilisé (bufio.Writer implémente io.ReaderFrom), ainsi que le paramètre buffsize de NewHeffalump.",
       "evidence": [
         {
-          "resource": "repo://heffalump/heffalump.go#L24-L29",
-          "version": "repo-lines-v1:sha256:5c2006c54a4468405600c4cc185eeb9200e7413b4fc8bea3b18691345305aee0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYTNjMDc1NzBmMjA2NTk5ZmU0OTFhYmJiZmYxNjM3ZmRkOGQ4MTdlOGMxYmZkNjViMWE0ZWZkOGQyYWRkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFkMDgyMTQ3Njc4YTRjMzMxYzkwNzM4MmNiOWFlOGZmZjM2NzgyNmVmYzI1NThhOTFkNzMzZmViN2M0NTcyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc0YzkzZTEwYTkyMTMzMWYxMzQ1OTc5ZDg2M2Y3OWUyMmQwYjc5ZmZhNzZmMzg3OTNhNTI4NDlkODZhNjA0ZSJ9"
+          "resource": "repo://heffalump/heffalump.go#L24-L27",
+          "version": "repo-lines-v1:sha256:1006a3fc2db124af102728cd421002bae330c5e43d6bbf60dfa973db6c2f8a13:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzFhYTNjMDc1NzBmMjA2NTk5ZmU0OTFhYmJiZmYxNjM3ZmRkOGQ4MTdlOGMxYmZkNjViMWE0ZWZkOGQyYWRkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTFkMDgyMTQ3Njc4YTRjMzMxYzkwNzM4MmNiOWFlOGZmZjM2NzgyNmVmYzI1NThhOTFkNzMzZmViN2M0NTcyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc0YzkzZTEwYTkyMTMzMWYxMzQ1OTc5ZDg2M2Y3OWUyMmQwYjc5ZmZhNzZmMzg3OTNhNTI4NDlkODZhNjA0ZSJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.1",
-    "at": "2026-10-04T19:20:53.104Z"
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-27T17:47:03.026Z"
   }
 }
