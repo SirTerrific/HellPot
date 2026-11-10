@@ -50,6 +50,6 @@ Le point d'entrée du programme est [HellPot.go](../cmd/HellPot/HellPot.go) : il
 
 - Derrière un reverse proxy, la limite par défaut de 10 connexions par IP plafonne toute l'instance : relever `performance.max_conns_per_ip`.
 - `debug = false` ne supprime pas les lignes debug et trace des logs.
-- `--help` n'est pas reconnu, seul `-h` l'est.
+- Un fichier de configuration illisible arrête HellPot avec une erreur : il n'est jamais écrasé. Avec `-c`, les valeurs par défaut s'appliquent d'abord.
 - `X-Real-IP` est cru tel quel : ne pas exposer HellPot directement sur Internet si l'IP journalisée doit être fiable.
 - Les fichiers `README.md` (anglais) et `README.fr.md` (français) à la racine documentent l'usage ; [CHANGELOG.md](../CHANGELOG.md) liste les changements du fork.

@@ -24,6 +24,8 @@ Two differences in log *text*, both at debug or trace level and both coming from
 - Go module renamed to `github.com/SirTerrific/HellPot` (imports and README links updated). Use `go install github.com/SirTerrific/HellPot/cmd/HellPot@latest`.
 - Dockerfile: build image `golang:1.27`, runtime image `distroless/static-debian13` (was `static-debian11`), native cross-compilation for multi-arch builds, optional `VERSION` build argument, `org.opencontainers.image.source` label points to this repository.
 - CI: runs on the latest stable Go (Go 1.26.0 has known standard-library vulnerabilities reported by `govulncheck`), `actions/checkout` v5, `actions/setup-go` v6. Dependabot now also tracks Docker base images (weekly).
+- CI: all GitHub Actions are pinned to a commit SHA (tag kept in a comment); Dependabot updates them.
+- Tests added for the blacklisted user agent, `robots.txt` content and environment list options.
 - Release binaries now embed the tag name (for example `v1.2.3`, shown as `1.2.3` by `--banner`). The workflow used to embed the full git ref.
 
 ### Fixed
@@ -31,7 +33,13 @@ Two differences in log *text*, both at debug or trace level and both coming from
 - Unix socket mode (`use_unix_socket`) was served by a default fasthttp server instead of the configured one, so `deception.server_name` was ignored (the response said `Server: fasthttp`, revealing the real server) and the request read timeout, request size limit and GET-only mode did not apply. It now uses the configured server. Behavior change, only for unix socket users: those limits now apply. `max_conns_per_ip` still does not apply to unix sockets (no client IP).
 - `robots.txt` handler passed generated content as a `Fprintf` format string (`go vet` error): a `%` in a configured path would have corrupted the output.
 
+- A configuration file that exists but fails to parse was silently overwritten with the defaults. HellPot now prints the error and exits.
+- With `-c`, the built-in defaults were not applied, so a missing key took its zero value (for example no route at all, or socket permissions `000`). Defaults are now applied first and the file overrides them.
+- List options set by environment variable (`HELLPOT_HTTP_ROUTER_PATHS`, `HELLPOT_HTTP_UAGENT__STRING__BLACKLIST`) came out empty. They are now read as comma separated lists.
+- `--help` now prints the usage (it used to start the server). The usage shows the real version and the right `--genconfig` file name, and also works when stdout is not a terminal.
+
 ### Removed
 
+- `golang.org/x/term` dependency and the column-alignment help code, the unused `ssh` config section, and a commented-out block in `config.go`.
 - The unused 100 KB buffer pool in `heffalump`: `io.CopyBuffer` never used it because `*bufio.Writer` implements `io.ReaderFrom`. Output is unchanged.
 - The `trigger.yml` workflow (it dispatched to the upstream repository) and the Docker Hub publishing job of the release workflow (it pushed to the upstream's Docker Hub and GHCR namespaces).

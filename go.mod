@@ -11,7 +11,6 @@ require (
 	github.com/knadh/koanf/v2 v2.3.7
 	github.com/rs/zerolog v1.35.1
 	github.com/valyala/fasthttp v1.74.0
-	golang.org/x/term v0.46.0
 )
 
 require (

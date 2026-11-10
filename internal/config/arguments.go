@@ -22,8 +22,8 @@ func argParse() {
 			continue
 		}
 		switch arg {
-		case "-h":
-			CLI.printUsage()
+		case "-h", "--help":
+			printUsage()
 		case "-c", "--config":
 			if len(os.Args) < i+2 {
 				println("missing config file after -c/--config")

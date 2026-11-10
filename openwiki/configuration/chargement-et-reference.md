@@ -32,7 +32,7 @@ Tout le code est dans `internal/config` ([config.go](../../internal/config/confi
 
 Dans l'ordre d'application, la dernière couche gagne :
 
-1. **Valeurs par défaut intégrées** (`defOpts`), **uniquement si `-c` n'est pas utilisé**.
+1. **Valeurs par défaut intégrées** (`defOpts`), dans les deux modes.
 2. **Fichier TOML**.
 3. **Variables d'environnement `HELLPOT_*`**, dans les deux modes.
 4. **Options `-v`, `-vv`, `--nocolor`**, qui ne peuvent qu'activer quelque chose.
@@ -45,15 +45,13 @@ Dans l'ordre d'application, la dernière couche gagne :
 2. sinon `config.toml` dans le répertoire de configuration utilisateur (`os.UserConfigDir()`, sous-dossier `HellPot`, créé au besoin) ;
 3. repli sur `./config.toml` seulement si aucun répertoire utilisateur n'est déterminable.
 
-Si le fichier choisi est absent ou illisible, HellPot affiche « No configuration file found, writing new configuration file... », écrit un nouveau fichier (droits `0600`) à l'emplacement du répertoire utilisateur à partir des valeurs par défaut, puis le charge. Une erreur d'écriture ou de chargement termine le processus avec le code 1.
+Si le fichier choisi est **absent**, HellPot affiche « No configuration file found, writing new configuration file... », écrit un nouveau fichier (droits `0600`) à l'emplacement du répertoire utilisateur à partir des valeurs par défaut, puis le charge. Si le fichier existe mais **ne se lit pas** (erreur de syntaxe), HellPot affiche l'erreur et quitte avec le code 1 : il n'écrase jamais le fichier. Une erreur d'écriture ou de chargement termine aussi le processus avec le code 1.
 
-## Avec `-c` : pas de valeurs par défaut
+## Avec `-c`
 
-`-c <fichier>` (ou `--config`) charge le fichier immédiatement, puis `Init()` **retourne sans appeler `setDefaults()`**. Conséquences :
+`-c <fichier>` (ou `--config`) charge le fichier par-dessus les valeurs par défaut, déjà appliquées par `setDefaults()` au début de `Init()`. Toute clé absente du fichier garde donc sa valeur par défaut.
 
-- Toute clé absente du fichier prend sa valeur zéro (chaîne vide, `false`, `0`, liste vide). Un fichier qui ne définit que `[http]` n'enregistre aucune route : tous les chemins répondent 404 et il n'y a pas de `robots.txt`. De même `use_date_filename` absent donne un fichier de log sans date.
-- **Exception** : `performance.max_conns_per_ip` garde sa valeur `10` quand la clé est absente, car la variable `MaxConnsPerIP` est initialisée à 10 et n'est écrasée que si la clé existe.
-- `--genconfig` est silencieusement ignoré : il n'agit que dans `setDefaults()`.
+- `--genconfig` écrit les valeurs par défaut dans `./config.toml` puis quitte, avec ou sans `-c`.
 - Un `-c` sans fichier après lui est une erreur fatale ; un fichier illisible aussi.
 - `-c` peut être répété : chaque fichier est fusionné par-dessus le précédent. C'est ce qui se produit dans l'image Docker quand on ajoute `-c` aux arguments : l'entrypoint charge déjà `/config`.
 
@@ -83,13 +81,12 @@ Sans `-c` : debug actif, trace inactif, `use_date_filename` actif, `docker_loggi
 
 ## Configuration de l'image Docker
 
-[docker_config.toml](../../docker_config.toml) est chargé avec `-c`, donc **sans** valeurs par défaut. Il fixe : `server_name` `nginx`, écoute `0.0.0.0:8080`, `real_ip_header` `X-Real-IP`, liste noire `Cloudflare-Traffic-Manager` et `curl`, `catchall` actif, `debug` et `trace` à `false`, répertoire de logs `/logs/`, `nocolor` actif, `use_date_filename` actif. Tout le reste (par exemple `makerobots`, `docker_logging`) vaut zéro. Voir [Image Docker](../operations/docker-et-publication.md).
+[docker_config.toml](../../docker_config.toml) est chargé avec `-c`, par-dessus les valeurs par défaut. Il fixe : `server_name` `nginx`, écoute `0.0.0.0:8080`, `real_ip_header` `X-Real-IP`, liste noire `Cloudflare-Traffic-Manager` et `curl`, `catchall` actif, `debug` et `trace` à `false`, répertoire de logs `/logs/`, `nocolor` actif, `use_date_filename` actif. Tout le reste (par exemple `makerobots`, `docker_logging`) garde sa valeur par défaut. Voir [Image Docker](../operations/docker-et-publication.md).
 
 ## Options de ligne de commande
 
-`argParse` parcourt tous les arguments : `--debug` ou `-v`, `--trace` ou `-vv`, `--nocolor`, `--banner`, `--genconfig` activent un booléen ; `-c` ou `--config` charge un fichier ; `-h` affiche l'aide.
+`argParse` parcourt tous les arguments : `--debug` ou `-v`, `--trace` ou `-vv`, `--nocolor`, `--banner`, `--genconfig` activent un booléen ; `-c` ou `--config` charge un fichier ; `-h` ou `--help` affiche l'aide (texte fixe dans `help.go`, avec la version réelle) puis quitte avec le code 0, même si la sortie n'est pas un terminal.
 
-- Le texte d'aide liste `--help`, mais **seul `-h` est reconnu** : `--help` est ignoré et le serveur démarre.
-- L'aide ne s'affiche que si la sortie standard est un terminal ; sinon le processus sort avec le code 1.
-- L'aide annonce que `--genconfig` écrit `HellPot.toml` ; en réalité le fichier est `./config.toml`, avec des droits `0600`, puis le processus quitte avec le code 0.
+- `--genconfig` écrit `./config.toml` (droits `0600`), puis le processus quitte avec le code 0.
+- Les variables d'environnement `HELLPOT_HTTP_ROUTER_PATHS` et `HELLPOT_HTTP_UAGENT__STRING__BLACKLIST` sont lues comme des listes séparées par des virgules.
 - `-v` et `-vv` (ou les clés `debug` et `trace`) règlent le niveau global de zerolog sur debug ou trace, et ne le baissent jamais. Sans eux, le niveau global n'est pas modifié : c'est pourquoi les lignes debug et trace apparaissent même avec `debug = false`. Voir [Journalisation](../operations/journalisation.md).

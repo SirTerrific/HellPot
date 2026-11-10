@@ -37,7 +37,7 @@ Deux étapes ([Dockerfile](../../Dockerfile)).
 
 ## Configuration embarquée
 
-`/config` est chargé avec `-c`, donc **sans valeurs par défaut intégrées** : voir [Chargement de la configuration](../configuration/chargement-et-reference.md). Pour utiliser un autre fichier, le monter sur `/config`. Si on ajoute `-c autre.toml` aux arguments, il est fusionné par-dessus `/config` car l'entrypoint le charge déjà. Les variables `HELLPOT_*` surchargent le tout. `docker_config.toml` active `catchall`, écoute `0.0.0.0:8080` et écrit les logs dans `/logs/`.
+`/config` est chargé avec `-c`, par-dessus les valeurs par défaut intégrées : voir [Chargement de la configuration](../configuration/chargement-et-reference.md). Pour utiliser un autre fichier, le monter sur `/config`. Si on ajoute `-c autre.toml` aux arguments, il est fusionné par-dessus `/config` car l'entrypoint le charge déjà. Les variables `HELLPOT_*` surchargent le tout. `docker_config.toml` active `catchall`, écoute `0.0.0.0:8080` et écrit les logs dans `/logs/`.
 
 ## Publication : workflow `docker.yml`
 

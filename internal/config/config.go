@@ -81,14 +81,17 @@ func writeConfig() string {
 
 // Init will initialize our toml configuration engine and define our default configuration values which can be written to a new configuration file if desired
 func Init() {
+	setDefaults()
 	argParse()
+
+	if GenConfig {
+		gen("./config.toml")
+	}
 
 	if customconfig {
 		associateExportedVariables()
 		return
 	}
-
-	setDefaults()
 
 	chosen := ""
 
@@ -125,6 +128,12 @@ func Init() {
 
 	loadErr := snek.Load(file.Provider(chosen), toml.Parser())
 
+	if chosen != "" && loadErr != nil && !errors.Is(loadErr, os.ErrNotExist) {
+		// a broken file must be reported, never overwritten with the defaults
+		fmt.Println("failed to load config file "+chosen+": ", loadErr.Error())
+		os.Exit(1)
+	}
+
 	if chosen == "" || loadErr != nil {
 		println("No configuration file found, writing new configuration file...")
 		chosen = writeConfig()
@@ -136,10 +145,6 @@ func Init() {
 		os.Exit(1)
 	}
 
-	/*	snek.SetEnvKeyReplacer(strings.NewReplacer(".", "_", "-", "_"))
-		snek.SetEnvPrefix(Title)
-		snek.AutomaticEnv()
-	*/
 	associateExportedVariables()
 }
 
@@ -200,13 +205,17 @@ func processOpts() {
 }
 
 func associateExportedVariables() {
-	_ = snek.Load(env.Provider("HELLPOT_", ".", func(s string) string {
+	_ = snek.Load(env.ProviderWithValue("HELLPOT_", ".", func(s, v string) (string, interface{}) {
 		s = strings.TrimPrefix(s, "HELLPOT_")
 		s = strings.ToLower(s)
 		s = strings.ReplaceAll(s, "__", " ")
 		s = strings.ReplaceAll(s, "_", ".")
 		s = strings.ReplaceAll(s, " ", "_")
-		return s
+		// list options arrive as one comma separated string
+		if s == "http.router.paths" || s == "http.uagent_string_blacklist" {
+			return s, strings.Split(v, ",")
+		}
+		return s, v
 	}), nil)
 
 	processOpts()

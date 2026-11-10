@@ -165,16 +165,13 @@ networks:
 
 | Option | Effet |
 | --- | --- |
-| `-c`, `--config <fichier>` | Utilise ce fichier de configuration. **Les valeurs par défaut intégrées ne sont alors plus appliquées**, voir la note plus bas. |
+| `-c`, `--config <fichier>` | Utilise ce fichier de configuration. Les valeurs par défaut intégrées sont appliquées d'abord, votre fichier les remplace. |
 | `-v`, `--debug` | Force le niveau debug |
 | `-vv`, `--trace` | Force le niveau trace |
 | `--nocolor` | Désactive les couleurs et la bannière |
 | `--banner` | Affiche la bannière et la version, puis quitte |
 | `--genconfig` | Écrit la configuration par défaut dans `./config.toml`, puis quitte |
-| `-h` | Affiche l'aide (seulement si la sortie standard est un terminal), puis quitte |
-
-> [!NOTE]
-> Le texte d'aide mentionne `--help`, mais seul `-h` est reconnu : `--help` est ignoré et le serveur démarre. Le texte d'aide indique aussi que `--genconfig` écrit `HellPot.toml`, alors que le fichier écrit est `config.toml`.
+| `-h`, `--help` | Affiche l'aide, puis quitte |
 
 La version affichée par `--banner` est le tag git à partir duquel le binaire a été compilé (par exemple `1.2.3` pour le tag `v1.2.3`). Un build sans tag affiche le hash court du commit, ou `dev`.
 
@@ -182,8 +179,10 @@ La version affichée par `--banner` est le tag git à partir duquel le binaire a
 
 Sans option `-c`, HellPot charge `/etc/HellPot/config.toml` s'il existe (sauf sous Windows), sinon `config.toml` dans votre répertoire de configuration utilisateur, créé à partir des valeurs par défaut s'il manque. Les valeurs par défaut intégrées complètent toutes les clés absentes de votre fichier.
 
+Avec `-c`, les valeurs par défaut intégrées sont aussi appliquées : toute clé absente de votre fichier garde sa valeur par défaut.
+
 > [!IMPORTANT]
-> Avec `-c`, **les valeurs par défaut intégrées ne sont pas appliquées.** Toute clé omise prend sa valeur zéro (chaîne vide, `false`, `0`, liste vide). Par exemple, un fichier ne contenant que les paramètres d'écoute `[http]` et aucune section `[http.router]` n'enregistre aucune route : tous les chemins répondent `404` et il n'y a pas de `robots.txt`. Définissez explicitement `catchall = true` ou `paths`. La seule exception est `performance.max_conns_per_ip`, qui reste à `10` quand elle est absente.
+> Si le fichier de configuration existe mais ne peut pas être lu (par exemple un `]` manquant), HellPot affiche l'erreur et s'arrête. Il n'écrase jamais votre fichier.
 
 ### Variables d'environnement
 
@@ -195,6 +194,8 @@ Les valeurs de configuration peuvent être surchargées par des variables d'envi
 | `http.router.catchall` | `HELLPOT_HTTP_ROUTER_CATCHALL` |
 | `logger.docker_logging` | `HELLPOT_LOGGER_DOCKER__LOGGING` |
 | `performance.max_conns_per_ip` | `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP` |
+| `http.router.paths` | `HELLPOT_HTTP_ROUTER_PATHS` (liste séparée par des virgules, par exemple `a,b`) |
+| `http.uagent_string_blacklist` | `HELLPOT_HTTP_UAGENT__STRING__BLACKLIST` (liste séparée par des virgules) |
 
 ### Référence
 
@@ -290,6 +291,8 @@ Lignes par requête :
 | `Ignoring useragent` | trace | un user agent en liste noire a été refusé | |
 | `SERVE_ROBOTS` | debug | `robots.txt` a été servi | `PATHS` |
 | `The number of connections from <ip> exceeds MaxConnsPerIP=<n>` | debug | un client a été refusé avec HTTP 429 | |
+
+HellPot ne fait jamais tourner ni ne supprime son fichier de log, et les robots le font grossir. Faites la rotation vous-même, par exemple avec `logrotate` et `copytruncate` (le fichier est ouvert en ajout, c'est sans risque), ou mettez `docker_logging = true` et laissez Docker limiter la taille (`logging: { driver: json-file, options: { max-size: "50m", max-file: "5" } }`).
 
 `caller` est ajouté aux lignes de requête quand `trace` est activé. Les lignes de démarrage (`config`, `logger`, `Listening and serving HTTP...`) indiquent le fichier de configuration, le fichier de log et l'adresse d'écoute. Les messages de log restent en anglais, comme dans le projet d'origine.
 

@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	configSections = []string{"logger", "http", "performance", "deception", "ssh"}
+	configSections = []string{"logger", "http", "performance", "deception"}
 	defNoColor     = false
 )
 
@@ -100,7 +100,4 @@ func setDefaults() {
 		}
 	}
 
-	if GenConfig {
-		gen("./config.toml")
-	}
 }

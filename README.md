@@ -165,16 +165,13 @@ networks:
 
 | Flag | Effect |
 | --- | --- |
-| `-c`, `--config <file>` | Use this configuration file. **Built-in defaults are then not applied**, see the note below. |
+| `-c`, `--config <file>` | Use this configuration file. The built-in defaults are applied first, your file overrides them. |
 | `-v`, `--debug` | Force debug level on |
 | `-vv`, `--trace` | Force trace level on |
 | `--nocolor` | Disable color and the banner |
 | `--banner` | Print the banner and version, then exit |
 | `--genconfig` | Write the default configuration to `./config.toml`, then exit |
-| `-h` | Print usage (only when stdout is a terminal), then exit |
-
-> [!NOTE]
-> The usage text lists `--help`, but only `-h` is recognised: `--help` is ignored and the server starts. The usage text also says `--genconfig` writes `HellPot.toml`, but the file written is `config.toml`.
+| `-h`, `--help` | Print usage, then exit |
 
 The version shown by `--banner` is the git tag the binary was built from (for example `1.2.3` for tag `v1.2.3`). Builds without a tag show the short commit hash, or `dev`.
 
@@ -182,8 +179,10 @@ The version shown by `--banner` is the git tag the binary was built from (for ex
 
 With no `-c` flag, HellPot loads `/etc/HellPot/config.toml` if it exists (not on Windows), otherwise `config.toml` in your user config directory, which is created from the defaults when missing. The built-in defaults fill every key your file does not set.
 
+With `-c`, the built-in defaults are applied too: any key your file leaves out keeps its default value.
+
 > [!IMPORTANT]
-> With `-c`, **the built-in defaults are not applied.** Any key you leave out takes its zero value (empty string, `false`, `0`, empty list). For example a file with only the `[http]` bind settings and no `[http.router]` section registers no route at all: every path answers `404` and there is no `robots.txt`. Set `catchall = true` or `paths` explicitly. The one exception is `performance.max_conns_per_ip`, which stays at `10` when absent.
+> If the configuration file exists but cannot be parsed (for example a missing `]`), HellPot prints the error and exits. It never overwrites your file.
 
 ### Environment variables
 
@@ -195,6 +194,8 @@ Configuration values can be overridden with environment variables prefixed with 
 | `http.router.catchall` | `HELLPOT_HTTP_ROUTER_CATCHALL` |
 | `logger.docker_logging` | `HELLPOT_LOGGER_DOCKER__LOGGING` |
 | `performance.max_conns_per_ip` | `HELLPOT_PERFORMANCE_MAX__CONNS__PER__IP` |
+| `http.router.paths` | `HELLPOT_HTTP_ROUTER_PATHS` (comma separated list, for example `a,b`) |
+| `http.uagent_string_blacklist` | `HELLPOT_HTTP_UAGENT__STRING__BLACKLIST` (comma separated list) |
 
 ### Reference
 
@@ -290,6 +291,8 @@ Per-request lines:
 | `Ignoring useragent` | trace | a blacklisted user agent was refused | |
 | `SERVE_ROBOTS` | debug | `robots.txt` was served | `PATHS` |
 | `The number of connections from <ip> exceeds MaxConnsPerIP=<n>` | debug | a client was refused with HTTP 429 | |
+
+HellPot never rotates or deletes its log file, and bots keep it growing. Rotate it yourself, for example with `logrotate` and `copytruncate` (the file is opened in append mode, so this is safe), or set `docker_logging = true` and let Docker limit the size (`logging: { driver: json-file, options: { max-size: "50m", max-file: "5" } }`).
 
 `caller` is added to request lines when `trace` is enabled. Startup lines (`config`, `logger`, `Listening and serving HTTP...`) report the config file, the log file and the listen address.
 

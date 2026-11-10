@@ -53,7 +53,7 @@ Deux messages de niveau debug ou trace changent, parce que leur texte vient de l
 
 ## Particularités de l'upstream conservées volontairement
 
-Ces comportements existaient déjà et n'ont pas été modifiés, pour ne pas changer la sortie ni la configuration existantes : les lignes debug et trace écrites même avec `debug = false`, `--help` non reconnu (seul `-h` l'est), l'aide qui annonce `HellPot.toml` alors que `--genconfig` écrit `config.toml`, et l'absence de valeurs par défaut avec `-c`. Chacun est expliqué sur la page de son sujet.
+Ce comportement existait déjà et n'a pas été modifié, pour ne pas changer la sortie existante : les lignes debug et trace écrites même avec `debug = false`. Il est expliqué sur la page de son sujet. Corrigés dans le fork : fichier de config illisible écrasé par les valeurs par défaut, valeurs par défaut absentes avec `-c`, listes vides par variable d'environnement, `--help` ignoré.
 
 ## Migrer d'une image construite localement vers GHCR
 
