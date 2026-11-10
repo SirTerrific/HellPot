@@ -11,6 +11,10 @@ This repository has a generated `openwiki/` evidence index. It is optional just-
 - Treat source code and tests as authoritative. A brief's unknowns and review items are verification gaps, not automatic requirements.
 - Prefer the narrowest quiet validation that proves the changed behavior. Preserve complete failure output.
 
-The scheduled OpenWiki GitHub Actions workflow refreshes the repository wiki. Do not hand-edit generated OpenWiki pages unless explicitly asked; prefer updating source code/docs and letting OpenWiki regenerate.
+No GitHub Actions workflow refreshes the wiki in this repository. Do not hand-edit generated OpenWiki pages unless explicitly asked; after a code change, run `openwiki update` and commit `openwiki/`.
 
 <!-- OPENWIKI:END -->
+
+## Wiki maintenance (this repo)
+
+Nothing refreshes `openwiki/` automatically. After every code change, run `openwiki update`, then commit `openwiki/`. This note sits outside the OpenWiki block so regeneration does not overwrite it.
